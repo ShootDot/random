@@ -1,0 +1,5726 @@
+/*
+_______
+/       \
+.==.    .==.
+((  ))==((  ))
+/ "=="    "=="\
+/____|| || ||___\
+________     ____    ________  ___    ___
+|  ___  \   /    \   |  ___  \ |  |  /  /
+|  |  \  \ /  /\  \  |  |  \  \|  |_/  /
+|  |   )  /  /__\  \ |  |__/  /|  ___  \
+|  |__/  /  ______  \|  ____  \|  |  \  \
+_______|_______/__/ ____ \__\__|___\__\__|___\__\____
+|  ___  \ |  ____/ /    \   |  ___  \ |  ____|  ___  \
+|  |  \  \|  |___ /  /\  \  |  |  \  \|  |___|  |  \  \
+|  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
+|  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
+|__|   \__\____/__/      \__\_______/ |______|__|   \__\
+https://darkreader.org
+*/
+
+
+/* User-Agent Style */
+
+html {
+    background-color: #181a1b !important;
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+    background-color: #181a1b;
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+
+a {
+    color: #3391ff;
+}
+
+table {
+    border-color: #545b5e;
+}
+
+::placeholder {
+    color: #b2aba1;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #555b00 !important;
+    color: #e8e6e3 !important;
+}
+
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+
+
+/* Invert Style */
+
+.jfk-bubble.gtx-bubble,
+.captcheck_answer_label>input+img,
+span#closed_text>img[src^="https://www.gstatic.com/images/branding/googlelogo"],
+span[data-href^="https://www.hcaptcha.com/"]>#icon,
+#bit-notification-bar-iframe,
+ ::-webkit-calendar-picker-indicator,
+embed[type="application/pdf"] {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}
+
+
+/* Variables Style */
+
+:root {
+    --darkreader-neutral-background: #131516;
+    --darkreader-neutral-text: #d8d4cf;
+    --darkreader-selection-background: #004daa;
+    --darkreader-selection-text: #e8e6e3;
+}
+
+
+/* Modified CSS */
+
+a {
+    background-color: transparent;
+}
+
+a:active,
+a:hover {
+    outline-color: initial;
+}
+
+abbr[title] {
+    border-bottom-color: initial;
+}
+
+mark {
+    background-image: initial;
+    background-color: rgb(204, 204, 0);
+    color: rgb(232, 230, 227);
+}
+
+img {
+    border-color: initial;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+}
+
+fieldset {
+    border-color: rgb(66, 71, 74);
+}
+
+legend {
+    border-color: initial;
+}
+
+ul,
+ol {
+    list-style-image: initial;
+}
+
+a {
+    text-decoration-color: initial;
+}
+
+a:focus {
+    outline-color: initial;
+}
+
+body {
+    background-color: rgb(36, 45, 49);
+    color: rgb(211, 207, 202);
+}
+
+.textDecNone {
+    text-decoration-color: initial;
+}
+
+a {
+    color: rgb(211, 207, 202);
+}
+
+.jeeNav .home,
+.cartIcon,
+.jeeNav>ul>li.submenu::after,
+.searchIcon,
+.subIcon35,
+.filterIcon,
+.mysessionFilter .filterTypeBox ul li::before,
+.filterBy ul li.up::after,
+.filterBy ul li.down::after,
+.filterBy ul li.down.down_btn::after,
+.jeeHeader .userDetail::before,
+.lockIcon,
+.lockIconBig,
+.sessionBox header.pending::after,
+.sessionBox header.done::after,
+.icon,
+.closeVideo,
+.jeeHotness li .icon::after,
+.greenText::before,
+.redText::before,
+.grayText::before,
+.topSliderTitleBlock.jeeplusPQ .closeIcon,
+.cardRating .ltsTooltip {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/icons_latest.png?v=05092016");
+}
+
+.crossIcon {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTQyIiBoZWlnaHQ9IjIwIj48ZGVmcz48ZmlsdGVyIGlkPSJkYXJrcmVhZGVyLWltYWdlLWZpbHRlciI+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAuMjQ5IC0wLjYxNCAtMC42NzIgMC4wMDAgMS4wMzUgLTAuNjQ2IDAuMjg4IC0wLjY2NCAwLjAwMCAxLjAyMCAtMC42MzYgLTAuNjA5IDAuMjUwIDAuMDAwIDAuOTk0IDAuMDAwIDAuMDAwIDAuMDAwIDEuMDAwIDAuMDAwIiAvPjwvZmlsdGVyPjwvZGVmcz48aW1hZ2Ugd2lkdGg9IjU0MiIgaGVpZ2h0PSIyMCIgZmlsdGVyPSJ1cmwoI2RhcmtyZWFkZXItaW1hZ2UtZmlsdGVyKSIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFoNEFBQUFVQ0FZQUFBREN4elFGQUFBQUdYUkZXSFJUYjJaMGQyRnlaUUJCWkc5aVpTQkpiV0ZuWlZKbFlXUjVjY2xsUEFBQURpdEpSRUZVZU5yc1hRK1FWVlVaUDR1dXpLS0NrSmt6S1UxQStJY1NpRDhGNFlnZ2lDNk9sUzRWc0RTQkVRYUpOR0M1bW9ER01vSUZnUWdTTEFHQ3lLb1Q0aEtPWmlJNkVvaEJzS2JtNGd3Qkxrd1FLTzQyck0zMi9mYjlybnYyZXU5Nzk5MTM3cnZQZmVlYitlYThlKzY1NTU1Ny9uMi84MzNmT2ErZ3NiRlJCYVdDZ2dKbHlUeU5MZjF4VXlNOHR2YjN0b0l0V2JKa3laSXhTa2ZHWjR2T3RzMWlLWmVBa0x5N1RJS3B3bTJGNTBrWnluT2xQblRLSjVBbzN6OWVndC9pcytXN3A5Z1JZc21TSlFzOGdrK2dYU1I0WG5pRFRLRDM1SnBBeTNmTmgzei9UUkxNMGFMbVNOdytxWS9OZVZZUC9TU1lLVHhhdnYwRG56VHRKVmd2UEZ2UzdJcTRTTjhYN29EWENsdmdrYnY5NW1vSm5oVGVLMXdzL2FJaFpENG5KZGdaTUhsUDRUN3lya01abEx1SEJMY0pqeER1eXVnYTRhM0NLeVR2YXR1NmVRNDhwSk1VU3JCQStFZkNCNFYvSUIxamo4L2t1VWE0cy9BcTRXbGhCNEpCV2lZTThGRW01VlBaQUIvNXZscE9rNzdwRTdjNXorb0JvS01ZRTYvMG54RnU4RUhRZ1VsNUFLTkdSbHlldTRSbkFMRGJMcHJUZ2hKejhrWEN3NFJSeGowaDh3SFlIeDZ3THRaSmNMbUV3K1daaWpUcnNVaUMrY0lUaGY4alhDVzhscmU3QVhnTFQ1WjB5M05FZmtRbEgwNzUzTzdBc0U2NGtHRUh0L3lRUENDUEo2UDk1ZDY2VE1wVE9tNWlkeXhtaEFjSm41L0dvNGVGbnhLZXUzYk44dm9vTkI3ZjVrZUNMaGRlVGRUcnBrZDRYekg5TnVIS0dEVWREd2hQWXVkR3ViNHJuQld0aHgvUWNPS3RqOGNuOUdiQXVOWk9velZnMFFKOHVFREhhMHdiNVFyNmZpNGVkZ2d2bExpN0pad2FsWmFGcGphTXkzWnBQRllsNVJtcGozZTVQaEJCMlJ4QldTSzhGSXN1NGJkNSt6TE9qUzlLdXNvb0JLWGsyNHZ6Nmw4bDcya2VTVjVSQ2EzVVM4TFZCdDYzTVVVUzNReDZ1M0JGR25sRGtHNFNIc3oyZmxpK3FkNGp6WjBxb1FYdEx0ZkZyUkI4MUxFT3ZPZ3JESHZ3Ti9yZXF4N3BCaEdZWUU0SURUd0VkS0FQUTlQMWh2QjlCSU5lNVhXUHpRSUNjUFRKYXlTZm9RSStQallOUE01eFhlOW1KNW5GVmRvKzRlbkM2TFI5a3p5WFRkQ0JnWGdwSjlCaWFqNG01ZkdLTFZlQkR2ck1VSzdjUUtzWTV6VnBZWUJWeWpkVXRyYjJBY2dBMkhDREQ5N1dRY2NJUDFPTUlRTG82TTJWVnhmR2ZVNzRkOElESTNvbmhOQmxRVlgzTk0vOWhMODdjV3lYY0RJME9XWWNRWGxHK0FvcDN3bFhFbWdYOWtpNlJTcWg2YTJLUUZDV3NlMEhTTjZMUGNBVnhrNlhUTXdlTGtvMVIzN0k4QzNobzJubXZZQ2FHZEM1YnREQmNZQzZteS9mK2pjSnQvQ1pLUWJiTkJkQWJqc3UzcjJvRzhOM0dhNTJsMVhlZjRrRTh6Z2UwZWM2ZWZUTm9QUWdRSzN3RFFJYy9xY0JFdDhISkowT1hEQlg3eWY0L1lOcDRQRTBCZmxnb3AvcGRENmJ5ZnQ5MlduR1N6d0tjQlhUUHgwejZIQ1E0UU5CMVloWkZEVFc5TUtKUnRyc1R5cWhla1RmZXRNOWNYUFZ1WW1UMXVtNHRHaHhnQS9leWhib2NPYUhLcGRXQmRkZmpmQ2Q3Y0lJVHBwMllRcDZKcUp5UWVqQjkyRk1NakNCU1YvSzhoMENZNk9Da24wQW9BcnYvNWNITU5wZ0VIU0F2cDdpL2hzaDUyV3M0Q2RTNko4TDJVSFQ5eXlmT24xQjdpTXRmTDZXR2pSbDVRTElQU1h2NytscVI1aVhMeGF1RmQ3aDE5OGtiWWxyWVFidFVKM0U5dzlaUjVEcEUzVFFvZEZLQXQralNVRElRUUVmbUp1SHBBSWViVUlVN2pyaEk4S3ZFLzBCWFgzTlIwWDBMTk1kNFhOeGdnN0Z3Zm9ySytKelVndlRYdmhaRGlSb1BHQkRmd3cyWkE1R3g4eXdoYUJqRmNCdGhPV1pBYzJRbDQrT296VWl6NGdTZktpRUg4RnJ6a28zVzZDRGs1cGplMzVkNDZaeGhQdE91K1FBOWVOY2M2ZVBDU0xUdXVoQkFUTXBpQWFEYWFBdEtPR3pwdnBEQlRWT21Odk9oL0NEcHBrMi91NFJPR0gzVHNFWGhNd1hZeHRxL0FYMHN5c24rSmlWNUptRmZPYTJIQUc1TURVZU50elBBR3pnSy9ReTUwR0VOWXozb2h1RTNkcVdXbXErd2hBMG04Yzk0dEhPNC9tOTBIYWVseVFQUE44KzFZdmFwRmt4WlZ4UmpLWm1Bd01MZ0dLeE5rbGgwQzBpSXB6TWRFai9ESitQRTNRTWpzTDJhNkM4alhHL1ArNHljSFc5bDcvaDEvR084REhoK2RTRXRPZHFHNmg4U1pTZ2c1TTg3S2xqMlorOUNQRmptYTQxRWlhK1ltMnM5OVhHY2pIdkYrVklXZUZRdVN2QzNVOFFka3ZkS213QVpUOWd3YlJMRFF2S3Bud3BMT3NwL0daeXBidlRKTWh4eG9ET0V2V284T05hWE5pNWRBUVhyZlY4VDByd1FUQlh4V2RiSGNpbEhGMUJqWUxqTzFQTzZ4Vzg3eVljT1hEYUZYYzZ3bTgvUy9obnd1K3p6N1gxU1BOeDBNaytIWnJxdW42RmdPT0w2QnRFV3ZzMGxPUlcwMDVWTFIyUzhnWjArQWwyYTJacE1WSGZ3NjE4dlFnNnNNS3NKb2g5am9LdlBGdGJvZUVoTHUvR3dIOVNOWHVZSy9iNVc2RUNqbG9McEZyNmRDamw0WEFhMGJmYmZ0bFNVSTd6aUFjQUd5NXRzUVJDMDZNOU1QL0IzMk5hQkdXNlRqWDczVFN0M2pIWFNsbCtEWUV1NFJpNXZsZTR3aUE0eHZidFFmUnJPSkZCUG5CRXJIRDFONHg5cFpLYlhkN2xZaUJ1a0ZzVkFjZ0ZxRU9id1VUbm1EVldFcmlPNGYydTJ0endNR1VyMnVRcWcrWDRiNHI3QmRSNFFNdDJQYlV1YnVDVFVoTjJkb2hLZHdnT1JjTTVxUFN6RjdCanBJU05NNUtkYWJUSDgzbWw2YkFUZWRKMkE5QVk1cXlrcU1xc29iMGNvT012SEZ5ei9lekFFYlliN012RHVNcTVpSUJvWk5SblozaUFEcmR6cVhId3dYZitRdmdqUjlQRWVLeWtzV3RobSs3TUsvRVk5OWNLejQzeHJKWFBaK0VkbVBCcmZPNDVPeThnOU85MmJTbXQwWVZGQnUxU1JKRHhqbWJxOGRxeWlIdmY0aGJYOHdoR0FOTG5oM2dubkJZLzJTTExNZ0I4dytUeGxGempYYXN6K0t4Q2o3RVdCSHpFdWF1bGo2YjFNRG5XZTJneUZWcUVrN3creWV1M3RIUWxYSUFCOUdKZStyY3l1N010bGZtMGdiamhaUUpiTDJDU3NvM2FaRkRBcFN5a255QW81bmE4aFZuc0dEa0pPaHlOaHhkYjJORkU4TXFlUjBHR0NXY1hRUWNtdjFjSk91N0tOdWpRSnNSZEZQWTRmRzVBSEtBREFNUEQ1Mk1yMDVxaTJWeHBvUjFLdFhob2ZHQTIzY2cyY1NaQlo1ZkZ3aGpHMDAzVVJpMWpGRFFQR3lrZzQxb0pyNlMvaFdsQkNZYzk3QmJBVnQzdEJPYmJOQzJZSWlER0dTSXZDSDlCYTVPd1R2MjM4M3V1NWpVMDFmTTRCbS9tQXZOTElmTUdJT3ZtTTlhU21WMjZxZVlkSG5IUWJvYW14MzhueXEzOUJIZU92RHJBNi8yOGozUTRPK3NPdEs5TDQzcU00WmtNeTNKV2l2di9GTDVSSlV6ZXV6M3VkK0RDeGFqR1k1VHdOY0k0WkFSMitQWXBFRkpuYllDOHB4S09nVkZTenZwMFdJMUhVcnBWSmRUU09OZ05CK1JNb1lEYnhwVWV6bzFZRkhQN29SOWxhemZVZXVYalNPcXgyd1ZwVFIwZ2RrVDcvYUgydTVhQ3BvN3NqSzhEYko5dFdRWWQ0elhBQVJQdlAxVEM5bHpDK2NrME9acUxaT1lGVFB3L2R4M2cxTldRb096UDhFS0FjRTBUQmRNMnpoS0J3K25qdXFNa3RRY1BacUFSKzQxS2JCRytYL0k1d2p3M08zMlFjN3R6Z0ZpNnRKVWFva0l2WjEyWDVxT1ExMFZjNWErUGVhNUNPL2NEOERXbzVUdk1NWWJkWXU5THZoZGdVY3J3STlZMXdNZGhpZHZPWjZZNWl3QnRqQUw4Zm85YWtERFVxTHgzNktBTTJNSDBrRXJzSEV1MllBNGs1OUlDSGxTelZyclVjYW1ld1dBWW1PWE9rWE9PcE5iSEkya2ZnVEFkVG1DS2t3bzdxc1NXTWdpMUNlbWVpQmhsZTJXcERXY3o5RHd5WFFNZjY3VzBtWDR2RmhDd0tSOG42SGlPOFpqd0p4RGNBQWpWMC95RnJaWXdNWHdaaXhDWXk3eE9NQTVCZGNuT0l1QzdGL055S0NaaW11cm1jTnhmR2tGMzJFcWg1N1hTYlRwclF0aEx5T09aRncyOEgxTDRoMXpsTm1qOUFPYVdDdTU2UURzY2N2ZVRETVlrNnI5UzhzWUNFK2RvVERkWW55dW9RWnVoZkh6K05QQlJ4aERDcnlPZmpaTjJjY3h0a0hJTk1iV29rYndPY1FGVzY1aGVHTll5L3BDSFBPdXRYTnVxblRTTzVzL3JmSlFVY3ZOS2xUQnR1L3Q0bjRCNTlGQUJEbjNNOUw5YVBtREhHY2dDZDJRaGF6MVVnWG10VmNpRnN2bjlOMHlxNjJ5VW5RNXhOeExZamxiTnUwYldxVHdqbW5KR3BnSnJwalFkVXU5UTNjNVZuejZjNkpqeTlzdnlPcjBRNlUxc2NXNENFSkpYc2tPZDROejdCRUVIQUpQamEzQ0xTcGdJVEcvZGg3Q0RtV09SQ3hCQlMzZUgxd0tIQUFsbEdXS2dQN1JZOEhrUWhBdTBIOXNqNkl0dzdyNDRRMmRTcnp4eDhoUzJBdS8wYzlMV3dRZWpsaGcramg0Zzk1SjB0OVJpZk5MY3RjeGdXWDVLc0g5QysxNkVaemcycjA4enYwM3NoemNyYjM4Z0wzcEMrSmVsNHladVdidG0rWHRPcEg1SVdES1M1MHJaMysrTkZIaHc4b3Y5ejlZc3RScUJXNjhkdmhUcnFhUjVwb255TzczUnp4bmNEeFRnL0pYeEdkWjd1VXF4ODAzNkNDWmpSN3N5U3lWOGdNb3BFR0IrR211NEwxVHpHSFFJbWxGYWZETGd0NHg5T0J2LzIzSWxOUU9GaG5aOFhjaHpYUFE2OTB2Yk9lUTdzQ2tCSnZzdFBCeHNvYzloZ1k2ajVmUEsvTzRnZ055M1U0QmNOMVZwR3FGUjNOQmdvby90b1FiRjJhMmlHTDZrRWp2b3FsMTFnM29wOVJrZlI3V3hDNUFlOU5Sd2pDVTRybFlMaU1CN2p3VjhEamdDWmtWb3FXY0lVTmtSdGNiRFVnaE5neFdtU2N2WW9FL3VsckpDYlQ5ajVZVkt1QmRYblZEWC8xMDFPN24zVWk3MXN5R0MwS3ZpSVhmalVwaUMxbkN5SDVPbCtvQm14ZGxkWXdKNDNNZnk0eURJVk1BSnZsZkh3NHh6cnNaaHBvSnpPVTdBaGxCM2ZHTGdTRnBNQVlydHlzYi8reVlJeUEyUXh3R0Q1VUZkWDhzK0JFQjNNS1NtU1IvUGdRLzVFOEJRSjRBRDJrSm9EcitoRWo1Rk9oV3A1ck5EOVBNNjZna01KMGtlZTRPOHE2Q3hNYmhNTENpdy9wR1dMRm1LSGNnRFpKU3BacCtPL2x3eFlnZkduNm45bUJYQmU5MS9FdmRIOWVrL2lRTUlpT1JQNHBLVUM2WXkvSy9PRWxObjNIQzNGSFl3N0EzNFNFL3VwZ256THZlLy9UWVFnTUEvSnM1Lys4M1dvdlJVaUVleGV3Uk94ZERXd1BFVS8ydDFpOVJWWjVmR28wSEF3RG01OXQwV2VGaXlaT216TmxrWEVXREFySUl6RHVCOGZJVkttRmh3clB2UU5KM3FyS0MwMUdvcEhSbHZnWWNsUzVZc0pRY2ZPT3dNZG03bkQ3WFdxc1R1a25wYlE1WXM1Uzd3K0w4QUF3QWptbDJNNE9tV1V3QUFBQUJKUlU1RXJrSmdnZz09IiAvPjwvc3ZnPg==");
+}
+
+.boxShadow1,
+.subjectBoxStyle,
+.liveClasses {
+    box-shadow: rgba(0, 0, 0, 0.15) -1px 1px 4px;
+}
+
+.subMath .textColor,
+.subMath.textColor {
+    color: rgb(70, 166, 237);
+}
+
+.subMath .bgColor,
+.subMath.bgColor {
+    background-color: rgb(0, 121, 84) !important;
+}
+
+.subMath .borderColor,
+.subMath.borderColor {
+    border-top-color: rgb(16, 99, 163) !important;
+}
+
+.subMath .borderLeftColor,
+.subMath.borderLeftColor {
+    border-left-color: rgb(16, 99, 163) !important;
+}
+
+.subEnglish .textColor,
+.subEnglish.textColor {
+    color: rgb(255, 69, 131);
+}
+
+.subEnglish .bgColor,
+.subEnglish.bgColor {
+    background-color: rgb(154, 0, 51) !important;
+}
+
+.subEnglish .borderColor,
+.subEnglish.borderColor {
+    border-top-color: rgb(197, 0, 65) !important;
+}
+
+.subEnglish .borderLeftColor,
+.subEnglish.borderLeftColor {
+    border-left-color: rgb(197, 0, 65) !important;
+}
+
+.subHindi .textColor,
+.subHindi.textColor {
+    color: rgb(70, 166, 237);
+}
+
+.subHindi .bgColor,
+.subHindi.bgColor {
+    background-color: rgb(151, 0, 0) !important;
+}
+
+.subHindi .borderColor,
+.subHindi.borderColor {
+    border-top-color: rgb(152, 0, 0) !important;
+}
+
+.subHindi .borderLeftColor,
+.subHindi.borderLeftColor {
+    border-left-color: rgb(152, 0, 0) !important;
+}
+
+.subChemistry .textColor,
+.subChemistry.textColor,
+.subFrench .textColor,
+.subFrench.textColor,
+.subChemistry .textColor,
+.subAccountancy .textColor,
+.subAccountancy.textColor {
+    color: rgb(74, 227, 174);
+}
+
+.subChemistry .bgColor,
+.subChemistry.bgColor,
+.subFrench .bgColor,
+.subFrench.bgColor,
+.subAccountancy .bgColor,
+.subAccountancy.bgColor {
+    background-color: rgb(24, 157, 111) !important;
+}
+
+.subChemistry .borderColor,
+.subChemistry.borderColor,
+.subFrench .borderColor,
+.subFrench.borderColor,
+.subAccountancy .borderColor,
+.subAccountancy.borderColor {
+    border-top-color: rgb(25, 162, 115) !important;
+}
+
+.subBiology .borderColor,
+.subBiology.borderColor,
+.subSocial.Science .borderColor,
+.subSocial.Science.borderColor,
+.subBusiness.Studies .borderColor,
+.subBusiness.Studies.borderColor {
+    border-top-color: rgb(86, 51, 116) !important;
+}
+
+.subChemistry .borderLeftColor,
+.subChemistry.borderLeftColor,
+.subFrench .borderLeftColor,
+.subFrench.borderLeftColor,
+.subAccountancy .borderLeftColor,
+.subAccountancy.borderLeftColor {
+    border-left-color: rgb(25, 162, 115) !important;
+}
+
+.subPhysics .textColor,
+.subPhysics.textColor,
+.subScience .textColor,
+.subScience.textColor,
+.subEconomics .textColor,
+.subEconomics.textColor {
+    color: rgb(227, 168, 58);
+}
+
+.subBiology .textColor,
+.subBiology.textColor,
+.subSocial.Science .textColor,
+.subSocial.Science.textColor,
+.subBusiness.Studies .textColor,
+.subBusiness.Studies.textColor {
+    color: rgb(157, 115, 193);
+}
+
+.subPhysics .bgColor,
+.subPhysics.bgColor,
+.subScience .bgColor,
+.subScience.bgColor,
+.subEconomics .bgColor,
+.subEconomics.bgColor {
+    background-color: rgb(175, 122, 25) !important;
+}
+
+.subPhysics .borderColor,
+.subPhysics.borderColor,
+.subScience .borderColor,
+.subScience.borderColor,
+.subEconomics .borderColor,
+.subEconomics.borderColor {
+    border-top-color: rgb(154, 108, 22) !important;
+}
+
+.subPhysics .borderLeftColor,
+.subPhysics.borderLeftColor,
+.subScience .borderLeftColor,
+.subScience.borderLeftColor,
+.subEconomics .borderLeftColor,
+.subEconomics.borderLeftColor {
+    border-left-color: rgb(154, 108, 22) !important;
+}
+
+.subBiology .bgColor,
+.subBiology.bgColor,
+.subSocial.Science .bgColor,
+.subSocial.Science.bgColor,
+.subBusiness.Studies .bgColor,
+.subBusiness.Studies.bgColor {
+    background-color: rgb(93, 55, 125) !important;
+}
+
+.subBiology .borderColor,
+.subBiology.borderColor,
+.subSocial.Science .borderColor,
+.subSocial.Science.borderColor,
+.subBusiness.Studies .borderColor,
+.subBusiness.Studies.borderColor {
+    border-top-color: rgb(86, 51, 116) !important;
+}
+
+.subBiology .borderLeftColor,
+.subBiology.borderLeftColor,
+.subSocial.Science .borderLeftColor,
+.subSocial.Science.borderLeftColor,
+.subBusiness.Studies .borderLeftColor,
+.subBusiness.Studies.borderLeftColor {
+    border-left-color: rgb(86, 51, 116) !important;
+}
+
+.aits .bgColor,
+.aits.bgColor {
+    background-color: rgb(0, 52, 125) !important;
+}
+
+.aits .borderColor,
+.aits.borderColor {
+    border-top-color: rgb(86, 51, 116) !important;
+}
+
+.aits .borderLeftColor,
+.aits.borderLeftColor {
+    border-left-color: rgb(86, 51, 116) !important;
+}
+
+.aitsSyllabus a {
+    text-decoration-color: initial;
+    color: rgb(211, 207, 202) !important;
+}
+
+.button1,
+.pollSbmt {
+    border-color: rgb(77, 84, 87);
+    color: rgb(167, 159, 148);
+    text-decoration-color: initial;
+}
+
+.button1:hover,
+.pollSbmt:hover {
+    background-color: rgb(0, 121, 84);
+    border-color: rgb(0, 210, 146);
+    color: rgb(232, 230, 227);
+}
+
+.testClassesBox .bottomRow .button1:hover {
+    color: rgb(232, 230, 227) !important;
+}
+
+.button2 {
+    border-color: rgb(48, 52, 54);
+    text-decoration-color: initial;
+}
+
+h1,
+h2,
+h3,
+h4,
+.cardH2 {
+    color: rgb(211, 207, 202);
+}
+
+.mainContent {
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 7px 3px;
+}
+
+.cusButton {
+    color: rgb(211, 207, 202);
+    border-color: rgb(0, 210, 146);
+}
+
+.cusButtonHide {
+    border-color: rgb(77, 83, 86);
+    color: rgb(168, 160, 149);
+}
+
+.cusButtonHide:hover {
+    color: rgb(232, 230, 227);
+    border-color: rgb(0, 210, 146);
+}
+
+.cusButton:hover {
+    color: rgb(232, 230, 227);
+}
+
+.cusChapterDv {
+    border-bottom-color: rgb(53, 57, 59) !important;
+}
+
+.rmvBorder {
+    border-bottom-color: initial !important;
+}
+
+.customQuest {
+    color: rgb(211, 207, 202) !important;
+}
+
+.customQuest span.qWord {
+    color: rgb(211, 207, 202);
+}
+
+.cusSolution span.solWord {
+    color: rgb(98, 255, 207);
+}
+
+.cusSolution p {
+    color: rgb(211, 207, 202);
+}
+
+.twoColumn .sideBar {
+    background-color: rgb(25, 35, 38);
+}
+
+.twoColumn.rightAside .sideBar {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 7px 3px;
+}
+
+.jeeHeader {
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+}
+
+.jeeHeader .jeeHeaderInner {
+    background-color: rgb(24, 26, 27);
+}
+
+.jeeHeader .headerBlk2 {
+    border-left-color: rgb(59, 64, 67);
+}
+
+.headerBlk2 .cell1,
+.headerBlk2 .cell2 {
+    border-right-color: rgb(59, 64, 67);
+}
+
+#show-chat {
+    background-color: rgb(24, 26, 27) !important;
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/cache/css/") !important;
+}
+
+.courseDbHdr {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.subVisible {
+    color: rgb(211, 207, 202);
+    background-image: initial;
+    background-color: rgb(35, 161, 124);
+}
+
+.courseDbHdr h5 {
+    color: rgb(232, 230, 227);
+}
+
+.customEditIcn {
+    color: rgba(232, 230, 227, 0.7);
+}
+
+.editCoursesClass {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 25px;
+}
+
+.editCoursesClass .gradeCloseBox {
+    border-color: initial;
+    box-shadow: none;
+}
+
+.editCoursesClass li {
+    border-color: initial;
+}
+
+.editCoursesClass li a {
+    border-color: initial !important;
+    background-image: none !important;
+    background-color: initial !important;
+    color: rgb(200, 195, 188) !important;
+}
+
+.editCoursesClass li a:hover {
+    box-shadow: none !important;
+    background-image: initial !important;
+    background-color: rgb(34, 36, 38) !important;
+}
+
+.editCoursesClass li a.selectedClass {
+    background-image: initial !important;
+    background-color: rgb(0, 121, 84) !important;
+    color: rgb(232, 230, 227) !important;
+}
+
+.courseDbHdr .editCourseClass {
+    color: rgb(232, 230, 227);
+}
+
+.closeEditCourse::before,
+.closeEditCourse::after {
+    background-image: initial;
+    background-color: rgb(0, 0, 0);
+}
+
+.courseDbHdr ul li a {
+    border-color: rgb(33, 149, 115);
+    color: rgb(232, 230, 227);
+}
+
+.courseDbHdr ul li a:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 15px;
+}
+
+.nextCourseSlide,
+.previousCourseSlide {
+    border-color: rgb(70, 76, 78);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.nextCourseSlide:hover,
+.previousCourseSlide:hover {
+    border-color: rgb(48, 52, 54);
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.nextCourseSlide::before,
+.nextCourseSlide::after,
+.previousCourseSlide::before,
+.previousCourseSlide::after {
+    background-image: initial;
+    background-color: rgb(77, 83, 86);
+}
+
+.nextCourseSlide:hover::before,
+.nextCourseSlide:hover::after,
+.previousCourseSlide:hover::before,
+.previousCourseSlide:hover::after {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.courseDbHdr ul li a.active {
+    border-color: initial;
+    background-image: initial;
+    background-color: rgb(0, 145, 120);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 15px;
+    color: rgb(232, 230, 227);
+}
+
+.courseDbHdr ul li a.active::before {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: rgb(48, 52, 54);
+}
+
+.editCourseOverlay {
+    background-image: initial !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.jeeHeader .userInfo .userImgthumb img {
+    border-color: rgb(69, 74, 77);
+}
+
+.jeeHeader .userDetail {
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(59, 64, 67);
+}
+
+.jeeHeader .userDetail .bottomRow {
+    background-color: rgb(30, 32, 33);
+}
+
+.alertStartClass {
+    background-image: initial;
+    background-color: rgb(192, 145, 3);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px;
+}
+
+.alertStartClass .subjectIcon {
+    background-image: none;
+    background-color: initial;
+}
+
+.alertStartClass .chapterName,
+.alertStartClass .startClass {
+    color: rgb(232, 230, 227);
+}
+
+.alertStartClass .startClassBtn {
+    background-color: transparent;
+    border-color: rgb(48, 52, 54);
+    color: rgb(232, 230, 227);
+    text-decoration-color: initial;
+}
+
+.testPackAits .startIn {
+    color: rgb(232, 230, 227);
+}
+
+.alertStartClass .startClassBtn:hover,
+.alertStartClass .startClassBtn:active {
+    background-color: rgb(24, 26, 27);
+}
+
+.subEnglish .alertStartClass .startClassBtn:hover,
+.subEnglish .alertStartClass .startClassBtn:active {
+    color: rgb(255, 69, 131);
+}
+
+.subMath .alertStartClass .startClassBtn:hover,
+.subMath .alertStartClass .startClassBtn:active {
+    color: rgb(70, 166, 237);
+}
+
+.aits .alertStartClass .startClassBtn:hover {
+    color: rgb(110, 186, 255);
+}
+
+.subChemistry .alertStartClass .startClassBtn:hover,
+.subChemistry .alertStartClass .startClassBtn:active,
+.subFrench .alertStartClass .startClassBtn:hover,
+.subFrench .alertStartClass .startClassBtn:active,
+.subAccountancy .alertStartClass .startClassBtn:hover,
+.subAccountancy.alertStartClass .startClassBtn:active {
+    color: rgb(74, 227, 174);
+}
+
+.subPhysics .alertStartClass .startClassBtn:hover,
+.subPhysics .alertStartClass .startClassBtn:active,
+.subScience .alertStartClass .startClassBtn:hover,
+.subScience .alertStartClass .startClassBtn:active,
+.subEconomics .alertStartClass .startClassBtn:hover,
+.subEconomics .alertStartClass .startClassBtn:active {
+    color: rgb(227, 168, 58);
+}
+
+.subBiology .alertStartClass .startClassBtn:hover,
+.subBiology .alertStartClass .startClassBtn:active,
+.subSocial.Science .alertStartClass .startClassBtn:hover,
+.subSocial.Science .alertStartClass .startClassBtn:active,
+.subBusiness.Studies .alertStartClass .startClassBtn:hover,
+.subBusiness.Studies .alertStartClass .startClassBtn:active {
+    color: rgb(157, 115, 193);
+}
+
+.jeeNav {
+    border-left-color: rgb(59, 64, 67);
+    color: rgb(197, 192, 185);
+}
+
+.jeeNav ul {
+    list-style-image: none;
+}
+
+.jeeNav ul ul {
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.15) -1px 4px 5px;
+}
+
+.jeeNav li li,
+.jeeNav li li a {
+    color: rgb(168, 160, 149);
+}
+
+.jeeNav li li:hover,
+.jeeNav li li:hover a {
+    color: rgb(211, 207, 202);
+}
+
+.jeeNav li li:hover {
+    background-color: rgb(31, 33, 35);
+}
+
+.jeeNav>ul>li.submenu.homeWrap::after {
+    background-image: none;
+}
+
+.jeeNav a {
+    color: rgb(197, 192, 185);
+    text-decoration-color: initial;
+}
+
+.jeeNav a.active {
+    border-bottom-color: rgb(106, 98, 87);
+}
+
+.jeeNav .disable a,
+.jeeNav .disable {
+    color: rgb(202, 198, 191) !important;
+}
+
+.dashboardAlert {
+    border-color: rgb(55, 60, 62);
+}
+
+.dashboardAlert .startIn span {
+    color: rgb(180, 174, 164);
+}
+
+.sessionAndTest {
+    background-color: rgb(24, 26, 27);
+    border-bottom-color: rgb(59, 64, 67);
+    border-left-color: rgb(59, 64, 67);
+    border-right-color: rgb(59, 64, 67);
+}
+
+.sessionAndTest.fadeTestCard::after {
+    background-color: rgb(24, 26, 27);
+}
+
+.sessionAndTest.fadeTestCardForViewSyllabusTag::after {
+    background-color: rgb(24, 26, 27);
+}
+
+.fadedBtn {
+    background-color: rgb(24, 26, 27) !important;
+    color: rgb(152, 143, 129) !important;
+    border-color: rgb(84, 91, 94) !important;
+}
+
+.sessionBox.subEnglish {
+    border-top-color: initial;
+}
+
+.sessionBox.subMath {
+    border-top-color: initial;
+}
+
+.sessionBox.subChemistry,
+.sessionBox.subFrench,
+.sessionBox.subAccountancy {
+    border-top-color: initial;
+}
+
+.sessionBox.subPhysics,
+.sessionBox.subScience,
+.sessionBox.subEconomics {
+    border-top-color: initial;
+}
+
+.sessionBox header .date,
+.testClassesBox header .date {
+    color: rgb(232, 230, 227);
+}
+
+.hopOnSessionBox header .date {
+    color: rgb(232, 230, 227);
+}
+
+.testClassesBox .relContent .dec p {
+    color: rgb(168, 160, 149);
+}
+
+.bottomRow a.takeTestBtn {
+    color: rgb(211, 207, 202) !important;
+}
+
+.testClassesBox .relContent .dec a {
+    color: rgb(104, 167, 226);
+}
+
+.cardSessionTitleWrap .cardSessionTitle a {
+    text-decoration-color: initial;
+    color: rgb(168, 160, 149) !important;
+}
+
+.cardSessionTitleWrap .cardSessionTitle a:hover {
+    text-decoration-color: initial;
+}
+
+.testClassesBox .relContent .testTakenBy {
+    color: rgb(168, 160, 149);
+}
+
+.sessionAndTest .relContent .dec::after,
+.sessionAndTest .relContent .cardH2::after,
+.sessionAndTest .relContent .chapterName1::after {
+    background-image: linear-gradient(to right, rgba(24, 26, 27, 0), rgb(24, 26, 27) 50%);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.sessionBox.testClasses .testTakenBy {
+    color: rgb(168, 160, 149);
+}
+
+.mysessionFilter h3,
+.mysessionFilter div.fontRegular {
+    border-bottom-color: rgb(59, 64, 67);
+}
+
+.mysessionFilter h3 a {
+    text-decoration-color: initial;
+}
+
+.mysessionFilter h3.active::before,
+.mysessionFilter div.fontRegular.active::before {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.mysessionFilter .filterTypeBox ul {
+    list-style-image: none;
+}
+
+.mysessionFilter .filterTypeBox ul li {
+    color: rgb(170, 163, 152);
+}
+
+.mysessionFilter li a {
+    text-decoration-color: initial;
+    color: rgb(170, 163, 152);
+}
+
+.filterBy ul {
+    list-style-image: none;
+}
+
+.filterBy ul li.active {
+    background-color: rgb(35, 38, 39);
+}
+
+.filterBy ul li a {
+    text-decoration-color: initial;
+}
+
+.jeePlusTabWrap .tabs {
+    border-bottom-color: rgb(0, 210, 146);
+    list-style-image: none;
+}
+
+.jeePlusTabWrap .tabs li {
+    color: rgb(232, 230, 227);
+}
+
+.jeePlusTabWrap .tabs li a {
+    color: rgb(211, 207, 202);
+}
+
+.jeePlusTabWrap .tabs li.active {
+    border-bottom-color: rgb(0, 210, 146);
+}
+
+.jeePlusTabWrap .tabs li a {
+    text-decoration-color: initial;
+}
+
+.jeePlusTabWrap .tabs li.locked a {
+    color: rgb(193, 188, 180);
+}
+
+.studyAskTabs .tabs a {
+    background-image: none;
+    background-color: initial;
+    border-bottom-color: initial;
+    color: rgb(168, 160, 149) !important;
+}
+
+.studyAskTabs li:hover {
+    background-image: initial;
+    background-color: rgb(32, 35, 36);
+}
+
+.studyAskTabs li a:hover,
+.studyAskTabs li a.active {
+    color: rgb(200, 195, 188);
+    background-image: none !important;
+    background-color: initial !important;
+    border-bottom-color: initial !important;
+}
+
+.seSummary .tabContent p {
+    text-decoration-color: initial;
+}
+
+.subjectBoxStyle {
+    border-color: rgb(59, 64, 67);
+}
+
+.subjectBoxStyleInner {
+    border-top-color: initial;
+}
+
+.liveClasses header {
+    background-color: rgb(24, 26, 27);
+    border-bottom-color: rgb(59, 64, 67);
+}
+
+.liveClasses .liveVideo {
+    background-color: rgb(23, 24, 25);
+}
+
+.liveClasses .liveVideo .bottomRow {
+    color: rgb(232, 230, 227);
+}
+
+.board_grade_text ul li::before {
+    color: rgb(181, 175, 166);
+}
+
+.check-list a:not(.btn-large) {
+    color: rgb(51, 162, 255);
+}
+
+.topic-card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 5px;
+}
+
+.topic-title {
+    background-image: initial;
+    background-color: rgb(31, 34, 35);
+    border-bottom-color: rgb(55, 59, 62);
+}
+
+.check-list li {
+    color: rgb(186, 180, 171);
+}
+
+.imp-textbooks span {
+    color: rgb(180, 174, 164);
+}
+
+.imp-textbooks a {
+    color: rgb(51, 162, 255);
+}
+
+.practiceTest header,
+.classTest header {
+    color: rgb(232, 230, 227);
+}
+
+.chatIcon {
+    border-left-color: rgb(59, 64, 67);
+}
+
+.askAdoubtBT {
+    border-left-color: rgb(59, 64, 67);
+    border-right-color: rgb(59, 64, 67);
+}
+
+.greenBtn {
+    background-image: none;
+    background-color: rgb(20, 151, 124);
+    border-bottom-color: rgb(120, 112, 99);
+    color: rgb(232, 230, 227);
+}
+
+.blueBtn {
+    background-image: initial;
+    background-color: rgb(0, 122, 84);
+    border-color: initial;
+    color: rgb(232, 230, 227);
+}
+
+.grayBtn {
+    background-image: none;
+    background-color: rgb(59, 64, 67);
+    border-bottom-color: rgb(120, 112, 99);
+    color: rgb(232, 230, 227);
+}
+
+.greenBtn:hover {
+    background-image: none;
+    background-color: rgb(29, 157, 132);
+}
+
+.greenBtn:active {
+    background-image: none;
+    background-color: rgb(0, 112, 90);
+}
+
+.mainContent a.view-all-session:hover {
+    text-decoration-color: initial;
+}
+
+.mainContent a.view-all-session {
+    text-decoration-color: initial;
+}
+
+#upgradeBrowser {
+    background-image: initial;
+    background-color: rgb(91, 78, 0);
+    border-bottom-color: rgb(69, 75, 78);
+}
+
+.notification {
+    color: rgb(168, 160, 149);
+}
+
+#footer {
+    border-top-color: rgb(111, 103, 91);
+}
+
+#footer ul {
+    list-style-image: none;
+}
+
+.footerMenu li {
+    border-left-color: rgb(53, 57, 59);
+}
+
+.footerMenu li.first {
+    border-left-color: initial;
+}
+
+.footerMenu li.last {
+    border-right-color: initial;
+}
+
+.footerMenu li a {
+    color: rgb(222, 219, 215);
+    text-decoration-color: initial;
+}
+
+.footerMenu li a:hover {
+    text-decoration-color: initial;
+}
+
+#logout-footer-wrapper {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/border_bottom.jpg?v=04092015");
+    background-color: rgb(84, 91, 94);
+}
+
+.supportNcall li {
+    color: rgb(184, 178, 169);
+}
+
+.supportNcall .support {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/sprite-footer-icon.png?v=04092015");
+    background-color: rgba(0, 0, 0, 0);
+    border-right-color: rgb(106, 98, 87);
+}
+
+.supportNcall .support a {
+    color: rgb(184, 178, 169);
+}
+
+.supportNcall .support a:hover {
+    text-decoration-color: initial;
+}
+
+.supportNcall .call {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/sprite-footer-icon.png?v=04092015");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.socialIcons li a {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/sprite-footer-icon.png?v=04092015");
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration-color: initial;
+}
+
+.footLogo {
+    text-decoration-color: initial;
+}
+
+.footLogo span {
+    color: rgb(166, 159, 147);
+    text-decoration-color: initial;
+    text-shadow: rgb(75, 82, 85) 1px 1px 1px;
+}
+
+.expert_sec .accordian_btn,
+.expert_sec .close_accordian_btn {
+    border-color: rgb(71, 77, 80);
+    text-decoration-color: initial;
+}
+
+.expert_sec .accordian_btn:hover {
+    background-color: rgb(25, 35, 38);
+    border-color: rgb(71, 77, 80);
+}
+
+.expert_sec .close_accordian_btn:hover {
+    background-color: rgb(25, 35, 38);
+    border-color: rgb(71, 77, 80);
+}
+
+#mnPopup .mnPopupCont.jeeplusLightbox,
+#mnPopup .jeeplusLightbox .mnPopupFront,
+#mnPopup .jeeplusLightbox .mnPopupBack,
+.closeRollNoPopup .mnPopupBack {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+}
+
+.meterModule ul {
+    list-style-image: none;
+}
+
+.meterWrap ul li .fade {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+}
+
+.ratingResult li {
+    border-left-color: initial;
+}
+
+.ratingResult li .session {
+    color: rgb(168, 160, 149);
+}
+
+.attendance .meterWrap div:first-child {
+    border-bottom-color: rgb(129, 120, 106);
+}
+
+.myStandingInfoPara {
+    color: rgb(200, 195, 188);
+}
+
+.attendance .ratingResult li .session {
+    color: rgb(211, 207, 202);
+}
+
+.t_Content_jeeplusIicon {
+    color: rgb(168, 160, 149);
+}
+
+.subEnglish.faded {
+    background-color: rgb(154, 0, 51);
+}
+
+.subMath.faded {
+    background-color: rgba(18, 112, 185, 0.2);
+}
+
+.subChemistry.faded,
+.subFrench.faded,
+.subAccountancy.faded {
+    background-color: rgba(24, 157, 111, 0.2);
+}
+
+.subPhysics.faded,
+.subScience.faded,
+.subEconomics.faded {
+    background-color: rgba(175, 122, 25, 0.2);
+}
+
+.subBiology.faded,
+.subSocial.Science.faded,
+.subBusiness.Studies.faded {
+    background-color: rgba(93, 55, 125, 0.2);
+}
+
+.subEnglish.faded {
+    background-color: rgb(154, 0, 51);
+}
+
+.ppc-percents {
+    background-image: none;
+    background-color: rgb(29, 32, 33);
+}
+
+.small-chart .progress-pie-chart {
+    background-color: rgb(39, 42, 44);
+}
+
+.small-chart .progress-pie-chart.gt-50 {
+    background-color: rgb(0, 121, 84) !important;
+}
+
+.small-chart .ppc-progress .ppc-progress-fill {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.small-chart .gt-50 .ppc-progress .ppc-progress-fill {
+    background-image: initial;
+    background-color: rgb(39, 42, 44);
+}
+
+.smartStudy {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(60, 65, 67) rgb(60, 65, 67) rgb(0, 210, 146);
+    box-shadow: rgba(0, 121, 84, 0.3) 0px 8px 18px;
+}
+
+.smartStudy h3 {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.daysStudied h2 {
+    color: rgb(187, 181, 172);
+}
+
+.daysStudied p {
+    color: rgb(187, 181, 172);
+}
+
+.top2Hundred {
+    background-image: initial;
+    background-color: rgb(87, 95, 98);
+    color: rgb(232, 230, 227);
+    box-shadow: rgba(1, 2, 2, 0.12) 0px 5px 5px;
+}
+
+.top2Hundred span {
+    color: rgb(255, 209, 26);
+}
+
+.progressPercentCircle {
+    box-shadow: rgba(0, 121, 84, 0.25) -1px 3px 6px;
+}
+
+.progress>li {
+    color: rgb(209, 205, 199);
+}
+
+.progress>li::before {
+    color: rgb(187, 181, 172);
+}
+
+.progress>li::after {
+    color: rgb(187, 181, 172);
+}
+
+.progress>li div {
+    color: rgb(187, 181, 172);
+}
+
+.progress svg:nth-child(2) path {
+    fill: none;
+    stroke: rgb(209, 205, 199);
+}
+
+.small-chart .ppc-percents {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.small-chart .ppc-percents span {
+    color: rgb(98, 255, 207);
+}
+
+.medium-chart .progress-pie-chart {
+    background-color: rgb(39, 42, 44);
+}
+
+.medium-chart .progress-pie-chart.gt-50 {
+    background-color: rgb(0, 121, 84) !important;
+}
+
+.medium-chart .ppc-progress .ppc-progress-fill {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.medium-chart .gt-50 .ppc-progress .ppc-progress-fill {
+    background-image: initial;
+    background-color: rgb(39, 42, 44);
+}
+
+.medium-chart .ppc-percents {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.medium-chart .ppc-percents span {
+    color: rgb(98, 255, 207);
+}
+
+.lg-chart .progress-pie-chart {
+    background-color: rgb(39, 42, 44);
+}
+
+.lg-chart .progress-pie-chart.gt-50 {
+    background-color: rgb(0, 121, 84) !important;
+}
+
+.lg-chart .ppc-progress .ppc-progress-fill {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.lg-chart .gt-50 .ppc-progress .ppc-progress-fill {
+    background-image: initial;
+    background-color: rgb(39, 42, 44);
+}
+
+.lg-chart .ppc-percents {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.lg-chart .ppc-percents span {
+    color: rgb(98, 255, 207);
+}
+
+.completionBox .mid .ppc-percents {
+    background-image: none;
+    background-color: rgb(29, 32, 33);
+}
+
+.completionBox .inside .ppc-percents {
+    background-image: none;
+    background-color: rgb(29, 32, 33);
+}
+
+.completionBox .bio-circle .ppc-percents {
+    background-image: none;
+    background-color: rgb(29, 32, 33);
+}
+
+.completionBox .nano-circle .ppc-percents {
+    background-image: none;
+    background-color: rgb(29, 32, 33);
+}
+
+.hotnesmeter .sessionToper ul li a {
+    text-decoration-color: initial;
+}
+
+.jpPagination a {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(106, 99, 87);
+    text-decoration-color: initial;
+}
+
+.jpPagination a.activeSlide {
+    background-image: none;
+    background-color: rgb(77, 83, 86);
+}
+
+.clist li {
+    list-style-image: none;
+}
+
+.clist li a {
+    color: rgb(168, 160, 149);
+    text-decoration-color: initial;
+}
+
+.clist li a:hover {
+    text-decoration-color: initial;
+}
+
+.iconsprite span {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/subject_sprite_new.png?v=04092015");
+}
+
+.classTestwrap h2 {
+    color: rgb(211, 207, 202);
+}
+
+.classTestwrap .testTime {
+    color: rgb(211, 207, 202);
+}
+
+.classTestwrap p {
+    color: rgb(168, 160, 149);
+}
+
+.classTestwrap .ratingBox,
+.classTestwrap .rate {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDMiIGhlaWdodD0iNzIiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4zMzMgLTAuNjY3IC0wLjY2NyAwLjAwMCAxLjAwMCAtMC42NjcgMC4zMzMgLTAuNjY3IDAuMDAwIDEuMDAwIC0wLjY2NyAtMC42NjcgMC4zMzMgMC4wMDAgMS4wMDAgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iNDMiIGhlaWdodD0iNzIiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvanBlZztiYXNlNjQsLzlqLzRRQVlSWGhwWmdBQVNVa3FBQWdBQUFBQUFBQUFBQUFBQVAvc0FCRkVkV05yZVFBQkFBUUFBQUJRQUFELzRRTXJhSFIwY0RvdkwyNXpMbUZrYjJKbExtTnZiUzk0WVhBdk1TNHdMd0E4UDNod1lXTnJaWFFnWW1WbmFXNDlJdSs3dnlJZ2FXUTlJbGMxVFRCTmNFTmxhR2xJZW5KbFUzcE9WR042YTJNNVpDSS9QaUE4ZURwNGJYQnRaWFJoSUhodGJHNXpPbmc5SW1Ga2IySmxPbTV6T20xbGRHRXZJaUI0T25odGNIUnJQU0pCWkc5aVpTQllUVkFnUTI5eVpTQTFMak10WXpBeE1TQTJOaTR4TkRVMk5qRXNJREl3TVRJdk1ESXZNRFl0TVRRNk5UWTZNamNnSUNBZ0lDQWdJQ0krSUR4eVpHWTZVa1JHSUhodGJHNXpPbkprWmowaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1UazVPUzh3TWk4eU1pMXlaR1l0YzNsdWRHRjRMVzV6SXlJK0lEeHlaR1k2UkdWelkzSnBjSFJwYjI0Z2NtUm1PbUZpYjNWMFBTSWlJSGh0Ykc1ek9uaHRjRDBpYUhSMGNEb3ZMMjV6TG1Ga2IySmxMbU52YlM5NFlYQXZNUzR3THlJZ2VHMXNibk02ZUcxd1RVMDlJbWgwZEhBNkx5OXVjeTVoWkc5aVpTNWpiMjB2ZUdGd0x6RXVNQzl0YlM4aUlIaHRiRzV6T25OMFVtVm1QU0pvZEhSd09pOHZibk11WVdSdlltVXVZMjl0TDNoaGNDOHhMakF2YzFSNWNHVXZVbVZ6YjNWeVkyVlNaV1lqSWlCNGJYQTZRM0psWVhSdmNsUnZiMnc5SWtGa2IySmxJRkJvYjNSdmMyaHZjQ0JEVXpZZ0tGZHBibVJ2ZDNNcElpQjRiWEJOVFRwSmJuTjBZVzVqWlVsRVBTSjRiWEF1YVdsa09rVkJSVVk0T1VORVFqRkRSakV4UlRSQ05VWXlPRGxDTnpjME5rUkNRalV3SWlCNGJYQk5UVHBFYjJOMWJXVnVkRWxFUFNKNGJYQXVaR2xrT2tWQlJVWTRPVU5GUWpGRFJqRXhSVFJDTlVZeU9EbENOemMwTmtSQ1FqVXdJajRnUEhodGNFMU5Pa1JsY21sMlpXUkdjbTl0SUhOMFVtVm1PbWx1YzNSaGJtTmxTVVE5SW5odGNDNXBhV1E2UlVGRlJqZzVRMEpDTVVOR01URkZORUkxUmpJNE9VSTNOelEyUkVKQ05UQWlJSE4wVW1WbU9tUnZZM1Z0Wlc1MFNVUTlJbmh0Y0M1a2FXUTZSVUZGUmpnNVEwTkNNVU5HTVRGRk5FSTFSakk0T1VJM056UTJSRUpDTlRBaUx6NGdQQzl5WkdZNlJHVnpZM0pwY0hScGIyNCtJRHd2Y21SbU9sSkVSajRnUEM5NE9uaHRjRzFsZEdFK0lEdy9lSEJoWTJ0bGRDQmxibVE5SW5JaVB6Ny83Z0FPUVdSdlltVUFaTUFBQUFBQi85c0FoQUFDQWdJQ0FnSUNBZ0lDQXdJQ0FnTUVBd0lDQXdRRkJBUUVCQVFGQmdVRkJRVUZCUVlHQndjSUJ3Y0dDUWtLQ2drSkRBd01EQXdNREF3TURBd01EQXdNQVFNREF3VUVCUWtHQmdrTkN3a0xEUThPRGc0T0R3OE1EQXdNREE4UERBd01EQXdNRHd3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF6L3dBQVJDQUJJQUNzREFSRUFBaEVCQXhFQi84UUFtd0FBQWdJQ0F3RUFBQUFBQUFBQUFBQUFBQVVIQ0FRR0FRSURDUUVBQVFVQkFRRUFBQUFBQUFBQUFBQUFBQUVDQXdVSENBWUVFQUFCQXdNQkJnTUdCUVVBQUFBQUFBQUJBZ01FQUJFRkJpRXhRVkVTRTJFVUIzR0JvU0ppSTVFeVFsSWtjb0t5TkFnUkFBRURBZ1FFQXdZRkJRQUFBQUFBQUFFQUFnTVJCQ0V4RWdWQlVZRUdZWEV5SWtKaWNoTUhrYUd4MFlKU29pTXpGUC9hQUF3REFRQUNFUU1SQUQ4QSsvbENFYnRwMkFielFoYWZpYzM1dk16R1ZLK3hKLzFBZUhiM1cvcUcybmx1Q2phNnBXNFV4U0lvUWloQzErVHFUSHhIVnN1b2ZEclpzcEhSWS9FaW5hU21sNENTNUhWYkVpSS9IaU11b2NlVDBCeGZTTEE3RHVKNFVvWW1sK0MweGg1Y2Q1cDlzMmNaV0ZvUGlEZW5xTUtRRWF3Z0czY2p2b1BnRXFIK1FwbWdxWDZnVGZINW1Ka2xxUkdTNlNnWFdWSXNCN1R1cHBiUktIQXB0U0p5VTVYRHhzcTFaWTdjaEEreklBMmp3UE1Vb05FMXphcUxKa1I2REljaXZnQjFvN2JHNElJdUNQYUtsQnFvU0tMR3BVaWNZZkVPNVY1U1FydHgycmQ5M2lMN2dCek5xYVRST2EycWxHSkVqd21FeDR6WWJiVCtKUE1uaWFqSnFwZ0tMSnBFcUtFS0g4azR1ZGxKYTIwbHhUcnhTMGxJdVNFL0ttd0hnS21HQVVCeEs5MzhCbEk4ZE1seU9TZ2k2MEpQVXBBK29DazFCQmFRbWVrSkhibnZzRTJFaHE0SDFJTng4Q2FSK1NkR2NWSTFScVZGQ0YxV0NwS2twVjBxSUlDdVI1MElTN0g0bUZqVTJZYnU2Ujg4aGUxWjkvRDJDbEpxa0RRRmc0N1V1TnllYnptQmpPZFUzQTluell2c1BlVDFmTHo2ZHg1R3FHdzdodGIyK3VMS00vNUlOT3IrWXJoOHVUdVJWamNiYkxCYnh6dUhzeVZwMC9mTUxOVmlJbm5XY2d5bnk4bHBSS2lqWWxZSUlJVVBFSGZWOVZWdWtWcW1sSW5Jb1FpaENUYWh6VWZUMkR5ZWFrMkxXT1lVNkVFMjYxN2tJSGlwUkNSN2FxZDkzYVBhYkdhOGt5amFUVG1mZGIvSjFHOVY5bTMyYnJ5NFpDM054cDVEaWVneFZMTkJheGtZYlhVZk96NUJMZVdmVzFtblNiQW9sS3VwWjhFcnN2M1Z5TjJUM1hKdCsvdHZaM1lTdUlsUGhJY1hINVhVZjBXeWI3dERibmJqQkdNV0FGbm0wWURxTU9xdlpYWjZ3OUZDRVVJVmJ2VkhHK29tQ1UvbWNMcWJKeXRQcUpVK3kwNFVPdzcvQUx1MkVsU09TdUg2dVp3RDdqN2YzSnRoZGQybDNNNjJ6SURxT2k4OU5LczVPekh2ZjFIUmUyTG5iTHFrTTBMQkx3SkZRLzhBSEozaHg0Y2hYT2JuczdrMEtheU9hbjVCdFJCVTNKa3V1cEpCdUxoYWlLd1c4M3Uvdkc2Ymk0a2tISnozT0g5eEswS0d4dDREV09OclQ0TkEvUUpWVll2cld4d3RVNnVaVzB4QTFEbGtMV1FobGhtVS93RE1Uc0NRZ0syMzRDMVg5cDNKdkViZ3lDNm5CT0FEWkg0OGdBRGo1S3VtMnl5Y0M2U0tQeEphMzlhSzN2cHhndFp3NG95V3NjL0xsU0pDUDQrRmNXRmhsSi9VNnF4Slg0QTJIRzUzZFM5ZzdOdmR2Ri8wYnJjdmM1dzltSW11Z2Mzbk11K0d0RzhhbjA1TDNGZldFai9wMmNUUUJtOENsZmxITHg0K1djcFZwQzh3dUZKU3RLa3FTRkpVQ0ZKSXVDRHZCRkk1b2NLSEVGS0RURUtnbnFQR3hVUFd1ZmlZYU1tSkFqUGh0TENQeXBjQ0U5M3BIQWRmVllEWUs0azcrdDdTMzN5NWl0R0JrYlhVb01nNmcxMDVEWHF3eUhCYnYyN0pOSllSUG1OWEVWcjRWT244cVlyU2E4ZXJwV0MvNS9pWWlUbU0wN0tpSWV5c0pocDNHUHIybHRDaXBMcFNEc0IycEY5LzQxdVAyUHRyT2E4dUhTc0JtWTFwako5MEVrUG9PZnB4em9TT0pyNEh2Mldaa0VZYTRoamlRNGN6Z1cxL1BCV3dycHRaV2loQzhuM2tSMlhwRHBzMndoVGpoNUpTTG40Q281cFd4TWM5MlRRU2ZJWXB6R0Y3ZzBaazBWUzlPZWtXZjFoa0pPZjFLVjRLQmtaRGtweHBRL2x1OTFaV2VsQ3Z5QTMzcTIvU2E1aDJIN1hianY4QWN2dnR3ckJISTh2SVArMTJvbHhvMCtqUE4yUHdrTFZ0dzdzdHR1aUVGdFNSelFHMTl3VUZNK1BrUHhVeDVUMGEwVFB4TFdOaXdUaTVFWkpFZktNcUplS2p2THBVU0hBVHdQOEFiYXRXM0g3VDdIZFdndDQ0L3BPYU1KR21yNi9IWDErUnl5YVdyeUZ0M2hmeFRHUnp0WU9iVDZlbFBUMDYxVWI2TDBUcVQwNzlRTWVxWTE1ekM1UkQwRTVlTUNXL3VKNjJ3NG5lZ2xhRWpiczVFMTRIdEh0RGMrMHU0WWpLM1hieWgwZjFHK24yaHFhSEROaEwydEdPRmNuRmVpM25lclhlTnRkb09tUmhEdEp6d3dOT2VCT1dQTUJXZXJvcFpvaWhDLy9aIiAvPjwvc3ZnPg==");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.classTestwrap .ratingScore {
+    color: rgb(211, 207, 202);
+}
+
+.cardRating .ratingBoxSmall,
+.cardRating .rate {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/rating_icon_small.png?v=04092015");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.classTest header .button2 {
+    color: rgb(232, 230, 227);
+}
+
+.button2 {
+    border-color: rgb(48, 52, 54);
+    text-decoration-color: initial;
+}
+
+.relContent .test-card-more a {
+    text-decoration-color: initial;
+    color: rgb(168, 160, 149) !important;
+}
+
+.relContent .test-card-more a:hover {
+    text-decoration-color: initial;
+    color: rgb(168, 160, 149) !important;
+}
+
+.videoWrapper .videoPanel {
+    background-image: none;
+    background-color: rgb(0, 0, 0);
+}
+
+.videoWrapper .videoPoll {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+}
+
+.classTest header .button2 {
+    color: rgb(232, 230, 227);
+}
+
+.videoWrapper .closeVideo,
+.jeeplusLightbox .closeAskPopup,
+.jeeplusLightbox .closeRollNoPopup {
+    text-decoration-color: initial;
+}
+
+.rollNumberPopupSkin .closeRollNoPopup {
+    text-decoration-color: initial;
+}
+
+.videoPoll .arrowBtn a {
+    border-color: rgb(59, 64, 67);
+    outline-color: initial;
+}
+
+.vplyaButton {
+    border-color: rgba(48, 52, 54, 0.5);
+    outline-color: initial;
+}
+
+.vplyaButton::after {
+    outline-color: initial;
+}
+
+.vplyaButton.width95::after {
+    border-bottom-color: transparent;
+    border-left-color: rgba(48, 52, 54, 0.5);
+    border-top-color: transparent;
+}
+
+.vplyaButton.width59::after {
+    border-bottom-color: transparent;
+    border-left-color: rgba(48, 52, 54, 0.5);
+    border-top-color: transparent;
+}
+
+.recording_wrapper span.recording,
+.recording_wrapper span.download {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 4px;
+}
+
+.recording_wrapper span.recording {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/play.svg?v=04092015");
+}
+
+.recording_wrapper span.download {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/download.svg?v=04092015");
+}
+
+.recording_wrapper {
+    color: rgb(232, 230, 227);
+}
+
+.recording_wrapper a {
+    color: inherit;
+}
+
+.recording_wrapper>div:hover {
+    color: rgb(232, 230, 227);
+}
+
+.v_overlay {
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dbtSecFilter {
+    border-bottom-color: rgb(69, 74, 77);
+}
+
+.stylishSel select {
+    background-image: none;
+    background-color: transparent;
+    border-color: initial;
+    outline-color: initial;
+}
+
+.testPaperSection ul {
+    list-style-image: initial;
+}
+
+.testPaperSection ul li:not(.solutionEntity) {
+    border-bottom-color: rgb(62, 67, 70);
+}
+
+.testPaperSection ul li .test_btn {
+    border-color: rgb(71, 77, 80);
+    color: rgb(211, 207, 202);
+    text-decoration-color: initial;
+}
+
+.testPaperSection ul li:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 7px;
+}
+
+.testPaperSection ul li .test_btn.active {
+    background-image: initial;
+    background-color: rgb(36, 45, 49);
+}
+
+.testPaperSection ul li .test_btn:hover {
+    background-image: initial;
+    background-color: rgb(36, 45, 49);
+}
+
+.testPaperSection ul li .view_solution_img {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_solution_normal.png");
+    background-color: initial;
+}
+
+.testPaperSection ul li .view_solution_img:hover {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_solution_hover.png");
+    background-color: initial;
+}
+
+.testPaperSection ul li .view_report_img {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_report_normal.png");
+    background-color: initial;
+}
+
+.testPaperSection ul li .view_report_img:hover {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_report_hover.png");
+    background-color: initial;
+}
+
+.stylishSel {
+    border-color: rgb(71, 77, 80);
+}
+
+.stylishSel::after {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/icons_latest.png?06102016");
+    background-color: initial;
+}
+
+.whatNext.group a:hover {
+    text-decoration-color: initial;
+}
+
+.radioWrapper span,
+.radioWrapper span.checked,
+.checkBoxWrapper span,
+.checkBoxWrapper span.checked {
+    color: rgb(211, 207, 202);
+}
+
+input[type="text"] {
+    outline-color: initial;
+}
+
+.searchPanel input[type="text"] {
+    color: rgb(205, 200, 194);
+}
+
+.tableD {
+    border-color: rgb(58, 63, 66);
+}
+
+.tableD .tRow:last-child .tCol {
+    border-bottom-color: initial;
+}
+
+.tableD .tHead {
+    background-image: none;
+    background-color: rgb(35, 38, 39);
+}
+
+.tableD .tCol {
+    border-right-color: rgb(58, 63, 66);
+}
+
+.tableD .tRow .tCol {
+    border-bottom-color: rgb(58, 63, 66);
+    color: rgb(211, 207, 202);
+}
+
+.tableD .tRow .tCol:last-child,
+.tableD .tHead .tCol:last-child {
+    border-right-color: initial;
+}
+
+.tableD .tHead .tCol {
+    color: rgb(211, 207, 202);
+}
+
+.tableD .tCol.borderLeftColor {
+    border-left-color: initial;
+}
+
+.pagination ul li a {
+    color: rgb(165, 157, 146);
+    text-decoration-color: initial;
+}
+
+.pagination ul li a.active {
+    color: rgb(211, 207, 202);
+    text-decoration-color: initial;
+}
+
+.pagination {
+    color: rgb(165, 157, 146);
+}
+
+.copyrightMn {
+    color: rgb(232, 230, 227);
+}
+
+.copyrightMn a {
+    color: rgb(232, 230, 227);
+    text-decoration-color: initial;
+}
+
+.mysessionFilter.leftaccordian .accordWrap .listWrap {
+    border-bottom-color: rgb(59, 64, 67);
+}
+
+.mysessionFilter.leftaccordian .accordWrap h4,
+.mysessionFilter.leftaccordian .accordWrap .listLink {
+    border-left-color: transparent;
+    text-decoration-color: initial;
+}
+
+.mysessionFilter.leftaccordian .accordWrap h4:hover,
+.mysessionFilter.leftaccordian .accordWrap .listLink:hover,
+.mysessionFilter.leftaccordian .accordWrap .listLink.active,
+.mysessionFilter.leftaccordian .accordWrap h4.active {
+    border-left-color: rgb(0, 210, 146);
+}
+
+.mysessionFilter.leftaccordian .accordWrap ul li {
+    list-style-image: none;
+}
+
+.mysessionFilter.leftaccordian .accordWrap ul li a,
+.mysessionFilter.leftaccordian .accordWrap ul li {
+    color: rgb(211, 207, 202);
+    text-decoration-color: initial;
+}
+
+.cardWrap .reportStatus {
+    box-shadow: rgb(46, 50, 52) 0px 0px 2px 1px;
+}
+
+.ie8 .cardWrap .reportStatus {
+    border-color: rgb(62, 68, 70);
+}
+
+.ie8 .cardWrap .reportStatus h2 {
+    border-bottom-color: rgb(62, 68, 70);
+}
+
+.cardWrap .reportStatus h2 {
+    box-shadow: rgb(38, 41, 43) 0px 3px 2px;
+}
+
+.graphWrap .titleAvailability span {
+    color: rgb(163, 155, 142);
+}
+
+.graphWrap .gW ul {
+    list-style-image: none;
+}
+
+.graphWrap .gW ul li {
+    border-bottom-color: rgb(69, 75, 78);
+}
+
+.graphWrap .gW ul li>div {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+    border-left-color: rgb(56, 61, 64);
+    border-right-color: rgb(56, 61, 64);
+}
+
+.graphWrap .gW ul li:first-child>div {
+    border-left-color: rgb(69, 75, 78);
+}
+
+.graphWrap .gW ul li span {
+    color: rgb(183, 176, 167);
+}
+
+.seSummary .tabs,
+.jeeTab {
+    border-bottom-color: rgb(53, 57, 59);
+    list-style-image: none;
+}
+
+.jeeTab.group {
+    border-bottom-color: initial;
+}
+
+.jeeTab .jeeTabUl {
+    list-style-image: none;
+}
+
+.seSummary .tabs li.active,
+.jeeTab .jeeTabUl li.active {
+    border-bottom-color: rgb(0, 210, 146);
+}
+
+.seSummary .tabs li a,
+.jeeTab .jeeTabUl li a {
+    text-decoration-color: initial;
+}
+
+.range .select_box {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+    color: rgb(165, 157, 145);
+}
+
+.range .down_arrow {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOCIgaGVpZ2h0PSI2Ij48ZGVmcz48ZmlsdGVyIGlkPSJkYXJrcmVhZGVyLWltYWdlLWZpbHRlciI+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAuMjQ5IC0wLjYxNCAtMC42NzIgMC4wMDAgMS4wMzUgLTAuNjQ2IDAuMjg4IC0wLjY2NCAwLjAwMCAxLjAyMCAtMC42MzYgLTAuNjA5IDAuMjUwIDAuMDAwIDAuOTk0IDAuMDAwIDAuMDAwIDAuMDAwIDEuMDAwIDAuMDAwIiAvPjwvZmlsdGVyPjwvZGVmcz48aW1hZ2Ugd2lkdGg9IjgiIGhlaWdodD0iNiIgZmlsdGVyPSJ1cmwoI2RhcmtyZWFkZXItaW1hZ2UtZmlsdGVyKSIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFBZ0FBQUFHQ0FZQUFBRCtCZC83QUFBQUdYUkZXSFJUYjJaMGQyRnlaUUJCWkc5aVpTQkpiV0ZuWlZKbFlXUjVjY2xsUEFBQUF5SnBWRmgwV0UxTU9tTnZiUzVoWkc5aVpTNTRiWEFBQUFBQUFEdy9lSEJoWTJ0bGRDQmlaV2RwYmowaTc3dS9JaUJwWkQwaVZ6Vk5NRTF3UTJWb2FVaDZjbVZUZWs1VVkzcHJZemxrSWo4K0lEeDRPbmh0Y0cxbGRHRWdlRzFzYm5NNmVEMGlZV1J2WW1VNmJuTTZiV1YwWVM4aUlIZzZlRzF3ZEdzOUlrRmtiMkpsSUZoTlVDQkRiM0psSURVdU15MWpNREV4SURZMkxqRTBOVFkyTVN3Z01qQXhNaTh3TWk4d05pMHhORG8xTmpveU55QWdJQ0FnSUNBZ0lqNGdQSEprWmpwU1JFWWdlRzFzYm5NNmNtUm1QU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUx6QXlMekl5TFhKa1ppMXplVzUwWVhndGJuTWpJajRnUEhKa1pqcEVaWE5qY21sd2RHbHZiaUJ5WkdZNllXSnZkWFE5SWlJZ2VHMXNibk02ZUcxd1BTSm9kSFJ3T2k4dmJuTXVZV1J2WW1VdVkyOXRMM2hoY0M4eExqQXZJaUI0Yld4dWN6cDRiWEJOVFQwaWFIUjBjRG92TDI1ekxtRmtiMkpsTG1OdmJTOTRZWEF2TVM0d0wyMXRMeUlnZUcxc2JuTTZjM1JTWldZOUltaDBkSEE2THk5dWN5NWhaRzlpWlM1amIyMHZlR0Z3THpFdU1DOXpWSGx3WlM5U1pYTnZkWEpqWlZKbFppTWlJSGh0Y0RwRGNtVmhkRzl5Vkc5dmJEMGlRV1J2WW1VZ1VHaHZkRzl6YUc5d0lFTlROaUFvVjJsdVpHOTNjeWtpSUhodGNFMU5Pa2x1YzNSaGJtTmxTVVE5SW5odGNDNXBhV1E2T0RCRVJFSTFPVGN3TURVek1URkZOVGt4UVVJNU16RXpPRUZDT1RBeE9VRWlJSGh0Y0UxTk9rUnZZM1Z0Wlc1MFNVUTlJbmh0Y0M1a2FXUTZPREJFUkVJMU9UZ3dNRFV6TVRGRk5Ua3hRVUk1TXpFek9FRkNPVEF4T1VFaVBpQThlRzF3VFUwNlJHVnlhWFpsWkVaeWIyMGdjM1JTWldZNmFXNXpkR0Z1WTJWSlJEMGllRzF3TG1scFpEbzRNRVJFUWpVNU5UQXdOVE14TVVVMU9URkJRamt6TVRNNFFVSTVNREU1UVNJZ2MzUlNaV1k2Wkc5amRXMWxiblJKUkQwaWVHMXdMbVJwWkRvNE1FUkVRalU1TmpBd05UTXhNVVUxT1RGQlFqa3pNVE00UVVJNU1ERTVRU0l2UGlBOEwzSmtaanBFWlhOamNtbHdkR2x2Ymo0Z1BDOXlaR1k2VWtSR1BpQThMM2c2ZUcxd2JXVjBZVDRnUEQ5NGNHRmphMlYwSUdWdVpEMGljaUkvUGphcEJZOEFBQUJ6U1VSQlZIamFZalF4czBwaVlHQ1lEOFQvR1ZBQkl4Q25zQUNKUUNBV0FlSitJUDRObFdRRDRrSWd0Z0VwZUF6RXRrQXNBTVJ0VUFVMVFLd054SThZZ1Zid0FoblZNQUdvMGJKQWZBV0lXNW1BeEdjZ3JnUGlZMEFzQjVVOEFoWDd3Z0kxOGhjUWQ0QWNCWFhzWEppakFRSU1BSVhGRmRTclFEaExBQUFBQUVsRlRrU3VRbUNDIiAvPjwvc3ZnPg==");
+    background-color: rgb(24, 26, 27);
+}
+
+.range span.white_border {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+}
+
+.range_dropdown {
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.15) -1px 4px 5px;
+}
+
+.range_dropdown .btns_section a {
+    color: rgb(168, 160, 149);
+    text-decoration-color: initial;
+}
+
+.range_dropdown .btns_section a:hover,
+.range_dropdown .btns_section a.active {
+    background-color: rgb(31, 33, 35);
+    color: rgb(211, 207, 202);
+}
+
+.range_dropdown .custom_range {
+    background-image: none;
+    background-color: rgb(40, 43, 45);
+}
+
+.range_dropdown .custom_range .or {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+    color: rgb(146, 167, 190);
+}
+
+.range_dropdown h3 {
+    border-bottom-color: rgb(56, 61, 63);
+    color: rgb(188, 183, 174);
+}
+
+.range_dropdown .custom_range h3 {
+    border-bottom-color: initial;
+}
+
+.range_inputs input {
+    border-color: rgb(67, 73, 75);
+}
+
+.chartWrapper .chartHeading {
+    color: rgb(232, 230, 227);
+}
+
+.chartWrapper .chartData {
+    background-image: none;
+    background-color: rgb(24, 26, 27);
+}
+
+.reportStatus a {
+    text-decoration-color: initial;
+}
+
+.graphTooltip .titleGraph {
+    color: rgb(232, 230, 227);
+}
+
+.Math {
+    border-color: rgb(16, 99, 163);
+}
+
+.Math .titleGraph {
+    background-image: none;
+    background-color: rgb(18, 112, 185);
+}
+
+.Physics {
+    border-color: rgb(154, 108, 22);
+}
+
+.Physics .titleGraph {
+    background-image: none;
+    background-color: rgb(175, 122, 25);
+}
+
+.Chemistry {
+    border-color: rgb(25, 162, 115);
+}
+
+.Chemistry .titleGraph {
+    background-image: none;
+    background-color: rgb(24, 157, 111);
+}
+
+.Biology {
+    border-color: rgb(86, 51, 116);
+}
+
+.Biology .titleGraph {
+    background-image: none;
+    background-color: rgb(93, 55, 125);
+}
+
+.recordingMode .videoPanel {
+    background-image: none;
+    background-color: rgb(33, 36, 37);
+}
+
+.select-wrapper {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOCIgaGVpZ2h0PSI2Ij48ZGVmcz48ZmlsdGVyIGlkPSJkYXJrcmVhZGVyLWltYWdlLWZpbHRlciI+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAuMjQ5IC0wLjYxNCAtMC42NzIgMC4wMDAgMS4wMzUgLTAuNjQ2IDAuMjg4IC0wLjY2NCAwLjAwMCAxLjAyMCAtMC42MzYgLTAuNjA5IDAuMjUwIDAuMDAwIDAuOTk0IDAuMDAwIDAuMDAwIDAuMDAwIDEuMDAwIDAuMDAwIiAvPjwvZmlsdGVyPjwvZGVmcz48aW1hZ2Ugd2lkdGg9IjgiIGhlaWdodD0iNiIgZmlsdGVyPSJ1cmwoI2RhcmtyZWFkZXItaW1hZ2UtZmlsdGVyKSIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFBZ0FBQUFHQ0FZQUFBRCtCZC83QUFBQUdYUkZXSFJUYjJaMGQyRnlaUUJCWkc5aVpTQkpiV0ZuWlZKbFlXUjVjY2xsUEFBQUF5SnBWRmgwV0UxTU9tTnZiUzVoWkc5aVpTNTRiWEFBQUFBQUFEdy9lSEJoWTJ0bGRDQmlaV2RwYmowaTc3dS9JaUJwWkQwaVZ6Vk5NRTF3UTJWb2FVaDZjbVZUZWs1VVkzcHJZemxrSWo4K0lEeDRPbmh0Y0cxbGRHRWdlRzFzYm5NNmVEMGlZV1J2WW1VNmJuTTZiV1YwWVM4aUlIZzZlRzF3ZEdzOUlrRmtiMkpsSUZoTlVDQkRiM0psSURVdU15MWpNREV4SURZMkxqRTBOVFkyTVN3Z01qQXhNaTh3TWk4d05pMHhORG8xTmpveU55QWdJQ0FnSUNBZ0lqNGdQSEprWmpwU1JFWWdlRzFzYm5NNmNtUm1QU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUx6QXlMekl5TFhKa1ppMXplVzUwWVhndGJuTWpJajRnUEhKa1pqcEVaWE5qY21sd2RHbHZiaUJ5WkdZNllXSnZkWFE5SWlJZ2VHMXNibk02ZUcxd1BTSm9kSFJ3T2k4dmJuTXVZV1J2WW1VdVkyOXRMM2hoY0M4eExqQXZJaUI0Yld4dWN6cDRiWEJOVFQwaWFIUjBjRG92TDI1ekxtRmtiMkpsTG1OdmJTOTRZWEF2TVM0d0wyMXRMeUlnZUcxc2JuTTZjM1JTWldZOUltaDBkSEE2THk5dWN5NWhaRzlpWlM1amIyMHZlR0Z3THpFdU1DOXpWSGx3WlM5U1pYTnZkWEpqWlZKbFppTWlJSGh0Y0RwRGNtVmhkRzl5Vkc5dmJEMGlRV1J2WW1VZ1VHaHZkRzl6YUc5d0lFTlROaUFvVjJsdVpHOTNjeWtpSUhodGNFMU5Pa2x1YzNSaGJtTmxTVVE5SW5odGNDNXBhV1E2T0RCRVJFSTFPVGN3TURVek1URkZOVGt4UVVJNU16RXpPRUZDT1RBeE9VRWlJSGh0Y0UxTk9rUnZZM1Z0Wlc1MFNVUTlJbmh0Y0M1a2FXUTZPREJFUkVJMU9UZ3dNRFV6TVRGRk5Ua3hRVUk1TXpFek9FRkNPVEF4T1VFaVBpQThlRzF3VFUwNlJHVnlhWFpsWkVaeWIyMGdjM1JTWldZNmFXNXpkR0Z1WTJWSlJEMGllRzF3TG1scFpEbzRNRVJFUWpVNU5UQXdOVE14TVVVMU9URkJRamt6TVRNNFFVSTVNREU1UVNJZ2MzUlNaV1k2Wkc5amRXMWxiblJKUkQwaWVHMXdMbVJwWkRvNE1FUkVRalU1TmpBd05UTXhNVVUxT1RGQlFqa3pNVE00UVVJNU1ERTVRU0l2UGlBOEwzSmtaanBFWlhOamNtbHdkR2x2Ymo0Z1BDOXlaR1k2VWtSR1BpQThMM2c2ZUcxd2JXVjBZVDRnUEQ5NGNHRmphMlYwSUdWdVpEMGljaUkvUGphcEJZOEFBQUJ6U1VSQlZIamFZalF4czBwaVlHQ1lEOFQvR1ZBQkl4Q25zQUNKUUNBV0FlSitJUDRObFdRRDRrSWd0Z0VwZUF6RXRrQXNBTVJ0VUFVMVFLd054SThZZ1Zid0FoblZNQUdvMGJKQWZBV0lXNW1BeEdjZ3JnUGlZMEFzQjVVOEFoWDd3Z0kxOGhjUWQ0QWNCWFhzWEppakFRSU1BSVhGRmRTclFEaExBQUFBQUVsRlRrU3VRbUNDIiAvPjwvc3ZnPg==");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.select-wrapper select {
+    outline-color: initial;
+}
+
+.becomePaidMember a {
+    color: rgb(232, 230, 227);
+    text-decoration-color: initial;
+}
+
+#wiziqLinq {
+    color: rgb(232, 230, 227);
+    text-decoration-color: initial;
+}
+
+#wiziqLinq:hover {
+    text-decoration-color: initial;
+}
+
+.freeSession {
+    background-color: rgb(167, 0, 3);
+    color: rgb(232, 230, 227);
+}
+
+.blueButton {
+    background-color: rgb(18, 112, 185);
+    color: rgb(232, 230, 227);
+}
+
+#rectangle {
+    background-image: none;
+    background-color: rgb(184, 126, 0);
+}
+
+.rectangle {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/bookmark_icon.png?v=04092015");
+    background-color: initial;
+}
+
+.link {
+    color: rgb(122, 171, 217);
+    text-decoration-color: initial;
+}
+
+.outer_numberCircle {
+    background-color: rgb(24, 26, 27);
+}
+
+.numberCircle.greenCircle:hover,
+.numberCircle.greenCircle.current {
+    background-color: rgb(31, 139, 77);
+}
+
+.numberCircle.redCircle:hover,
+.numberCircle.redCircle.current {
+    background-color: rgb(154, 46, 34);
+}
+
+.tooltip_questionWrapper.correct {
+    border-top-color: rgb(35, 156, 86);
+}
+
+.tooltip_questionWrapper.inCorrect {
+    border-top-color: rgb(151, 45, 34);
+}
+
+.tooltip_questionWrapper.unAttempted {
+    border-top-color: rgb(80, 87, 91);
+}
+
+.tooltip_questionWrapper .result_N_btn {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 5px;
+}
+
+.dinlineBlock.manyOption,
+.dinlineBlock.manyOption>p,
+.dinlineBlock.manyOptionVal {
+    color: rgb(161, 153, 141);
+}
+
+.question_status {
+    color: rgb(211, 207, 202);
+}
+
+hr.shadow_line {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 5px;
+}
+
+.testBTN {
+    color: rgb(211, 207, 202) !important;
+}
+
+.no_attem_question>p {
+    color: rgb(168, 160, 149);
+}
+
+.buttonRollNoWrapper {
+    background-color: rgb(10, 144, 54);
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/admit_card.png?v=03092015");
+}
+
+.headingAdmitCard .popupErrMsg {
+    color: rgb(255, 26, 26);
+}
+
+.buttonRollNoWrapper .floatLeft h2 {
+    color: rgb(232, 230, 227);
+}
+
+.buttonRollNoWrapper .floatLeft p {
+    color: rgb(232, 230, 227);
+}
+
+.aitsBtn {
+    color: rgb(98, 255, 207);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    text-decoration-color: initial;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px;
+}
+
+.headingAdmitCard h2 {
+    color: rgb(197, 192, 184);
+}
+
+body.play-video,
+.play-video video {
+    -webkit-tap-highlight-color: rgba(232, 230, 227, 0);
+}
+
+.hotnesmeter .meterWrap ul li.completion_tab.active {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/greenTick.png?v=04092015");
+    background-color: initial;
+}
+
+.subject_heading {
+    color: rgb(211, 207, 202);
+}
+
+.subject_heading a.view-all-session {
+    text-decoration-color: initial;
+}
+
+.cardWrap .reportStatus.smallReportBox.chartBox {
+    box-shadow: rgb(46, 50, 52) 0px 0px 2px 1px;
+}
+
+.solutionEntity a {
+    text-decoration-color: initial;
+    border-bottom-color: rgb(62, 67, 70);
+}
+
+.testPaperSection ul {
+    list-style-image: initial;
+}
+
+.testPaperSection ul li:not(.solutionEntity) {
+    border-bottom-color: rgb(62, 67, 70);
+}
+
+.testPaperSection ul li .test_btn {
+    border-color: rgb(71, 77, 80);
+    color: rgb(211, 207, 202);
+    text-decoration-color: initial;
+}
+
+.testPaperSection ul li:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px;
+}
+
+.testPaperSection ul li .test_btn.active {
+    background-image: initial;
+    background-color: rgb(36, 45, 49);
+}
+
+.testPaperSection ul li .test_btn:hover {
+    background-image: initial;
+    background-color: rgb(36, 45, 49);
+}
+
+.filterBy ul li.down.down_btn {
+    background-image: initial;
+    background-color: rgb(35, 38, 39);
+}
+
+.testPaperSection ul li .view_solution_img {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_solution_normal.png");
+    background-color: initial;
+}
+
+.testPaperSection ul li .view_solution_img:hover {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_solution_hover.png");
+    background-color: initial;
+}
+
+.testPaperSection ul li .view_report_img {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_report_normal.png");
+    background-color: initial;
+}
+
+.testPaperSection ul li .view_report_img:hover {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/view_report_hover.png");
+    background-color: initial;
+}
+
+.editField {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/sprite_icons.png?12042013");
+}
+
+.primaryBgGreen,
+#SelectSchoolSave {
+    background-color: rgb(0, 121, 84);
+    border-color: rgb(0, 210, 146);
+}
+
+.primaryBgGreen h3 {
+    color: rgb(232, 230, 227);
+}
+
+.modal-body .selectize-control.single .selectize-input::after {
+    border-color: rgb(0, 210, 146) transparent;
+}
+
+.modal-body .selectize-control.single .selectize-input,
+.schoolSelectPopup input[type="text"] {
+    background-image: none;
+    background-color: initial;
+}
+
+.modal-body .text-hint {
+    color: rgb(157, 148, 136);
+}
+
+.schoolSelectPopup input[type="text"]:focus {
+    outline-color: initial;
+    border-bottom-color: rgb(0, 210, 146);
+}
+
+.bdr0,
+.schoolSelectPopup .modal-content {
+    border-color: initial !important;
+}
+
+.blk {
+    color: rgb(221, 218, 214);
+}
+
+span.cntNum {
+    color: rgb(98, 255, 207);
+    border-color: rgb(0, 210, 146);
+}
+
+.text-hint-lg {
+    color: rgb(189, 183, 175) !important;
+}
+
+.modal-body .selectize-input.selectize-focus {
+    border-color: rgb(0, 210, 146) !important;
+}
+
+input[type="checkbox"].css-checkbox {
+    border-color: initial;
+}
+
+input[type="checkbox"].css-checkbox+label.css-label {
+    color: rgb(157, 148, 136);
+}
+
+.lite-green-check {
+    background-image: url("https://css-nm.mnimgs.com/theme/img/site_content/images/lite-green-check2.jpg");
+}
+
+.singnUpFeatures h3 {
+    color: rgb(232, 230, 227);
+}
+
+ul li.completion_tab .completion_circle.complete {
+    background-image: initial;
+    background-color: rgb(0, 120, 83);
+}
+
+ul li.completion_tab .completion_circle.notstart {
+    background-image: initial;
+    background-color: rgb(64, 69, 72);
+}
+
+ul li.completion_tab .completion_circle.progress {
+    background-image: initial;
+    background-color: rgb(203, 129, 0);
+}
+
+#sessionSorting .chap_filter .filter_slide {
+    background-color: rgb(58, 63, 65);
+}
+
+#sessionSorting .chap_filter .filter_slide::before {
+    background-color: rgb(78, 85, 88);
+}
+
+#sessionSorting .switch_filter input:checked+.filter_slide {
+    background-color: rgb(52, 145, 126);
+}
+
+#sessionSorting .switch_filter input:checked+.filter_slide::before {
+    background-color: rgb(0, 131, 96);
+}
+
+#sessionSorting .chap_filter .chap_text {
+    color: rgb(211, 207, 202);
+}
+
+.chapwise {
+    border-bottom-color: rgba(107, 99, 88, 0.2);
+}
+
+.chapwise .chapwise_title {
+    color: rgb(211, 207, 202);
+}
+
+.chapwise .active,
+.chapwise .chapwise_title:hover {
+    background-color: rgb(24, 26, 27);
+}
+
+.chapwise .chapwise_title::after {
+    border-color: rgba(107, 99, 88, 0.5) rgba(107, 99, 88, 0.5) transparent transparent;
+}
+
+.chapwise.active .chapwise_title::after {
+    border-color: transparent transparent rgba(107, 99, 88, 0.5) rgba(107, 99, 88, 0.5);
+}
+
+#wizIQAppUrl {
+    text-decoration-color: initial;
+    border-bottom-color: rgb(140, 130, 115);
+}
+
+.testG .testG_helpText span {
+    color: rgb(98, 255, 207);
+}
+
+.testG .testG_helpText a {
+    color: rgb(153, 144, 131);
+    border-color: rgb(70, 76, 79);
+    text-decoration-color: initial;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 10px;
+}
+
+.testGenerateBox {
+    background-image: linear-gradient(rgba(24, 26, 27, 0) 0%, rgba(24, 26, 27, 0.01) 1%, rgba(24, 26, 27, 0.45) 34%, rgb(24, 26, 27) 75%);
+    background-color: initial;
+}
+
+.chapterList li a {
+    color: rgb(96, 161, 225);
+}
+
+.social-breadcrum-Box {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px;
+}
+
+.breadcrumb {
+    list-style-image: initial;
+}
+
+.ncrtQsPge {
+    background-image: initial;
+    background-color: rgb(33, 36, 37);
+}
+
+.breadcrumb>li+li::before {
+    color: rgb(176, 170, 159);
+}
+
+.breadcrumb>li>a {
+    color: rgb(96, 161, 225);
+    text-decoration-color: initial;
+}
+
+.breadcrumb>li>a:hover {
+    text-decoration-color: initial;
+}
+
+.dash-breadcrumb li+li::before {
+    color: rgb(176, 170, 159);
+}
+
+.school--breadcrumb {
+    border-bottom-color: rgb(54, 59, 61);
+}
+
+.tb-article a {
+    color: rgb(51, 162, 255);
+}
+
+.feature-list {
+    list-style-image: initial;
+}
+
+.ncertFeatureBox a {
+    color: rgb(51, 162, 255);
+    text-decoration-color: initial;
+}
+
+.tb-article a:hover,
+.ncertFeatureBox a:hover {
+    text-decoration-color: initial;
+}
+
+.newChapterList.testListing li.selected {
+    background-image: initial;
+    background-color: rgb(31, 33, 35);
+}
+
+.newChapterList.testListing li.selected .circ {
+    border-color: rgb(48, 52, 54);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    color: rgb(98, 255, 207);
+}
+
+.newChapterList li:not(.noFlex),
+.newChapterList .noFlex .verticle-card {
+    text-decoration-color: initial;
+}
+
+.c_name a:hover {
+    text-decoration-color: initial;
+}
+
+.newChapterList .chapter_image .circ {
+    border-color: rgba(48, 52, 54, 0.5);
+    color: transparent;
+}
+
+.newChapterList .chapter_name {
+    border-top-color: rgb(56, 61, 63);
+    border-bottom-color: rgb(56, 61, 63);
+}
+
+.newChapterList .chapter_status {
+    border-color: rgb(56, 61, 63);
+    color: rgba(191, 185, 177, 0.6);
+}
+
+.newChapterList .c_name {
+    color: rgb(191, 185, 177);
+}
+
+.c_name a {
+    text-decoration-color: initial;
+}
+
+.newChapterList .r_notes {
+    color: rgb(163, 155, 143);
+}
+
+.activity-card {
+    border-color: rgb(59, 64, 67);
+}
+
+.activity-card .activity__image {
+    border-top-color: rgb(0, 210, 146);
+}
+
+.activity-card .help-text {
+    color: rgb(153, 144, 131);
+}
+
+.pq-title {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+}
+
+.pq-title .resume-box {
+    border-left-color: rgb(55, 60, 62);
+}
+
+.bdyContainer .ltContent {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.bdyContainer .rtContent {
+    background-image: initial;
+    background-color: rgb(25, 35, 38);
+}
+
+.chapterBox span {
+    color: rgb(205, 201, 195);
+    border-color: rgb(77, 83, 86);
+}
+
+.dropdownbox {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(53, 57, 59);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 9px;
+}
+
+.chapterBox.active span {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 9px;
+}
+
+.dropdownbox li a {
+    color: rgb(200, 195, 188);
+}
+
+.dropdownbox li a:hover {
+    background-image: initial;
+    background-color: rgb(34, 36, 38);
+}
+
+.quesAns .qaContent {
+    border-left-color: rgb(60, 65, 67);
+}
+
+.quesAns .qaContent.ncertclass10 {
+    border-left-color: initial;
+}
+
+.quesAns .qaContent:not(.ncertclass10)::before {
+    border-color: rgb(67, 73, 76);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.ncertclass10 h4 {
+    color: rgb(168, 160, 149);
+}
+
+.ncertclass10>h4 {
+    color: rgb(211, 207, 202);
+}
+
+.opnAnswer {
+    border-bottom-color: rgb(58, 62, 65);
+}
+
+.opnAnswer h4 {
+    color: rgb(98, 255, 207) !important;
+}
+
+.quesAns .qaContent .ques h4 {
+    color: rgb(197, 192, 184);
+}
+
+.quesAns .qaContent .ques p {
+    color: rgb(197, 192, 184);
+}
+
+.queListing ul {
+    list-style-image: initial;
+}
+
+.queListing ul li {
+    border-bottom-color: rgb(59, 64, 67);
+}
+
+.queListing ul li a {
+    color: rgb(205, 201, 195);
+    text-decoration-color: initial;
+}
+
+.queListing ul li a.selected {
+    border-left-color: rgb(0, 210, 146);
+}
+
+.test-card {
+    border-color: rgb(55, 60, 62);
+    color: rgb(207, 203, 197);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 10px;
+}
+
+.test-card__title {
+    background-image: initial;
+    background-color: rgb(33, 36, 37);
+}
+
+.test-card .not-started {
+    color: rgb(171, 163, 152);
+}
+
+.last-attempted {
+    color: rgb(159, 150, 138);
+}
+
+.test-card .faded {
+    background-image: initial;
+    background-color: rgb(35, 38, 40);
+}
+
+.green-bar .bgColor {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.defBook {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.chapter-select_dd {
+    border-color: transparent;
+    color: rgb(205, 201, 195);
+    outline-color: initial;
+}
+
+.chapter-select_dd .dropdown li a {
+    text-decoration-color: initial;
+    color: rgb(205, 201, 195);
+    border-bottom-color: rgb(59, 64, 66);
+}
+
+.chapter-select_dd .dropdown li:last-child a {
+    border-bottom-color: initial;
+}
+
+.chapter-select_dd .dropdown li:hover {
+    background-image: initial;
+    background-color: rgb(31, 33, 35);
+}
+
+.chapter-select_dd .dropdown li:hover a {
+    border-bottom-color: transparent;
+}
+
+.topic-select_dd {
+    border-color: transparent transparent rgb(58, 62, 65);
+    color: rgb(205, 201, 195);
+    outline-color: initial;
+}
+
+.chapter-select_dd .dropdown,
+.topic-select_dd .dropdown {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    list-style-image: initial;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px;
+}
+
+.topic-select_dd .dropdown li a {
+    text-decoration-color: initial;
+    color: rgb(205, 201, 195);
+    border-bottom-color: rgb(59, 64, 66);
+}
+
+.topic-select_dd .dropdown li:last-child a {
+    border-bottom-color: initial;
+}
+
+.topic-select_dd .dropdown li a::before {
+    background-color: rgb(66, 72, 75);
+}
+
+.topic-select_dd .dropdown li a.green::before {
+    background-color: rgb(0, 121, 84);
+}
+
+.topic-select_dd .dropdown li a.orange::before {
+    background-color: rgb(204, 101, 0);
+}
+
+.topic-select_dd .dropdown li:hover {
+    background-image: initial;
+    background-color: rgb(36, 39, 40);
+}
+
+.topic-select_dd.active::after {
+    border-color: rgb(35, 82, 107) transparent;
+}
+
+.topic-select_dd.active {
+    background-image: initial;
+    background-color: rgb(32, 35, 37);
+    border-top-color: rgb(105, 98, 86);
+    border-right-color: rgb(105, 98, 86);
+    border-left-color: rgb(105, 98, 86);
+    border-bottom-color: initial;
+}
+
+.topic-select_dd.active {
+    background-image: initial;
+    background-color: rgb(32, 35, 37);
+    border-top-color: rgb(105, 98, 86);
+    border-right-color: rgb(105, 98, 86);
+    border-left-color: rgb(105, 98, 86);
+    border-bottom-color: initial;
+}
+
+.chapter-select_dd.selectDropDown.showDropDown,
+.topic-select_dd.selectDropDown.showDropDown {
+    background-image: initial;
+    background-color: transparent;
+    border-color: rgb(57, 61, 64);
+}
+
+.chapter-select_dd.showDropDown::after,
+.topic-select_dd.showDropDown::after {
+    border-color: initial;
+}
+
+.sideMenuWrapper {
+    border-bottom-color: rgb(59, 64, 67);
+}
+
+.mysessionFilter h3.active+.sideMenuWrapper,
+.mysessionFilter div.active+.sideMenuWrapper {
+    background-image: initial;
+    background-color: rgb(25, 35, 38);
+}
+
+.btn-radio-list {
+    list-style-image: initial;
+}
+
+.btn-radio-list a::before {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/jeeplus/icons/icons_latest.png?v=05092016");
+}
+
+.logout_info_box {
+    border-color: rgb(59, 64, 67);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 3px;
+}
+
+.login_button_container span {
+    color: rgb(205, 201, 195);
+}
+
+.log_btn {
+    text-decoration-color: initial;
+    color: rgb(98, 255, 207);
+    border-color: rgb(0, 210, 146);
+}
+
+.log_btn a {
+    text-decoration-color: initial;
+}
+
+.log_btn:hover {
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.create_new {
+    text-decoration-color: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+    border-color: rgb(0, 210, 146);
+}
+
+.create_new:hover {
+    background-color: rgb(0, 99, 69);
+    border-color: rgb(0, 218, 151);
+}
+
+.notification_top.connecto-overlay {
+    background-color: rgb(17, 111, 187);
+}
+
+.notification_top.connecto-overlay {
+    border-bottom-color: rgba(140, 130, 115, 0.2);
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+}
+
+#top-notification-close {
+    background-image: none !important;
+    background-color: initial !important;
+    color: rgb(232, 230, 227) !important;
+    border-color: initial !important;
+}
+
+#top-notification-content-html {
+    color: rgb(232, 230, 227);
+}
+
+.notify-button {
+    color: rgb(232, 230, 227);
+    background-color: transparent;
+    border-color: rgb(48, 52, 54);
+}
+
+#notify_text a {
+    color: rgb(232, 230, 227);
+}
+
+.stickyInstructions h1 {
+    color: rgb(232, 230, 227);
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.newQuesList ul li span.queNumber {
+    color: rgb(98, 255, 207);
+}
+
+.newQuesList ul li {
+    border-bottom-color: rgb(59, 64, 67);
+}
+
+.newQuesList ul li a.viewSolution {
+    color: rgb(98, 255, 207);
+    text-decoration-color: initial;
+    border-color: rgb(0, 210, 146);
+}
+
+.newQuesList ul li a.viewSolution:hover {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.newSolHead {
+    color: rgb(98, 255, 207);
+}
+
+.newInstructions {
+    color: rgb(168, 160, 149);
+    border-color: rgb(62, 68, 70);
+}
+
+.bpsParent1 {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px;
+}
+
+.strProgram {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 10px;
+    border-color: rgb(59, 64, 67);
+}
+
+.strProgram .xiStudents {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.strProgram .xiiStudents {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.strProgram li label {
+    color: rgb(190, 184, 176);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.strProgram li label::before {
+    border-color: rgb(100, 93, 82);
+}
+
+.strProgram li input:checked+label {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.strProgram li input:checked+label::before {
+    border-color: rgb(48, 52, 54);
+}
+
+.strProgram li input:checked+label::after {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.lockedMnWrapper .locked_content {
+    border-color: rgb(62, 68, 70) !important;
+}
+
+.lockedMnWrapper .locked_content .premium_box {
+    background-image: initial;
+    background-color: rgba(31, 34, 35, 0.36);
+}
+
+.lockedMnWrapper .locked_content .premium_box span {
+    color: rgb(232, 230, 227);
+}
+
+.commentSection {
+    border-color: rgb(62, 68, 70);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+}
+
+.commentSection h4 {
+    color: rgb(205, 201, 195) !important;
+}
+
+.commentSection .commentType {
+    background-image: initial;
+    background-color: rgb(28, 30, 31);
+}
+
+.commentType .userImg {
+    background-image: initial;
+    background-color: rgb(26, 28, 29);
+}
+
+.commentType .textAreaSect input {
+    border-color: rgb(59, 64, 67);
+    color: rgb(211, 207, 202);
+}
+
+.commentType .textAreaSect input::placeholder {
+    color: rgb(200, 195, 188);
+}
+
+.commentType .textAreaSect input::-webkit-input-placeholder {
+    color: rgb(200, 195, 188);
+}
+
+.commentType .textAreaSect button {
+    color: rgb(179, 172, 162);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(69, 75, 78);
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 8px;
+}
+
+.commentType .textAreaSect button:hover {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+    border-color: rgb(0, 210, 146);
+}
+
+.studComments .studImge {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.studComments .commentText {
+    color: rgb(178, 172, 162);
+}
+
+.studComments .commentText .studInfo {
+    color: rgb(168, 160, 149);
+}
+
+.studComments a {
+    color: rgb(66, 162, 255);
+    text-decoration-color: initial;
+    border-bottom-color: transparent;
+}
+
+.studComments .comments {
+    border-bottom-color: rgb(53, 57, 59);
+}
+
+.studComments a:hover {
+    border-bottom-color: rgb(0, 61, 161);
+}
+
+.anaNotification {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgb(0, 121, 84) 0px 0px 120px;
+}
+
+.anaNotification .topBdr {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.anaNotification .icnCircle {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    box-shadow: rgba(0, 121, 84, 0.6) 0px 0px 3px;
+}
+
+.anaNotification p {
+    color: rgb(180, 174, 164);
+}
+
+.anaNotification a.answerNow {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+    box-shadow: rgba(0, 121, 84, 0.5) 0px 5px 15px;
+}
+
+.anaNotification .closeBtn::before,
+.anaNotification .closeBtn::after {
+    background-image: initial;
+    background-color: rgb(167, 11, 11);
+}
+
+.customizedIcnana {
+    color: rgb(232, 230, 227);
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+}
+
+.optionText {
+    color: rgb(199, 194, 187);
+}
+
+.option {
+    color: rgb(168, 160, 149);
+}
+
+.pageClass {
+    color: rgb(211, 207, 202) !important;
+}
+
+.tenClassQues {
+    color: rgb(197, 192, 184) !important;
+}
+
+.subject_page_list .mn-right-arrow-thin {
+    color: rgb(51, 162, 255);
+}
+
+.subject_page_list a {
+    color: rgb(200, 195, 188);
+    text-decoration-color: initial;
+    outline-color: initial;
+}
+
+.subject_page_list a:hover {
+    text-decoration-color: initial;
+}
+
+.search-results .item {
+    background-color: rgb(24, 26, 27);
+    border-bottom-color: rgb(55, 60, 62);
+}
+
+.search-results .item:hover {
+    background-color: rgb(31, 33, 35);
+}
+
+.search-results .item a {
+    color: rgb(211, 207, 202);
+}
+
+.select-batch-btn {
+    border-color: rgb(0, 210, 146);
+    text-decoration-color: initial;
+    color: rgb(98, 255, 207);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 121, 84, 0.55) 0px 6px 19px;
+}
+
+.batch-para {
+    color: rgb(171, 163, 152);
+}
+
+.drawerWrapper div+div {
+    border-left-color: rgb(9, 190, 135);
+}
+
+.liveFreemium h2 {
+    color: rgb(211, 207, 202);
+}
+
+.liveFreemium h3 {
+    color: rgb(159, 151, 139);
+}
+
+.liveFreemium .live-card {
+    outline-color: initial !important;
+}
+
+.liveFreemium .btn-view {
+    background-image: linear-gradient(rgb(169, 143, 0) 51%, rgb(172, 88, 12) 100%);
+    background-color: initial;
+    border-color: rgb(48, 52, 54);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+    color: rgb(211, 207, 202);
+}
+
+@media (min-width: 767px) {
+    .bps-table {
+        background-image: initial;
+        background-color: rgb(24, 26, 27);
+    }
+    .bps-table-cell {
+        border-color: rgb(68, 74, 77);
+    }
+    .title {
+        background-image: initial;
+        background-color: rgb(66, 71, 74);
+    }
+    .bg-name {
+        background-image: initial;
+        background-color: rgb(31, 33, 35);
+    }
+    .head {
+        background-image: initial;
+        background-color: rgb(87, 94, 98);
+    }
+    .sol-link {
+        color: rgb(198, 193, 185);
+    }
+    .sol-link:hover {
+        color: rgb(77, 173, 232);
+        text-decoration-color: initial;
+    }
+    .tabel-head .bps-table-cell {
+        color: rgb(232, 230, 227);
+    }
+}
+
+.line-btn--black-border-green {
+    color: rgb(232, 230, 227) !important;
+    border-color: rgb(0, 210, 146) !important;
+}
+
+.hopOnSessionBox .relContent .dec p {
+    color: rgb(185, 179, 169);
+}
+
+.hopOnSessionBox .recording--text {
+    color: rgba(232, 230, 227, 0.5);
+}
+
+.line-btn--disabled {
+    border-color: rgba(140, 130, 115, 0.1) !important;
+    color: rgba(232, 230, 227, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.planner {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
+}
+
+.planner__header {
+    background-color: rgb(0, 121, 84);
+}
+
+.planner__school-image {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgba(48, 52, 54, 0.6);
+}
+
+.planner__school-info {
+    color: rgb(232, 230, 227);
+}
+
+.planner__body .btn-default {
+    text-decoration-color: initial;
+}
+
+.planner__body .btn-fill-green {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.planner__body .btn-fill-green:hover {
+    background-image: initial;
+    background-color: rgb(0, 102, 71);
+}
+
+.gradeNotification a {
+    color: rgb(51, 162, 255);
+}
+
+.gradeNotification a:hover {
+    color: rgb(120, 193, 255);
+}
+
+.mainHeader {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 5px;
+}
+
+.mainHeader a {
+    text-decoration-color: initial;
+}
+
+.mainHeader .navBox {
+    border-left-color: rgb(9, 190, 135);
+}
+
+.mainHeader .searchElement input {
+    border-color: initial;
+    background-image: initial;
+    background-color: rgba(24, 26, 27, 0.1);
+    color: rgba(232, 230, 227, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.04) 1px 1px 3px 1px;
+}
+
+.mainHeader .searchElement input::-webkit-input-placeholder {
+    color: rgba(232, 230, 227, 0.5) !important;
+}
+
+.mainHeader .searchElement .inputIcons {
+    background-image: none;
+    background-color: initial;
+    color: rgba(232, 230, 227, 0.5);
+}
+
+.mainHeader .btn-back {
+    color: rgb(232, 230, 227);
+}
+
+.mainHeader .navBox_top span {
+    color: rgba(232, 230, 227, 0.6);
+}
+
+.mainHeader .navBox_bottom>li>a {
+    color: rgb(232, 230, 227);
+    text-decoration-color: initial;
+    border-bottom-color: transparent;
+}
+
+.mainHeader .navBox_bottom>li>a i {
+    color: rgba(232, 230, 227, 0.6);
+}
+
+.mainHeader .navBox_bottom li:hover a,
+.mainHeader .navBox_bottom li a.active {
+    border-color: rgb(48, 52, 54);
+}
+
+.mainHeader .navBox_bottom .sublist {
+    list-style-image: initial;
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 11px;
+}
+
+.mainHeader .navBox_bottom .sublist li:hover {
+    background-image: initial;
+    background-color: rgb(35, 38, 40);
+}
+
+.mainHeader .navBox_bottom .sublist a {
+    color: rgb(175, 168, 157);
+}
+
+.mainHeader .navBox_bottom {
+    list-style-image: initial;
+}
+
+.mainHeader .chatBox a {
+    color: rgba(232, 230, 227, 0.6);
+}
+
+.mainHeader .userBox {
+    border-left-color: rgb(9, 190, 135);
+}
+
+.mainHeader .profile {
+    color: rgb(232, 230, 227);
+}
+
+.mainHeader .profile .profileEditBox {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+    color: rgb(232, 230, 227);
+}
+
+.mainHeader .profile .profileEditBox .closebox {
+    color: rgb(164, 156, 144);
+}
+
+.mainHeader .profile .usr_name {
+    color: rgb(204, 199, 192);
+}
+
+.mainHeader .profile .usr_email,
+.mainHeader .profile .usr_grade,
+.mainHeader .profile .usr_mode {
+    color: rgb(190, 184, 176);
+}
+
+.mainHeader .profile .usr_grade .mn-pencil-edit-button {
+    background-image: initial;
+    background-color: rgb(92, 99, 103);
+    color: rgb(232, 230, 227);
+}
+
+.mainHeader .profile .usr_mode strong {
+    color: rgb(173, 165, 155);
+}
+
+.mainHeader .profile .usr_mode .link-btn {
+    color: rgb(98, 255, 207);
+    border-bottom-color: initial;
+}
+
+.mainHeader .profile .usr_entu,
+.mainHeader .profile .usr_points {
+    color: rgb(190, 184, 176);
+}
+
+.mainHeader .profile .usr_bio {
+    background-image: initial;
+    background-color: rgb(182, 119, 6);
+    color: rgb(232, 230, 227);
+}
+
+.mainHeader .picBox {
+    border-color: rgba(48, 52, 54, 0.3);
+}
+
+.mainHeader .picBox:hover {
+    border-color: rgb(48, 52, 54);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px;
+}
+
+.mainHeader .btn-butterfly {
+    color: rgb(232, 230, 227);
+}
+
+.search-text-box {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.search-text-box .infoText {
+    color: rgb(205, 200, 194);
+}
+
+.search-mode .jeeMaxWidth>div+div,
+.search-mode .jeeMaxWidth .navBox {
+    border-left-color: transparent !important;
+}
+
+.gradeEditBox {
+    background-image: initial;
+    background-color: rgba(36, 39, 41, 0.85);
+}
+
+.gradeCloseBox {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(45, 109, 90);
+    box-shadow: rgba(0, 121, 84, 0.35) 2px 5px 15px;
+    color: rgb(164, 156, 144);
+}
+
+.gradeClass {
+    color: rgb(190, 184, 176);
+    background-image: initial;
+    background-color: rgb(29, 32, 33);
+}
+
+.wrapperDropdown {
+    border-bottom-color: rgb(98, 91, 81);
+    color: rgba(232, 230, 227, 0.7);
+}
+
+.dropdownSelected {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+    border-bottom-color: rgb(0, 210, 146);
+}
+
+.sbtBtn {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+}
+
+.chngeTick {
+    color: rgb(232, 230, 227);
+}
+
+.boardDropDown {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(1, 1, 1, 0.15) 2px 5px 15px;
+}
+
+.boardDropDown li a {
+    color: rgb(160, 152, 140);
+}
+
+.boardDropDown li a:hover {
+    background-image: initial;
+    background-color: rgb(42, 45, 47);
+    color: rgb(232, 230, 227);
+}
+
+.selBrdCls {
+    color: rgb(132, 215, 192);
+}
+
+.mainHedDD {
+    border-color: rgb(0, 210, 146) rgb(0, 210, 146) rgba(48, 52, 54, 0.5);
+    color: rgba(232, 230, 227, 0.7);
+}
+
+.mainHedDD li a {
+    color: rgb(160, 152, 140) !important;
+}
+
+.mainHedDD li a:hover {
+    color: rgb(232, 230, 227) !important;
+}
+
+.brdGrdSelected {
+    color: rgb(232, 230, 227);
+    border-color: rgb(48, 52, 54);
+}
+
+#jeeHeader .headerSearchBox .closeDropDown {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/icon_cross_input.png");
+    background-color: initial;
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu {
+    border-top-color: rgb(65, 71, 73);
+    list-style-image: initial;
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .suggesionbox-dropdpwn {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+    color: rgb(214, 211, 205);
+    border-color: rgb(65, 71, 73);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .headSec {
+    background-color: rgb(34, 36, 38);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .chapterRow {
+    border-left-color: transparent;
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .chapterRow:hover {
+    background-color: rgb(34, 36, 38);
+    border-left-color: rgb(65, 71, 73);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .linkBtn {
+    border-color: rgb(63, 68, 71);
+    color: rgb(214, 211, 205);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .outerQueRow {
+    border-bottom-color: rgb(65, 71, 73);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .queRow {
+    color: rgb(214, 211, 205);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .lastRow {
+    color: rgb(120, 169, 204);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .lastRow a {
+    color: rgb(120, 169, 204);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .hidedots1 {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+#jeeHeader .headerSearchBox .dropdown-menu .hidedots2 {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.boxContent h4 {
+    color: rgb(211, 207, 202);
+}
+
+.boxContent h4 a {
+    color: rgb(80, 175, 244);
+    text-decoration-color: initial;
+}
+
+.boxContent p {
+    color: rgb(211, 207, 202);
+}
+
+.boxContent .wp-content a {
+    color: rgb(80, 175, 244);
+}
+
+.morePost ul {
+    list-style-image: initial;
+}
+
+.morePost a {
+    color: rgb(80, 175, 244);
+    text-decoration-color: initial;
+}
+
+.morePost a:hover {
+    text-decoration-color: initial;
+}
+
+#fc_push_frame {
+    border-color: initial;
+}
+
+#fc_widget {
+    border-color: initial;
+}
+
+.fc-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fc-modal-content {
+    background-color: rgb(25, 27, 28);
+    border-color: rgb(82, 88, 92);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+
+.fc-modal-header {
+    background-color: rgb(24, 26, 27);
+}
+
+.fc-modal-footer {
+    color: rgb(232, 230, 227);
+}
+
+.fc-modal-footer input:first-child {
+    background-image: initial;
+    background-color: initial;
+    border-color: initial;
+    color: rgb(192, 187, 179);
+}
+
+.fc-modal-footer input:last-child {
+    background-color: rgb(24, 83, 153);
+    border-color: initial;
+}
+
+.mySearchBox .chapterRow .titleDetail {
+    color: rgb(175, 168, 157);
+}
+
+.headerSearchBox input::-webkit-input-placeholder {
+    color: rgb(178, 171, 161) !important;
+}
+
+.headerSearchBox .inputIcons {
+    background-image: url("https://www.meritnation.com/img/site_content/header_search/headerSearch.jpg");
+    background-color: initial;
+}
+
+.searchTextBox .inputIcons {
+    background-image: url("https://www.meritnation.com/img/site_content/header_search/searchBtns.png");
+    background-color: initial;
+}
+
+.mySearchBox a {
+    color: rgb(232, 230, 227);
+}
+
+.featureIconFlat {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzk0IiBoZWlnaHQ9IjM2Ij48ZGVmcz48ZmlsdGVyIGlkPSJkYXJrcmVhZGVyLWltYWdlLWZpbHRlciI+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAuMjQ5IC0wLjYxNCAtMC42NzIgMC4wMDAgMS4wMzUgLTAuNjQ2IDAuMjg4IC0wLjY2NCAwLjAwMCAxLjAyMCAtMC42MzYgLTAuNjA5IDAuMjUwIDAuMDAwIDAuOTk0IDAuMDAwIDAuMDAwIDAuMDAwIDEuMDAwIDAuMDAwIiAvPjwvZmlsdGVyPjwvZGVmcz48aW1hZ2Ugd2lkdGg9IjM5NCIgaGVpZ2h0PSIzNiIgZmlsdGVyPSJ1cmwoI2RhcmtyZWFkZXItaW1hZ2UtZmlsdGVyKSIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFZb0FBQUFrQ0FZQUFBQ1hIMzA2QUFBQUdYUkZXSFJUYjJaMGQyRnlaUUJCWkc5aVpTQkpiV0ZuWlZKbFlXUjVjY2xsUEFBQUF5SnBWRmgwV0UxTU9tTnZiUzVoWkc5aVpTNTRiWEFBQUFBQUFEdy9lSEJoWTJ0bGRDQmlaV2RwYmowaTc3dS9JaUJwWkQwaVZ6Vk5NRTF3UTJWb2FVaDZjbVZUZWs1VVkzcHJZemxrSWo4K0lEeDRPbmh0Y0cxbGRHRWdlRzFzYm5NNmVEMGlZV1J2WW1VNmJuTTZiV1YwWVM4aUlIZzZlRzF3ZEdzOUlrRmtiMkpsSUZoTlVDQkRiM0psSURVdU15MWpNREV4SURZMkxqRTBOVFkyTVN3Z01qQXhNaTh3TWk4d05pMHhORG8xTmpveU55QWdJQ0FnSUNBZ0lqNGdQSEprWmpwU1JFWWdlRzFzYm5NNmNtUm1QU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUx6QXlMekl5TFhKa1ppMXplVzUwWVhndGJuTWpJajRnUEhKa1pqcEVaWE5qY21sd2RHbHZiaUJ5WkdZNllXSnZkWFE5SWlJZ2VHMXNibk02ZUcxd1BTSm9kSFJ3T2k4dmJuTXVZV1J2WW1VdVkyOXRMM2hoY0M4eExqQXZJaUI0Yld4dWN6cDRiWEJOVFQwaWFIUjBjRG92TDI1ekxtRmtiMkpsTG1OdmJTOTRZWEF2TVM0d0wyMXRMeUlnZUcxc2JuTTZjM1JTWldZOUltaDBkSEE2THk5dWN5NWhaRzlpWlM1amIyMHZlR0Z3THpFdU1DOXpWSGx3WlM5U1pYTnZkWEpqWlZKbFppTWlJSGh0Y0RwRGNtVmhkRzl5Vkc5dmJEMGlRV1J2WW1VZ1VHaHZkRzl6YUc5d0lFTlROaUFvVjJsdVpHOTNjeWtpSUhodGNFMU5Pa2x1YzNSaGJtTmxTVVE5SW5odGNDNXBhV1E2UmpOQ01rVXlPRVU0TlVNNU1URkZORUZFTWpFNE5rRkdNVGczTnpkQk1qWWlJSGh0Y0UxTk9rUnZZM1Z0Wlc1MFNVUTlJbmh0Y0M1a2FXUTZSak5DTWtVeU9FWTROVU01TVRGRk5FRkVNakU0TmtGR01UZzNOemRCTWpZaVBpQThlRzF3VFUwNlJHVnlhWFpsWkVaeWIyMGdjM1JTWldZNmFXNXpkR0Z1WTJWSlJEMGllRzF3TG1scFpEcEdNMEl5UlRJNFF6ZzFRemt4TVVVMFFVUXlNVGcyUVVZeE9EYzNOMEV5TmlJZ2MzUlNaV1k2Wkc5amRXMWxiblJKUkQwaWVHMXdMbVJwWkRwR00wSXlSVEk0UkRnMVF6a3hNVVUwUVVReU1UZzJRVVl4T0RjM04wRXlOaUl2UGlBOEwzSmtaanBFWlhOamNtbHdkR2x2Ymo0Z1BDOXlaR1k2VWtSR1BpQThMM2c2ZUcxd2JXVjBZVDRnUEQ5NGNHRmphMlYwSUdWdVpEMGljaUkvUGw0UHI5TUFBQjluU1VSQlZIamE3RjBKdkUzbCtuN1B4Qm5NVStFbVUyVW9LVndrTjJYS2tGUm9vdEs5eVMybE5DQlVLcUdRZjJuZ3FyaE5wcUtrWkw2U2hGTlJRbVpLa1J4RGhqUC8zK2ZzNSt1c3M5cnpYbnNvM3Qvdi9hMjkxbDdEdDc3aGZkN3ArMVpjcVNwMVJhbUdjai9saTVWVEpIeVVvOXp6OEkvZjdTeGR0VjRGL1gyVDhvVVNXYnBQbjMvVTA1OWFydk4wTTBHNVRRVEx0RmU1dG5JZTZ5alAwNGxhOW54YmVmMTlScUp5VStVbXloY29uNk5jUmJtOGNwcHlrdkp2eWllVjl5dnZWdjVXK1J2bDVjbzdQWlRINjBNREtKODdRaDk1VG5taThvcEFuNi9QanJmc3hyTU9VdmpPbFpTdlpMMDdSZm1zUDI5MHIvSXhmOTVCeTQreGNhM3kzMElvVTdieUZPVlZiUC9ibEl1RmNMOGZsV2NyZjRWeWF4bXI2dThCeWkwazhvUngvSmFXWTRxUC9sZFIrVkhsNjNHSTdSUnVRbC83VkxtM2ZleVk5cmFVYmJoeU4rVXlFU29iS0U0NVEzbUc4bVBLQjcyZXJFQnh0bTdYVVZnc1U5NGVacUI0aE0vYXlrSDdKVHRmSkFnVmM3YzIxRzhlT3RWWnV2bGVPVmw1cmZKUEVTclhSaTNUd0dBdTlDR0k4UjVkbEhzb3QxTXVHVUlaMFY1emxOOWhtL2tGRkNHV1h5d0RaNVR5VS80S1dSL1ByTURCbXhiaC9uZUFDdGx4TjBJbDE2b0VhQms3Nk9Zajd2NmluQkRFODNJSmlnREp3Y29qcVlUOEdzTDlLdkwzUDVTM0tPK0l3bmd4d04rS2JiaEV1YjNXWDQ2YnRxNU1ZSU1TdkliOU9CS1VUTGs2a2ZYOXU4dzE3YXhsUTl0OHBnemw5QXZsWFJZaEhrNHkvYXdHRmNjTkJQckQzbEN2cjNJSkNwSWxFYXJFZHdrU0hiVFM1anVzaFlZaXZHYXdnZHZxUFJaSkZFbnJBQjI3cHBaalZwQ2ErUDNLZmZqYjBPY2MwTjhRRUgra0pnSGd6Q0tRcEZEYmhnSnhQcTJQbHRTOEh5U3ZWaDZuUE5PYjllTVFiVk91cFR4SStSYSsxNHdRNy9rWUJVeEJPNGZhM3h5Z1RSUzZIU3pISm5OYlJjdjRVd2pXR3ZyekxJTEVoOVJjTTBNb2F4WDJteUdVSDM2UGwzQ01hNzFuRDVZcGdZcW9uV0JKTkZJZVJtVWpxbVR6Q0R4RmtQaTM4aXRSS2hJVWx4ZVVIK2ZZOG1oUkxLS0cwNFVWMmoxTUJjcWpTMmN2RVcydFZscVRTSFVvUDRVenl2VS92YjVWbEVIaWJ0WVZhS2FXcDRlZmc2OFlCZmtnaS9XQTl2MkF3blZmQ01WcXBud2pRZU1pSGx0SFY5NnlNRm9VVzl5NGh6Nm1zRjhUcEVVQk4weHh2ZllpSi9wYmlBU044aEwrdmwzTDlMcWxMMmJxZnJJRGdoZnVwdGNKdEc4NFVPWVRiUHVtZ1l5WGFJeHJmU1lVb1kxUmNvMTVmUWN0V3dZVm9jWlJMdGEzVkNpcml3ZlhhU0t0aVczY3YweDVZSmdLQTdOMUlZRkMySGl4U050aW9BelcrRWgzN1ZBQUMxOEEzbEQ1VGVYNjNJZWJDUDc5NVE2VmFSWFphQ0UzVXNBdDBmSk5KbUFjZCtBNVo5TWNScWN0USt2R1RoM0lVL1haTCtoejA3MElDZ2pKVlhyT0p0dGZtMk9nblExSTNNdjZmRTNMdTF6TGF2cGd0a1BQS2NOdFdRZnVGY2V4SEJQalJldXJQbDFRaUptc2RITktxdkxQc1NKY0FKWVdzQ2dSSS9JR1phaEo2OUF0VUpoZ1gxTjJnSEhjaG9NQlNrc3R6MDZMVWFCSWpXSW51a2w1a1hha2EyZ09HdXFteDkvMmNpbUV6RXFDQklDaG8vSTFEb0tFblNaUVEzdUZiWHNIaEo2V3NWcVE5NnRKVndZMG01MTBhVDNMWTZXOFhIZXJjbWN2OWJtQm12VFhEQXpIUkR1VFZoSWs3dGYyUmx0ZnhlUC9zd2xsSnlqT3dmdmwyKzRUN1hyc3hQNTRoeGRQUmtLRXk0UnhjRDNkWG0rSkt6WnlnSFhYS3NwbGMwY0pMSXZIUUhvaXR4ZXlzaC9qQzRXTFlON1VrTlBrVHFoZHhrNkYzNStvOEdpdlc0RHA3UVlNZEQ5Ymo5OXF1L1F1dGgwRzd4UnhaVm40UzQxczFzdDJ1cW95L0x3ZXZ0WG5sVjlWYmc1ZzBqSzJ0bWpFdnQ0WmdjWW5sUDlsT1F6TmZ3VTFmcFJqbEJTTnN4aUMwakZZbi9XRm0vdVdvcloyaEllS0s2L1c0eTMxL05VeDBOeExXVjlJN0JoUGw4U3ZXajRjKzF5M3EwK1BDUCs5T2R6K0VrTmxPa1lBdTg0TmtKNHJycVFoTzhIYXV5Z0NaUU1ZckJaYlVvZ3ZNa0N4bndMbnJnZ1VkTEFYd2JHUWdtcTBSWkJCVU1EbmJ0d0xBeTNDTFozYTV5amJmWEI4RXMrdGFSR0NvM210T3pmT3BpaUN4T1hpU2lUWVNhdnVlVDIyUUlWSE85M0NIM3czVDcyRldyUzVycnNGSkY2aDRQWVhJRWFKK3hSZ0NPZTJsdnIyUlhBaElzMzBIVm95ODdWY2wyalpmL0h4emhoRTA2bk5aRk5ndmk1L2RFa09zZ0VGeWpkVStTVXZ0MGRiRjlNeWxOTG4vSWRBaFBqTkY3b2ZiVjgxVWlZdkZWZmdjTHp0djQ3Y2JxWDdMVjlpay9KanNDeXhWS1pmT1ZiblVKR3Fhdm5QVTZBRzdmMUpoTXJYUUZ3SkxRRURCYktRNXRPTUx4TkdsMDRuSCtlMEljL2tZQy9MZmVOYlJhcFpILzYzblNCZ3pqSEhyTzRNNjdsOUNCQ2piYy9MQ0VBb2hnTWsva0dRZ0crd2lRcTNBM29NZ2VnUmRFTzEwUzE4aC84VVYvYUt1YTQyQld1Z0lHR0ViUnVDYWJxbHJydVRBZGkxQXJBc29Ma2ptK1o5Z3N3VUxWOW4rNXdQUzlsSFVKc0dQWU4zdFdqL2RpcHUrZjEveWs5SzBYUkQrNzIvRWxkSzZBbjl2VkxMY0lsdTg5ait4clVUcmZZMklQR1FIU1MwakpQb1BubFJ5OXhQOTI4OEJhd0I5TEZ5N01NSEpMalUvQjhzeW02c0VaUWVFN2ZMb2J5dDYrRmN1S2RhUndoWUE2N25STXZ2RDhqaDlOdnQ4dlBjaVJRNGRpMjREeTJPdGpaaEx4UjZvMm5HWStEOWZsejNSK3UrQVpsMDdITnc1bk8vTGZmN1JSZ2tHbE53UVpDZFE1QzRpSllRd0JLQmJMUUpoTVozK3Y4NHkrVjRYN2ltL2hzZ1NCaU51NWFiRG9ObnJwWEM3TGRKQWR3VGxrOHZjZVdEUXpPK1dWekJkZnM3djBqTEZRUG5DZ3BQOFFJU21OdUNXQU1tWjY3M1VaK3dDcEZ1V0UzcmFnL2FWL2xYL1YxZXQ4ZW94UitNa3RCWVJwQkEyNDZ4bFhzY1FRS1R4L3JGcU9idWxFVUJRWGtiKzBkVk4wRDZtQlNOWlZycjZRd3BkTVhtazV0eXY0dituMGpRUWV6MXBHMjhSSnJLVTU3V1pyOU5weUorbGhmbGJVbU10bmNSb0lnVjJtNnhMTVFOSU13TTRiNHhROXFwbTlCWENKQTRUenYxRDNvTW1VdVlBRFpCOSsvUmZVd1U2cW84UVBlZnRGeUx1cmljN3JJN0hhNlBtUVNLWURKa2tINDdraGJPRTFyT2FkWkpVTHAvRDBFQ2c2S3gvcmZkUjhva3JGQUVCV2Y0VVorWUY0TFo1cGNRSks2bEN3Zi9yU0NJUWJDODVjTnRGUTVDT2k5aVVFTm9RVm5wYVFMWWRDMTN6eGgyOFRoRmM2bWtnQTZKS3lNSmMzZVE3ZGFTd3JJWkZRNDduYy82Y2tmL0lGc3BXa0JSa2k2bjJsUk1NRmNOYzVpdUMwS3BjNVN5c3JJbE15dExpaGRMa21MRmluazlMeWNuUi9MejgyTWFLR3JTcXJnekFBSFh4NEFKMGtrdDU5V2tMOSs0SHRLai9ZSzBKRXpBc2hhWE5MbUlJREZlOSsvWC9RY0lFaGhZTDlodVlUcmJOUEc5WkVTZ0ZHb0tKZHJ0Qm5GbGQ3Ulhuc2QzYnNqQkErQm9wTys0dzA4WDJRd2ZkUWtoOHcyRkQ4QW5YWTg5UklHTWQwRlFlNC95YS9yZjVid21rczI5aEtEK2tOMlNFTmNrSjhUczN0T3kzZkFuRXZhaEFCaEF1akhiWjUzbFhrMElxTkRFMzJGNzJwK3ppWFZvamtQSndyaHB4L0cwbE5aRVhCakdCZm9SbHJtQml6VFh4N24zY1F3ZzlqYVVJQUdDaTM5bDFCcE5oWDdOR3RYazBtWk41TE5WYTJYajVpMlNscFlxY1hHRlNXeFoyUW9RMlRsU3UxWjFxWFpXVlNtV2xCU3pRR0hjS2lhbUVDcjFJVVBvM0trRE1pT2FMMFpBV01QZDh3Z1M5UWdTTDFsQUFnTUNBZTB1dHVzUnJ6Q3hucGZEQUJMZFE3VGNRSjhRS0xvYm9PRGdCL1h3RXlUOHRZaTMwSVhSUU8vN2pkWlBmd29oYUhOd04ySGV6aTVxZGNGUUYxb0NjS2Y5R3VDMWl3Z1NqN29CaVNGMHM4elRjbDhYQm9FY3EwRGhTY3RmUXpCOVRWeVprYkFPdjdlZW9QWDBJOCt4am9kT0JBck1OUm9UcHZkRndnWG11cHlnSXVSdHZoRGMyQThTc0Y2WFA3cHZQUzF6a2lTaExiSGppVEFMLzFpMldnZGxTcFdVaFIrOExWWE9QRU1PSGp3a0F4OTlXbDc5N3pRcFVTS3RBQ3grKysyWVZENnprZ3g5dUwvYzFPTnFLVld5c0RqeE1kb1JCMUd3ZHc5QTQ1M0VSc0p5QXRiR0djMy95a2JiL2NUSlFXYWRwSHBhenUrNUNDRjg4Sk4xLzI3T3lrYUhYNEVVV1RlM3dkSWV4V21hT3gzQUcwVnJibWFJZFdWaVhYL25lMSt0bXpwOHA5a09sVFdObGdKQTRpS0NoQWtTdzQyeFUxekxrbUNnWEtEL0J6UEJEdjN2ZmI3SGlpREFzalhCNEVuYmZ4QTZUL0dlbmVVMEdWcG0rVjNCejJ0TW5LTmlHTXZWampLcE9RVzZKd0xBSWNzTzZkbnJhVm5rK3ZtTUZuVERPYzNqWVRDY1VCRG8yTDUxQVVpQXlwVXJJLytaOEl5TUcvbW9aR1ptNXB3NGVUSy9hK2YyUno1ZjhyNzAvV2ZQSWlBUnl4WkZCZ1g4S0RjdXArNEJhcnNaRmd0bElMVzhhSUFFNXFwOHpkMzZLcmcyNnJGemFVN0RMWEtIN2tPQUlMTm5NYktkUE56S3JDVDZnOE5GTkpaWHVnUWY5ekQwbzIwUVA4L3RMUTZWTllYOUFiTzI2d0FFdE82R1VQaVdaNXZETFFFZmVEVnZxd1Y3b1h0WWJtaTZtT3o0SElWL2V6K3UvWmpDQldXeSs5VDdFOHlXMGRvSWwrWWVxeGFGTjdJSysxaVpGd0ZyZnlTMWZRQUFzclRjTFo1WGp0YlMyVlJnTUlaK0MrQTVzSjRjVDZaUlMySHowYU8vU2UxemFzcVRReCt3L2xVbE56ZXZZOXNyV2w2d1kxZXZSbXB4RkIvMmNQL2hhbEVVckF6c3puU1BWVExDdmFiRkZaSk9vSmpCMzIya01OMjFqVVVvWjFnMVlnWk5DKzZIUUhDa0YveWpKV0ZBNG54OS9uZDZES1kxdE53cHV2OVAzYitMSUxIU0MwZ1lJU2swZzUyaTdqU3BNOWpCUTNYUEdkTThsV204eUhoYjU1RExDYjdpM2JRUURVZ01Ja2dnb3lTYklBRVRINWxreHdLOFB6VEdZV1JZYmMxTU00b3JwZ0FmdTdmNVJ2TUpKa1BkZ0VSZmdrUzZIeUJ4S3BMSmFFTDcrcnZLYXpsdUs0ZWhQRkMveDByaHB4QnEwTkp4MTQrUmtOQ0ZWaXdVMGxVQlBtdXZCSlpsNkJjQkpHclZQRnRtVEgxWktydXNpZklidjk5NjcvUlpIL1Q5Y1A3aVN0dDI3SlQ0K0lTQ1dNU0N4Y3VIdFc3VjRwRnVYVHROYjN0NXkrZkZrbEFRSDhPZEprT0t6bmtBOVNCZ2RLZTFZUlZvYlhoc2xBZVhsV21FZ1pGOENSVmlBTHB2dVh1aENxNE5sdVhNNFZmdHJmdVlUWTIwMGRXNjcydEMyQ0Z1blpydlVwWWdJUkxZUkR0Zjl6UnQyTkZXLzZGUU9WcFN1RCtDblFDSlo2anhwZkY1UjNqT1dVR0FCT2g2Z3NSbUMwaUE4TTBBSkEvODI0dm1ONDhnQWRBYVlmc1AxaFJpU3Q4WWwxd1VOZmRZdENocVd5elpSd0o0eGlkc215a09sNmNTZ2Y1S3k3SEs0bjVKbVd2WUorS3BTTXlNaFVZNmN1Um9RZkI2NW45ZmtZWU5DcGFBcXpaNzd2d0ZyVHAwZjNUNGlMR1Z2dG13U1hKeWNpVTdPMXVPSFQ4dWUzL2FKNU5lZXl2aHltdDYzblQvb09GTGpwODQwVDBtTFFvZDJIRVVybGJoUHNubWZuSzNrbXFjN1Q1L09NNkY0K0xjUFMrTUlGRkxDZ055emZWNTZ3a1MwSmpleGFxd3VvK1oxZ2pnWVQ1SFV6OXVhMTZ1am9NdUp3amVRZUpjUnBocFFFdzRNdS8waFFNZ3NadUFBTTF1SndmeVE5VDhVdW11d1BHNldwZTVRVDRIa3cwUlIwSXNDUE1lckxFSnpHZUJKWWdzdEcxME1SbWFRMUI4bWtCakphVHFUbVZmdUZqOFg1cjlyNWdlNjQ0UUxEWnpKMURmYndVZ003NXk1eW9Ka1ZMWnIyRGg1TkliVUlYZ2tlS21yNCtqNGdaUEJSSVhjcUpkb1ptWldkTHpobXRseklpaGNrYWxBby9lbVZQZW5MbXNULytCTlJMaTQ2VlVtZEovTktXVEVwVkxTbDVlbm94L2ZtTHF2djBIM3BrNmNWeCtVbExTckhnNVRlRUNpUm8wbjFISEYydUhYcVhIL21ZQkNTejAxNHVhMEplNjM5alBnYkZGQ3IrSTE4eUJvb1k2UDhVZG1WbkZ5eTFtZXlqQmNRREJQb0tFQ1ZUREpZRFUwbVM2bXdBU083UithaWlIa2hxNWovV0tPc1lFTUh1N3dCckFMT0tQcEhEeUZOeE5WOU0xTmNSMlBqS2EzdVg3TjRnRklSS0RGZ1hBQVdNRDhib3JBaHhuQ1ZoZmpFa2hUbEFpQWNJc01vaHZlTnhOTUVxd1dSU1ZhYzFXWjlsaENSME44cmxRV3BNYzRFU2t3ZWJrNWtpZjNqY2JrSWo3ZXYyR0YrNGE4RWlOeE1SRXIvTW5rUDJFT1JURlVsTGtuZW16RXg0Yk1RNXpvc3FmOGtEQmhmZWN2bWRsbXlYeGxSNkROb0lnMTF5Q0JHYW1ZbGIxZWpmQ0NQY281K1VSWmlYWmV4d29iam8xSWFjeXdrcGJ6SFdreEZhallEa1VBa2pzNWdDdXd0OElMQThnQ0VPVHc2UW1BT2k1YnVxeGRCRFB6S2JtRDBJdzI1cUJrMmRwTHdESmRJdTdhYmp0UHJBd1poSEU4QUVvZHg4TUtzMFp4YWVxUmZFaWdSa3V3eFlTK05McWFleS9ReDBxVDJlQ1Bmck5adjZHTlh6TUFnNkdrQWFMVlgrUDg3dzFmdHpmMDJkdHNaTHdMZ2Q0blFyN01nQUxwTHVDY25QejJneDk4dGx1bVFvQVNZbmVuVWlITXc1SmwwN3RwRlA3S3lRK01VRmVmV05hK2IwLzdYczBVVTVoMGdIYWpScmZqUTdlODB3S0xkUnRTMW9TRmFpcEZzeUw0SUo0YnhKTUdycjVEamJjRjJkS1lYRFBUaThRSkxDc3hjc1NlT3FtbFFZNVhLMWpDUTd6R0xTSCtwTHZhZDBuSDRTc3FSOW8vZ013OWhNazdxTWxVWjBBdDBudlg5ZE5XMEJJVDZRN0tSakx3cmllMWtqUlZZOTNVYWg5Umd0bmhCdDNVeXR4eFN5UUlWTmYzT2ZlWDhNMnZ2b1V0U2hnRlp2RWdMWVMzUElxcGl4SEhTaFBjd0srR2NQSVVOdkEvMHlXWVJWdWIyRGJtYzh6elBQai9waEFXNWRXaUoxK3B1SVlLaDNQeWNuSktsdW10TlNyYzQ1TDAwbi8rc3FGU3orVnROUVVyeGNlT1h4RXJ1cmNYdDZZTkY2KzNiaFpQbHF3VlBidjJ5OVQzNTdWK1pRR0NycGJ2blBxWnJRYU5sSEx3WExiSy9SWVdXcVV5N2gwK0RYVU1qZDVBSWxrdWxTbWVYRS83ZGJ6bnFPUVI4Qy9Vd2dhT3dKV0NMZ2pGaFJxdGhPeVByQjRZWllGZ0hEUE03VzhTVnJ1UUxSRkU4dkpKa2pnUHBqQWRCc0g1MWtFaWZWNjN3dmR0TVZiVkFMdUMrRjlQcU5BUUZ2QWgyN05WRnBKTGJLV0cyMzJFcDUvaklMQlU2cG5nVXRLeTU5M2lsb1VEMW5HWWFoTHErZUdlRDBBL3htQ09nQUxzWVpQYk1vQnFCeXRqbUcwWmora2N1VHI4N0t3VUxDay9qb1AvMjl6U21rN2NmS2tQREhrQVRtN1dvSHhFcTlDLzdLc3JDeEpMdTVhWHhPVDd4SVRFb3JNeUQ1eTlEZHAxK1l5bVQ3MUpUbW9Wc1d3SjExekZ4T1Rpc25pWlN2S25JNVJPUFQxSzdxSzFyRkRBQ1NXOE9QcDZIUUxzWHdFUWVJOWNjVXVNQW5NWGVjcWJ0Rm92ZEhqZk40bElXZ2lXTk1KcWNhanBERHpLVmlDUURTZjJSeXE3Mll5dmN4RXQwQW5SSzJ4V0JVQWlja0VpUVFPWm9ESUdnOGdrVXhyQzkvdkNIVyt5WFFPNEZadTZ2bHBBcU9WbWhKZ3N1a0srOG5MdmVOOC9QOVh0eWhNWXNxNEtMOFBMUDR4dENBUFVhQy9aenZuSUlFZi9RQWYxVUlRTzUyQTRZK1NWcEp1cDdER3FBQUNsYzg0UTI2NTZmZUVwWklxK004U3J0bVVuWjBqbFNxV2R5M1ZrZVBDVnJpb0xtM1dXT1pNZTdVQU1McmYwbGZtTDFnaXljbkZCVEdOQXdjejhrOERoWE5mRVJ0Tms3VWpRUUlhTDRLZUsvbGRpU3ZaK1pDRGZiNTFzVHdiR2UzUzY1ZXZDREtkYVJMRFQvcHdFR1hPc0ZnUm9jUW8ybElqUktEdkxTbTZYSVVSK1BVRHVOOVZ0Q0thVWh0L25nSTVqc0lYSUFTL3NhYzBVNU4xdGNUQnRnVlE5YUttNllrQVdpWi9IdVhjNjhlOTR5TWdrR01WS0xhempyWkU4VjJRNFlTVStXNGNlNitRczJ6bkhlVllxUzZ1ak1PakJKU3ZBN0I0c3NMZHBwa25NK1dldnIybFlvVnlSZVdiUHZXay90ZXFaWFA1OHRPUFpmQ0F1eVVoTVY2T0hNeVFLeTVySVlzK25GYXdyRWU3cTIrV1ZhdS9sTkpsU3YrK0lDQkE1alJRT0VmNE9NNDJGZUFmVzl3S0d6QXZnaUR4TWJYZ0N6MVlFZ0VUdFdYajQyMFo1RUJ0VEVFZnJObUxRYlZBWEJQaFlGSGNhbk9uTGVPMlE0RDMzRzV4Unl4a2gwZUFlU1BkUHQ0eXZscHh1OVRCOXIyRDl4c3U3bE8wNjFpRUJyS2JkcDRlRW41WnRMQVlmNDFpR1dDbG12a2JVSEtlOCtCR2d0VmdqVE9OWXIrUEdjckp6WldLYWkzY2VsTzNJZ0JYdWxTcGZSSWZyOENRSUx2Mi9DQTdkdTJSeHdiZkwzUGVuaXc5ZS9hUWVlOU9sWXlNdzlLdTY4M3k3WGViQzlaK01pQ0I3S2t5WlVySEpaN3VxNDY0blhyeHAzWGh1WnVSeW1vQkNTeHJnZnorNHc0K04xVUtaLzlhdit0UWpDYXVQL242MjRPMEptRE4zRXVReWFNQWZkSk4wSHFSQlVnSCtIRmZST0FRTUxUR0ZyQ0NydmtLSUZKdUwvTnhqN3NzWU8wa1hVSHRkenBkUnA5YTNHNG0xbldCRkU2d2pCWE5QVll0aW1nVFhNRkQ2UlphTEs2WWs2ZjEwL1pLWWJBZDJYeElLSEZ5aFZxQVpqREwzeU5iN0RwdUN3VDh5Y3dpT0pkN2J1MGF5eE1TNGk5QXh0TzI3YnZraWs3WHk5Q0g3NVdIK3ZjdHNDYTI3OXd0SGE3dFZiQXRrVmIweTYwNVdkblNvbG5qbzk0c0N2anIxZ2JKazA4eHJJQ3d6ck11RFVLUWFFZVFnRkNwNXlSSWtOQlp6NmZBZXBNQ2NpNDFvbHhxNXZVZGZxWlpFWFl1UVFMeEZzUmtubkNYMlVUckNaWkdTVCsvMm1hME8yUjFOYUZMWURkQllxRXZrTkJub044aXdJeE1xSzFoYU90R0JFWUFWaEpkUndZa0dqc0lFbjkxZ2lXUlRzRThPQXJQUjlZYVlpTklkMFdzRHpQdTkzZzVILzhsVUw0OUxzNWtXVGxLOFdvMVlNbU9mZnNQRkRuZTdPOFhMMmpSckVuQjdHdkVIZkNkaVVHUGpwVGVmUWZJM0k4V1N0Y2IveVhiZHV5UzFKU1VQMWdvWmN1VmxkNDlleXoyWmxGZ2NBYTc3TUxQcDBwdjU1cE5DRkxsOCt0dEQxUDdoYWJTbEZvSUxJa2pEajhYUzBMY1RsRElrc0tGK0VBSXBDWlM2TjVKcmY1ajhzWUFId1hyQkIrRTZVcjNWZ01lTjB1c1BLL3Y1bXZkS1ZnSHNMcitJNFhMamJzakJLRjc4M2N0aStzSkFyOFByL2RGWmxidjdXRnE4aU1FaTY4b1lCSXRpcFhUM3pyNUsxc1VtRWQwc1VYUkdobkI4cDlMa0tqT3ZuV2YrSTZUWUp6QjlZaVkyL2RoS0ZPNkZLNWlFR1NyNUV0OFFvSUsvT1FpaDFPU2t4Y01mMlRBNGpaZGJtd05rRUNBT2kwdFVkNmNNVnVtdnpkWDh2UzZFbW1GN2laRHh4VjBidTF6MjdIYU5hdVA4QVlVcFRrZ2dxR3RjdXFRMFlEanFORmJGNHlESm8ydjB4MTJHQ1FRckRYZm9rQ1dWR3NLTU13UW5rTkFxRXF0SEZxOCtXTGdXQXI0citsdVFveGpINjBQQ1BzVWNsV0NIMXdxRFcyUDM4Um5UOEV6TGN1bGVDUTk1NkNXR2ZucFEzWDdPdGEzOG5BcWdvb21Db2VCTzR1Q2Y0T2Y5WUw1REdZT3grZGhiSFBVMzFXMHFveEw2ck13UENkV1ozSG5PbkNQNVpiZjcwZXc3RWd5UVJ6aTd4d3pTRTVZNWljNGpvbEZTOEpLY0MvdFAvQ0hrTS9KVmkyYi8zdklnL2V1Zm1MMCtESUFFb0FGTEFpQUE5SmtyU0NCMzBjUEg1SExXMTBxeno0MUJNdmtiL2NHRk1jbCtFeVl2WElLRUZOaSs5c09RMlBIS3JCVFExeEt3dE16NFVSRTNua3FYVm9mRUJ5V1N0RWdISUp2ZmFrdGRTQURVR3JTNHZGMzlWSllKMS9RS3Bram52UEFmWUhGTUg1cDhEYmRZbDJyQ1c1T1F5cnQ2M1J0dlJ0Z3ZXQyt3eU8wcm5wRm9QbVJQdytmOWkvaWJORGNTc1dka2grMmJTeVVDOWxoOWFuVmZ4U2hJWXR5bzU5MEpFZzhHRUEveTVmWVdmcmNvK3NKN3FMdXZlNlVibDA3eWQxOWJwT0dGL3krYnQ2VzRVTUd0RTFPTGpaejVOZ1hxOE5GbFpxYVVuQ05BUWtUMzhqUHk1ZXVWM2ZNbVR6aG1XRnBhYWxRTHIwdUNyaE4vcmg2NjJrcVN1ZXpEZy9SZW5oREJlQ2FNRC96Zm9MRDdUU0RmUVdzQVZhenlVS052U0VCQTFZRDBsRGpDVHpIYVZuOFNQNk9uT1ZRMlRIbkE3N2VGekJqVyt2S25qOC9UYnhNTlBRQ0VnQUdNOGZoMGdoK3hmRHBNTisvQXIrYi9vc0Vsc1p0enYyT0xwWXRGaXNOaEtTQ2VrRzRrWEJ1Sll2VkZ5cVovaFVweXFiVlhadVc5RlFIKzNac2dJVmFCOWs1dWZMcTFHbnk5c3ozNWFvT2JlU3hRZmRMM2ZQd3lySjI4QVA5bW5kb2QvbUxUejN6UXBmbG42MUtQSDc4UklGMUFVc0Vpd0hXT2JlMlBOai96dlhYWDNzVlhPaS9UemlNWk5aVG5CdUxKUmJJcmgwRjhwMkgxUlIrRzFVNEhYS29QS1plaW5uUXpFZlloR1NnOTBmTVpJazROOGNnRUtzQ0xxam10RkRHY25YZGU4VC8xVlRkZ1FTK0htZG1SbDhYQUZESFN2L3p0RUliNGwxWWpLNXJpUGR2SjRWek82QWczTVZqb1JLczJxYmk3SGRSSEI4dmxEdkdWWVoraG1YZUIvSjNKRUhDQUhLOGg3STVSbGdkdG1USkVnV0NmOGE3YzJYUjBrK2xkYXRMQ3dDalhwMXpmbTU0UWYzclpyM3hTdjBEdng1c3NXLy9nWllMbGl4dmwzSG9jUGxlTjF6NzdEbTFhc0NhVDdlM3E5R0c2MFNnb3N3enpFelVHakV5VU8wZHZXb0FnZy9hdXRPK2NBTmNXWDZXNFUrbDhYQ3A5WFBweG9MUTZrWVh3QnNCM3VvNmF2UzRGOUk4dWdRWWw0aVYvcGZqb1o3NmFUMU5wS1VYcURESm8yQkNaZzh5NDh4WCtSN25GdDlPV0VsQkZlaGNxZ1FLWndqY01ZR01sekFyZWxsZTZzTCtMZXBEVVNobkF1djd1TTNDcVJST1Z4UUFBeFB0WnI3M0laYmlrRGFYdDVRRzlldEtxMHViYmFoWXNjS0dPZk0rbVRSK3d1UVZKekl6aXgwOG1ERjQ5Qk9QU0pvdFJkWUFCVklyRVdqRXpOZFh3MVJtZENaTWU0Y1BIWk5Va0dLR2lXaU4rSjJJaUJPL3J3eXlCdElRTk1Vc2FreUtXeGVsam05eXFlZklYNVMwYnVGK2FzUUE5eEM2amFCQlF6QWlnTDNlRFlCRElDQzRqdHgzWkVDZHllTzR0bCtBbnpzRnV1S0RVVmhyNitzb1ZZT1pTZisybDNyNnhrY2Y5dlVNWkdidGxNS2dPd2p6WCtZNTlBNXIvd1RqQmZNajJ2SzlQNHhpdDcrQm9QQ2xyV3dvVnl2eEw2QWVIRUlsSkJRQ3h1d1BaZnFzRHlRNUpibGc3YWZEUjQ2MlNVdE5hUkVmRnpmenhaZGZrNDJidDhxckw0MlI2dFdLTG5JYlY2cEszUXBzY0N5S3RZdmFtZE9FQVk1c0d2aEc4U2xJcEpTYUZEUDQyM2RIdU5GZ01pTkhINEhuQzgxaWRmeGs2YmVXanZkREJNc0VqYU1ONjJhT2x1a2FPUVdJR1Z6NG1LODluUlg5Y0I4MVk2d1RkWWJ0ZndEOFdLMm5UNE40SmtiQm5pajJ2eWJzZ3dqZTF3bldLZ3pBN1FnaGRKbjQ5NTN1UUFpTzd5MnhQRjc0clhvQUl4YndtOFMyam90Z09TRmJrRHA5TFJWUnVFZTNzMnlRaTNCZkk1OFZ5OVJzajFUWjhsMVVXNjBPVEpxRmtvVTVRRnVQWUpueExsZks5Q2t2Rjh5NXNBSUZ0bGpoRkY5YVExNnowOTluZ05tTXdDaG1zNjR5N2hLdHBPcml5cVd1R1NVWkJULzVWUHR5R3B5d0JlMjJRWlRLaGJrQzFreXFmQ2s2eXpyWUpidWpCUVQrbm9vKzJJbURIMElVOFlza2kvdGdCelhrSmRRTTkvaHl5ZW16N1c0VkU3U3ZSTVVJbVdCVnd1aFM4clphN2lwYVE1a1JBSXFMQ01Ud0dEaG1RYkdPb1Z3OVNHVXdHalJOeXpIZVN4M0Y4LzJmNHpZcHd1V0Q0RDlKNndFWmlIdk0rR1g3b2ErUG9leU5kTm15YUNSQVVTdnc3R1RuNWtycEVpVmt3NXJGVXE1czRkZVcvMStBQVFCcGp1RE8wUEtpS1FBQUFBQkpSVTVFcmtKZ2dnPT0iIC8+PC9zdmc+");
+    background-color: initial;
+}
+
+.t_Content_searchChapterToolTip .chToolTipContainer li a {
+    color: rgb(214, 211, 205);
+}
+
+.t_Tooltip_searchChapterToolTip .t_ContentContainer li .lockedBook {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4yNDkgLTAuNjE0IC0wLjY3MiAwLjAwMCAxLjAzNSAtMC42NDYgMC4yODggLTAuNjY0IDAuMDAwIDEuMDIwIC0wLjYzNiAtMC42MDkgMC4yNTAgMC4wMDAgMC45OTQgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQllBQUFBV0NBWUFBQURFdEd3N0FBQUFHWFJGV0hSVGIyWjBkMkZ5WlFCQlpHOWlaU0JKYldGblpWSmxZV1I1Y2NsbFBBQUFBeUpwVkZoMFdFMU1PbU52YlM1aFpHOWlaUzU0YlhBQUFBQUFBRHcvZUhCaFkydGxkQ0JpWldkcGJqMGk3N3UvSWlCcFpEMGlWelZOTUUxd1EyVm9hVWg2Y21WVGVrNVVZM3ByWXpsa0lqOCtJRHg0T25odGNHMWxkR0VnZUcxc2JuTTZlRDBpWVdSdlltVTZibk02YldWMFlTOGlJSGc2ZUcxd2RHczlJa0ZrYjJKbElGaE5VQ0JEYjNKbElEVXVNeTFqTURFeElEWTJMakUwTlRZMk1Td2dNakF4TWk4d01pOHdOaTB4TkRvMU5qb3lOeUFnSUNBZ0lDQWdJajRnUEhKa1pqcFNSRVlnZUcxc2JuTTZjbVJtUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMekF5THpJeUxYSmtaaTF6ZVc1MFlYZ3Ribk1qSWo0Z1BISmtaanBFWlhOamNtbHdkR2x2YmlCeVpHWTZZV0p2ZFhROUlpSWdlRzFzYm5NNmVHMXdQU0pvZEhSd09pOHZibk11WVdSdlltVXVZMjl0TDNoaGNDOHhMakF2SWlCNGJXeHVjenA0YlhCTlRUMGlhSFIwY0RvdkwyNXpMbUZrYjJKbExtTnZiUzk0WVhBdk1TNHdMMjF0THlJZ2VHMXNibk02YzNSU1pXWTlJbWgwZEhBNkx5OXVjeTVoWkc5aVpTNWpiMjB2ZUdGd0x6RXVNQzl6Vkhsd1pTOVNaWE52ZFhKalpWSmxaaU1pSUhodGNEcERjbVZoZEc5eVZHOXZiRDBpUVdSdlltVWdVR2h2ZEc5emFHOXdJRU5UTmlBb1YybHVaRzkzY3lraUlIaHRjRTFOT2tsdWMzUmhibU5sU1VROUluaHRjQzVwYVdRNk1qRTFPREUyTWpjeU5rRTRNVEZGTkRsRlJFTkdRVUpGTkRORE5FRTVRekFpSUhodGNFMU5Pa1J2WTNWdFpXNTBTVVE5SW5odGNDNWthV1E2TWpFMU9ERTJNamd5TmtFNE1URkZORGxGUkVOR1FVSkZORE5ETkVFNVF6QWlQaUE4ZUcxd1RVMDZSR1Z5YVhabFpFWnliMjBnYzNSU1pXWTZhVzV6ZEdGdVkyVkpSRDBpZUcxd0xtbHBaRG95TVRVNE1UWXlOVEkyUVRneE1VVTBPVVZFUTBaQlFrVTBNME0wUVRsRE1DSWdjM1JTWldZNlpHOWpkVzFsYm5SSlJEMGllRzF3TG1ScFpEb3lNVFU0TVRZeU5qSTJRVGd4TVVVME9VVkVRMFpCUWtVME0wTTBRVGxETUNJdlBpQThMM0prWmpwRVpYTmpjbWx3ZEdsdmJqNGdQQzl5WkdZNlVrUkdQaUE4TDNnNmVHMXdiV1YwWVQ0Z1BEOTRjR0ZqYTJWMElHVnVaRDBpY2lJL1Boc3pQc2NBQUFJbFNVUkJWSGphWXVTVDBtVEFBUVNCT0JLSVBZQllENGdsb09JdmdmZ1NFTzhBNHVWQS9BNmJaa1lzQm5NQWNRVVFGd0V4THdOKzhBV0lKd0J4R3hCL3gyZXdQQkJ2QUdJREJ0TEFGU0QyQmVJSDJBeVdBZUpqUUN6TFFCNTRBc1NXVUJwdU1BZlVVRU9NZ0JiZ1oyaXJMMlZ3YzdLRGl4MDljWVlodTdpVzRmT1hyK2pLVHdPeFBTaFltTmw1UlVFQ1ZkQ0lRZ0VzTEN3TTY1Zk9aREExMG1jNGYvRXEyTUQzSHo0eVdGdVlNQ2dyeWpOczJia1BYWXMwRUlOc093SnlzUUNROFJDSStkQlZxYXNxTVd4YnM0QmgwN1k5RElXVlRRZ1g3MXJMSUNFdXlxQ3NiNGN0U0Q0Q3NSSVRrQWpEWmlnSWNITnpnZW5IVDUraGlITnhjZUlMYTM2UTcwRkJVUU5rYUdCVDhmekZLd1pPRG5hR1hYc1BNYng4L1FhUnhvQmhlLzNXSFlianA4N2hNdndmS0NqdUF4a0s2REoyMXVZTW5xNE9ERy9ldm1QZzRlWm00T1BqZ2N1OWVQbWE0ZS9mdnd6aW9pSU01ZlVkMkF4K0RESVlsTWk1MFdVV3p1aGpzTEUwSVpqR2NJVHpMeVpjR3Q2OS84QkFDUUFaL0JwcklQMy9SNG01TDBFR1gyQ2dQcmpJQkMybHFBMTJnQXhlQ2NTZk1SSWpIeSs1aG40Q0ZhY3NRQUlVUzcxQTNJQXNlK2ZlUTJCVzFpUEhZRkQ2ZTRkY0NCMG5vN2pFVm55YWdRb2hXSEw3QWNRQnNDS1BUUEFjaUFOaEJUNXlPZ1lWUkxaUVc4bHhxUTBvQkdFQ3NHSVRCa0RoUFIrSXZ3R3hNVFNJOEFGUVNkWUN4RW5vK1lHUlFHVWFCYTFNOVlGWUVsWlVRQ3ZUYlVDOEFvamZZdE1NRUdBQUJOQ01HVDRsZjhFQUFBQUFTVVZPUks1Q1lJST0iIC8+PC9zdmc+");
+    background-color: initial;
+}
+
+.chapterRow .listIcon.lock {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzciIGhlaWdodD0iNDgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4yNDkgLTAuNjE0IC0wLjY3MiAwLjAwMCAxLjAzNSAtMC42NDYgMC4yODggLTAuNjY0IDAuMDAwIDEuMDIwIC0wLjYzNiAtMC42MDkgMC4yNTAgMC4wMDAgMC45OTQgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iMzciIGhlaWdodD0iNDgiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQ1VBQUFBd0NBWUFBQUNXaGJNckFBQUFHWFJGV0hSVGIyWjBkMkZ5WlFCQlpHOWlaU0JKYldGblpWSmxZV1I1Y2NsbFBBQUFBeUpwVkZoMFdFMU1PbU52YlM1aFpHOWlaUzU0YlhBQUFBQUFBRHcvZUhCaFkydGxkQ0JpWldkcGJqMGk3N3UvSWlCcFpEMGlWelZOTUUxd1EyVm9hVWg2Y21WVGVrNVVZM3ByWXpsa0lqOCtJRHg0T25odGNHMWxkR0VnZUcxc2JuTTZlRDBpWVdSdlltVTZibk02YldWMFlTOGlJSGc2ZUcxd2RHczlJa0ZrYjJKbElGaE5VQ0JEYjNKbElEVXVNeTFqTURFeElEWTJMakUwTlRZMk1Td2dNakF4TWk4d01pOHdOaTB4TkRvMU5qb3lOeUFnSUNBZ0lDQWdJajRnUEhKa1pqcFNSRVlnZUcxc2JuTTZjbVJtUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMekF5THpJeUxYSmtaaTF6ZVc1MFlYZ3Ribk1qSWo0Z1BISmtaanBFWlhOamNtbHdkR2x2YmlCeVpHWTZZV0p2ZFhROUlpSWdlRzFzYm5NNmVHMXdQU0pvZEhSd09pOHZibk11WVdSdlltVXVZMjl0TDNoaGNDOHhMakF2SWlCNGJXeHVjenA0YlhCTlRUMGlhSFIwY0RvdkwyNXpMbUZrYjJKbExtTnZiUzk0WVhBdk1TNHdMMjF0THlJZ2VHMXNibk02YzNSU1pXWTlJbWgwZEhBNkx5OXVjeTVoWkc5aVpTNWpiMjB2ZUdGd0x6RXVNQzl6Vkhsd1pTOVNaWE52ZFhKalpWSmxaaU1pSUhodGNEcERjbVZoZEc5eVZHOXZiRDBpUVdSdlltVWdVR2h2ZEc5emFHOXdJRU5UTmlBb1YybHVaRzkzY3lraUlIaHRjRTFOT2tsdWMzUmhibU5sU1VROUluaHRjQzVwYVdRNk4wTkNRekpHT0VVeE9UVTJNVEZGTkVJMVJFVTRORUV3TmpFelFUTTFNVFFpSUhodGNFMU5Pa1J2WTNWdFpXNTBTVVE5SW5odGNDNWthV1E2TjBOQ1F6SkdPRVl4T1RVMk1URkZORUkxUkVVNE5FRXdOakV6UVRNMU1UUWlQaUE4ZUcxd1RVMDZSR1Z5YVhabFpFWnliMjBnYzNSU1pXWTZhVzV6ZEdGdVkyVkpSRDBpZUcxd0xtbHBaRG8zUTBKRE1rWTRRekU1TlRZeE1VVTBRalZFUlRnMFFUQTJNVE5CTXpVeE5DSWdjM1JTWldZNlpHOWpkVzFsYm5SSlJEMGllRzF3TG1ScFpEbzNRMEpETWtZNFJERTVOVFl4TVVVMFFqVkVSVGcwUVRBMk1UTkJNelV4TkNJdlBpQThMM0prWmpwRVpYTmpjbWx3ZEdsdmJqNGdQQzl5WkdZNlVrUkdQaUE4TDNnNmVHMXdiV1YwWVQ0Z1BEOTRjR0ZqYTJWMElHVnVaRDBpY2lJL1BtbEl2U2dBQUFGV1NVUkJWSGphN0pqdGJjSXdFSWFkaVA4d1FnY0FLUnNRRmloaGcyNEFUQUFiQkNZQUpnQW13Q05RZFlCNmhMQUJkOUlGQlJFN3ZwQTIrWEd2OUVxUjVZL0g1NHZqT0JpT1B4VlRDWGdLanNFZkh2VU4rQVRlMHZPVGZ2VDVwVUhJZ0VHSVgvQVIvT1VKcEtqZWd0cXVmUnI0UUEzQU8vQ0ZBV0xUaXZweXF1Y0JoRENSYWs0WTVReThyQnVwdEdHZ1hBdEtCM2FrRXBwVmxYRFcxNUx5aUNKdDB4eXN1VkJwQmN3R2ZMQUFGWmNxdGNBbFZKNzVRa1dPcE1aT0poVXd1ZmEwRFZ3YzQyamZuSExsa1M5UUx1Mm9IM0VTM1JhbEV4T29DR1o3dTkvYVBGSGZOZCsyRzZkeXFEb29nUktvdHFINi93SFZjK3pFdXNGeGJQMFpEcFN4TmFncFZuOUI0VGhjOVZYL2EyVndOTDdta1JyUUVUZHVPOEZIOFJTaEptRlhnQXFyZFF3N0JQVDRRWkhOVTZBRVNxQUVTcUFFU3FBRVNxQUVTcUFFcWxFbzB6RW1nMUF6VlhMQjN0WjlBdkxjQlJnQU80STllM0NaRStvQUFBQUFTVVZPUks1Q1lJST0iIC8+PC9zdmc+");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.searchPageNotExistPopup {
+    color: rgb(214, 211, 205);
+}
+
+#mnPopup.searchpageOverlay {
+    background-image: initial;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.unlockNScoreMarksPopup {
+    color: rgb(214, 211, 205);
+}
+
+.unlockNScoreMarksPopup .listing>li {
+    color: rgb(214, 211, 205);
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjAiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4yNDkgLTAuNjE0IC0wLjY3MiAwLjAwMCAxLjAzNSAtMC42NDYgMC4yODggLTAuNjY0IDAuMDAwIDEuMDIwIC0wLjYzNiAtMC42MDkgMC4yNTAgMC4wMDAgMC45OTQgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iMjQiIGhlaWdodD0iMjAiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQmdBQUFBVUNBWUFBQUNYdGYyREFBQUFHWFJGV0hSVGIyWjBkMkZ5WlFCQlpHOWlaU0JKYldGblpWSmxZV1I1Y2NsbFBBQUFBeUpwVkZoMFdFMU1PbU52YlM1aFpHOWlaUzU0YlhBQUFBQUFBRHcvZUhCaFkydGxkQ0JpWldkcGJqMGk3N3UvSWlCcFpEMGlWelZOTUUxd1EyVm9hVWg2Y21WVGVrNVVZM3ByWXpsa0lqOCtJRHg0T25odGNHMWxkR0VnZUcxc2JuTTZlRDBpWVdSdlltVTZibk02YldWMFlTOGlJSGc2ZUcxd2RHczlJa0ZrYjJKbElGaE5VQ0JEYjNKbElEVXVNeTFqTURFeElEWTJMakUwTlRZMk1Td2dNakF4TWk4d01pOHdOaTB4TkRvMU5qb3lOeUFnSUNBZ0lDQWdJajRnUEhKa1pqcFNSRVlnZUcxc2JuTTZjbVJtUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMekF5THpJeUxYSmtaaTF6ZVc1MFlYZ3Ribk1qSWo0Z1BISmtaanBFWlhOamNtbHdkR2x2YmlCeVpHWTZZV0p2ZFhROUlpSWdlRzFzYm5NNmVHMXdQU0pvZEhSd09pOHZibk11WVdSdlltVXVZMjl0TDNoaGNDOHhMakF2SWlCNGJXeHVjenA0YlhCTlRUMGlhSFIwY0RvdkwyNXpMbUZrYjJKbExtTnZiUzk0WVhBdk1TNHdMMjF0THlJZ2VHMXNibk02YzNSU1pXWTlJbWgwZEhBNkx5OXVjeTVoWkc5aVpTNWpiMjB2ZUdGd0x6RXVNQzl6Vkhsd1pTOVNaWE52ZFhKalpWSmxaaU1pSUhodGNEcERjbVZoZEc5eVZHOXZiRDBpUVdSdlltVWdVR2h2ZEc5emFHOXdJRU5UTmlBb1YybHVaRzkzY3lraUlIaHRjRTFOT2tsdWMzUmhibU5sU1VROUluaHRjQzVwYVdRNk1UazBPVVpHTmpBeVF6STNNVEZGTkVFeU16UkZSVEpGTkVFNU5rWXlRVFFpSUhodGNFMU5Pa1J2WTNWdFpXNTBTVVE5SW5odGNDNWthV1E2TVRrME9VWkdOakV5UXpJM01URkZORUV5TXpSRlJUSkZORUU1TmtZeVFUUWlQaUE4ZUcxd1RVMDZSR1Z5YVhabFpFWnliMjBnYzNSU1pXWTZhVzV6ZEdGdVkyVkpSRDBpZUcxd0xtbHBaRG94T1RRNVJrWTFSVEpETWpjeE1VVTBRVEl6TkVWRk1rVTBRVGsyUmpKQk5DSWdjM1JTWldZNlpHOWpkVzFsYm5SSlJEMGllRzF3TG1ScFpEb3hPVFE1UmtZMVJqSkRNamN4TVVVMFFUSXpORVZGTWtVMFFUazJSakpCTkNJdlBpQThMM0prWmpwRVpYTmpjbWx3ZEdsdmJqNGdQQzl5WkdZNlVrUkdQaUE4TDNnNmVHMXdiV1YwWVQ0Z1BEOTRjR0ZqYTJWMElHVnVaRDBpY2lJL1B0ek9KWDRBQUFGeFNVUkJWSGphWWd3TkRXV2dBV0FFNGdRZy9zTkVBOE9sZ0hnM0VNOEQ0azhzVkRiY0dZaFhBckV3bEgrRm1qN0lBT0lkU0lhRHdEMG1Lb1YzSHhCUEIyTDBFQkZsb1lMaElJUFRjY2o3VWVxREhqeUdnMEFxSlJaVUFuRVJEcms3UUJ3SHhHN2tCcEUzRUxkaUVmOER4QzFBM0E3RXZ4aXdSQW94UUEySWwwTERIeGs4QitKd0lENk1MSWdlUk14QTdBWEVpVGdNQnpsb01SRHpvNGxmQTJKTGRNT1JmYUFCemRxeDBKejRIK3JGcFdqcXk0SFlERTNzQk5SUjczRzVLQW1JSndJeEQxcnltd09OckpOUU1VVWdya0hUZndxSVBZRDRJNjd3WklLV0daSkFuQVBFVDVEa09JQjRNeEFyUVBtOVVERVl1QXhLSmZnTVI0NkRMMEE4RlJwVS9kQWdBdWRFSU40RUxXTUNrZlE5Qm1KUFFvWmppK1N2MExRZEFNVGZvR0s2MERJR1dRMG9tVDRsSnNuaHltZ2dWN3NpdVpBRnJWQzdUR3lheHBlVGowRlR4emNrc2JsQXZJU1VURU9vcUFCWkVnbkVmNkVKb0pEVVhFbE1UZ1lGVnk0MHAzNG0xUUtBQUFNQVJFRkQ4UjFpcHJjQUFBQUFTVVZPUks1Q1lJST0iIC8+PC9zdmc+");
+    background-color: initial;
+}
+
+#mnPopup .mnPopupCont.scoreMoreMarks .mnPopupFront {
+    background-image: url("https://www.meritnation.com/img/site_content/header_search/student-two.png") !important;
+    background-color: rgb(29, 31, 32) !important;
+}
+
+.headerSRcontainer .smallSlider .sliderPanel li .lockedBook {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTkiIGhlaWdodD0iMTkiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4yNDkgLTAuNjE0IC0wLjY3MiAwLjAwMCAxLjAzNSAtMC42NDYgMC4yODggLTAuNjY0IDAuMDAwIDEuMDIwIC0wLjYzNiAtMC42MDkgMC4yNTAgMC4wMDAgMC45OTQgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQk1BQUFBVENBWUFBQUJ5VURiTUFBQUFHWFJGV0hSVGIyWjBkMkZ5WlFCQlpHOWlaU0JKYldGblpWSmxZV1I1Y2NsbFBBQUFBeUpwVkZoMFdFMU1PbU52YlM1aFpHOWlaUzU0YlhBQUFBQUFBRHcvZUhCaFkydGxkQ0JpWldkcGJqMGk3N3UvSWlCcFpEMGlWelZOTUUxd1EyVm9hVWg2Y21WVGVrNVVZM3ByWXpsa0lqOCtJRHg0T25odGNHMWxkR0VnZUcxc2JuTTZlRDBpWVdSdlltVTZibk02YldWMFlTOGlJSGc2ZUcxd2RHczlJa0ZrYjJKbElGaE5VQ0JEYjNKbElEVXVNeTFqTURFeElEWTJMakUwTlRZMk1Td2dNakF4TWk4d01pOHdOaTB4TkRvMU5qb3lOeUFnSUNBZ0lDQWdJajRnUEhKa1pqcFNSRVlnZUcxc2JuTTZjbVJtUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMekF5THpJeUxYSmtaaTF6ZVc1MFlYZ3Ribk1qSWo0Z1BISmtaanBFWlhOamNtbHdkR2x2YmlCeVpHWTZZV0p2ZFhROUlpSWdlRzFzYm5NNmVHMXdQU0pvZEhSd09pOHZibk11WVdSdlltVXVZMjl0TDNoaGNDOHhMakF2SWlCNGJXeHVjenA0YlhCTlRUMGlhSFIwY0RvdkwyNXpMbUZrYjJKbExtTnZiUzk0WVhBdk1TNHdMMjF0THlJZ2VHMXNibk02YzNSU1pXWTlJbWgwZEhBNkx5OXVjeTVoWkc5aVpTNWpiMjB2ZUdGd0x6RXVNQzl6Vkhsd1pTOVNaWE52ZFhKalpWSmxaaU1pSUhodGNEcERjbVZoZEc5eVZHOXZiRDBpUVdSdlltVWdVR2h2ZEc5emFHOXdJRU5UTmlBb1YybHVaRzkzY3lraUlIaHRjRTFOT2tsdWMzUmhibU5sU1VROUluaHRjQzVwYVdRNk9EZzVSRGsyTnpFM05qTXlNVEZGTkVFNE0wRkNNVUkzTUVaRk1VTTNORGNpSUhodGNFMU5Pa1J2WTNWdFpXNTBTVVE5SW5odGNDNWthV1E2T0RnNVJEazJOekkzTmpNeU1URkZORUU0TTBGQ01VSTNNRVpGTVVNM05EY2lQaUE4ZUcxd1RVMDZSR1Z5YVhabFpFWnliMjBnYzNSU1pXWTZhVzV6ZEdGdVkyVkpSRDBpZUcxd0xtbHBaRG80T0RsRU9UWTJSamMyTXpJeE1VVTBRVGd6UVVJeFFqY3dSa1V4UXpjME55SWdjM1JTWldZNlpHOWpkVzFsYm5SSlJEMGllRzF3TG1ScFpEbzRPRGxFT1RZM01EYzJNekl4TVVVMFFUZ3pRVUl4UWpjd1JrVXhRemMwTnlJdlBpQThMM0prWmpwRVpYTmpjbWx3ZEdsdmJqNGdQQzl5WkdZNlVrUkdQaUE4TDNnNmVHMXdiV1YwWVQ0Z1BEOTRjR0ZqYTJWMElHVnVaRDBpY2lJL1BoVGtjODBBQUFIdlNVUkJWSGphWXVTVDBtVEFBbVNCT0E2SVhZRllHWWhGZ2ZnakVOOEE0bDFBUEIrSW42RnJZa1F6akFPSTY0QzRBSWc1R1hDRDcwRGNCOFF0UVB3RG0yRWcyN2NCc1FrRDhlQTBFSHNCOFJzUWh3a3F5QWJFRzlBTnlraUtacmg3OFJBY1QreXNSemZNRklqWFFmVXpNTFB6Z2h6RTBBWEVZY2lxM0p6c0dOcnF5eGl1WHIvRnNIckRWb1luVDU4eitIdTdNYnovOElIaDBwVWJ5RXJsb1VHeUcrUk5PU0RqRGhDeklxdFlNbnNDZzZXWkVZT3l2aDFjRE9TNmsyZk9NMFFsNTZPNzhCY1FxN0FBaVVSMGcwRGd6UGxMRENMQ2dpaGl0KzdjWnpoOTdoSzJzQU41TXg3a1RWQ015Q0hMcUtzcU1mRHk4akRjdUhXWFFVSmNsRUZaVVo1QlJVbWU0ZjdESnd5ZlBuMW0rUGJ0TzlDN0g5RU5aQVc1VEFsZGRPNlVMZ1pKQ1RHY1ViaGp6MEdHN09KYWRHRUZVR3lLbzR2KysvOFBiM3I0OWVzM05tRXhKbWpLUmdFL2Z2ekNhOWlmUDMrd0NYOW1nbVlSYW9CcklNTTJvNHNLQ3ZEaDFjWER3NFZOZUFzb0FwWUNjUU1RczhORUh6NTZ5c0RPeG9iVHNGZXYzMktFREJBdmgrWE5iaUF1b2NDTG5VQmNBVE1NVkZvY0FHSnpNZ3c2QWNUMm9FaG1RbkttTHhCZkpOR2c4MERzQjgxTzhGSURCRjREc1JVUVR3YkZQZ0ZEUVBLVGdOZ0dxZzlyNFFoUHpVQWNCY1RlMEJ3Q3lnNmZnUGdtRU8rRWxyUVAwRFVCQkJnQWlZK0NpOEFVSFRBQUFBQUFTVVZPUks1Q1lJST0iIC8+PC9zdmc+");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.searchGrayBtn {
+    border-color: rgb(75, 81, 84);
+    color: rgb(214, 211, 205);
+    text-decoration-color: initial;
+}
+
+.searchGrayBtn:hover {
+    border-color: rgb(121, 112, 99);
+    background-color: rgb(36, 46, 58);
+    color: rgb(232, 230, 227);
+}
+
+.headerSRcontainer .sliderPanel li span {
+    color: rgb(214, 211, 205);
+}
+
+.headerSRcontainer .sliderPanel li span a.iconTitle {
+    color: rgb(214, 211, 205);
+    text-decoration-color: initial;
+}
+
+.headerSRcontainer .title {
+    color: rgb(214, 211, 205);
+}
+
+.dropdown-menu .serchNcertSolution {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.serchNcertSolution h4.ncertheading {
+    color: rgb(214, 211, 205);
+}
+
+form .dropdown-menu .selectCover {
+    border-top-color: initial !important;
+}
+
+.dropdown-menu .headerSRcontainer .ncertRow {
+    border-color: initial;
+}
+
+.dropdown-menu .headerSRcontainer .whiteBox,
+.dropdown-menu .headerSRcontainer .whiteBox.ncertCarousal {
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+}
+
+.dropdown-menu .smallSlider .subIconFlat {
+    background-image: url("https://www.meritnation.com/img/site_content/header_search/small_subject_icon_search.png");
+    background-color: initial;
+}
+
+.dropdown-menu .headerSRcontainer .smallSlider .sliderBtnSR span {
+    background-image: url("https://www.meritnation.com/img/site_content/header_search/small_sliderBtn.png");
+    background-color: initial;
+}
+
+.dropdown-menu .smallSlider .featureIconFlat {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzM1IiBoZWlnaHQ9IjMwIj48ZGVmcz48ZmlsdGVyIGlkPSJkYXJrcmVhZGVyLWltYWdlLWZpbHRlciI+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAuMjQ5IC0wLjYxNCAtMC42NzIgMC4wMDAgMS4wMzUgLTAuNjQ2IDAuMjg4IC0wLjY2NCAwLjAwMCAxLjAyMCAtMC42MzYgLTAuNjA5IDAuMjUwIDAuMDAwIDAuOTk0IDAuMDAwIDAuMDAwIDAuMDAwIDEuMDAwIDAuMDAwIiAvPjwvZmlsdGVyPjwvZGVmcz48aW1hZ2Ugd2lkdGg9IjMzNSIgaGVpZ2h0PSIzMCIgZmlsdGVyPSJ1cmwoI2RhcmtyZWFkZXItaW1hZ2UtZmlsdGVyKSIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFVOEFBQUFlQ0FZQUFBQ3NhSndVQUFBQUdYUkZXSFJUYjJaMGQyRnlaUUJCWkc5aVpTQkpiV0ZuWlZKbFlXUjVjY2xsUEFBQUF5SnBWRmgwV0UxTU9tTnZiUzVoWkc5aVpTNTRiWEFBQUFBQUFEdy9lSEJoWTJ0bGRDQmlaV2RwYmowaTc3dS9JaUJwWkQwaVZ6Vk5NRTF3UTJWb2FVaDZjbVZUZWs1VVkzcHJZemxrSWo4K0lEeDRPbmh0Y0cxbGRHRWdlRzFzYm5NNmVEMGlZV1J2WW1VNmJuTTZiV1YwWVM4aUlIZzZlRzF3ZEdzOUlrRmtiMkpsSUZoTlVDQkRiM0psSURVdU15MWpNREV4SURZMkxqRTBOVFkyTVN3Z01qQXhNaTh3TWk4d05pMHhORG8xTmpveU55QWdJQ0FnSUNBZ0lqNGdQSEprWmpwU1JFWWdlRzFzYm5NNmNtUm1QU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUx6QXlMekl5TFhKa1ppMXplVzUwWVhndGJuTWpJajRnUEhKa1pqcEVaWE5qY21sd2RHbHZiaUJ5WkdZNllXSnZkWFE5SWlJZ2VHMXNibk02ZUcxd1BTSm9kSFJ3T2k4dmJuTXVZV1J2WW1VdVkyOXRMM2hoY0M4eExqQXZJaUI0Yld4dWN6cDRiWEJOVFQwaWFIUjBjRG92TDI1ekxtRmtiMkpsTG1OdmJTOTRZWEF2TVM0d0wyMXRMeUlnZUcxc2JuTTZjM1JTWldZOUltaDBkSEE2THk5dWN5NWhaRzlpWlM1amIyMHZlR0Z3THpFdU1DOXpWSGx3WlM5U1pYTnZkWEpqWlZKbFppTWlJSGh0Y0RwRGNtVmhkRzl5Vkc5dmJEMGlRV1J2WW1VZ1VHaHZkRzl6YUc5d0lFTlROaUFvVjJsdVpHOTNjeWtpSUhodGNFMU5Pa2x1YzNSaGJtTmxTVVE5SW5odGNDNXBhV1E2TTBRM01qY3hPVVk0TlVOQk1URkZORUZET0VRNU56WkNOVU5GT1VaRFJrTWlJSGh0Y0UxTk9rUnZZM1Z0Wlc1MFNVUTlJbmh0Y0M1a2FXUTZNMFEzTWpjeFFUQTROVU5CTVRGRk5FRkRPRVE1TnpaQ05VTkZPVVpEUmtNaVBpQThlRzF3VFUwNlJHVnlhWFpsWkVaeWIyMGdjM1JTWldZNmFXNXpkR0Z1WTJWSlJEMGllRzF3TG1scFpEb3pSRGN5TnpFNVJEZzFRMEV4TVVVMFFVTTRSRGszTmtJMVEwVTVSa05HUXlJZ2MzUlNaV1k2Wkc5amRXMWxiblJKUkQwaWVHMXdMbVJwWkRvelJEY3lOekU1UlRnMVEwRXhNVVUwUVVNNFJEazNOa0kxUTBVNVJrTkdReUl2UGlBOEwzSmtaanBFWlhOamNtbHdkR2x2Ymo0Z1BDOXlaR1k2VWtSR1BpQThMM2c2ZUcxd2JXVjBZVDRnUEQ5NGNHRmphMlYwSUdWdVpEMGljaUkvUGtyQk1jSUFBQnRUU1VSQlZIamEzRjBIZUZObEZ6NUptazQ2S0MyVUlkQWlZRUZFUVZFUWtDV0lMQlVSQkdYN00yV3FUQVhaS01nV1JhQ3lVWVlJS0tJb0tGT0dJQXJLejVTL3pGSktWenFUL045cDMyc3YxeVM5U1c1UzdIbWU4N1JOazN1L2NjNTczbk8rNzM3UmhaU0xKU0d2Q2YyUFVKM1FISEpmK0RvUlF0OFd1ZzZ2ZFJUYVE2aEJhQWJlbzVYNEMvMUw2QWlobVhiZVUxRm9uTkJtUW5PRldqUzh2NDlRdmREdVFsZmhkeXRVMlUrcms5Y3VJYlNTMEFaQzZ3dDlTR2lNMEpLSzk2VUt2U2owdE5DZmhlNFJlaDZ2ZTFMZUZab3RkSmJRTEpXZjBjdCtOK0p2dG9scVFsOFhXbHRvbWh0elpFV2JiTm5rR3FFZnE3aUdaTCtQd1Njc1RzelhlZlRqZnFHVFlKKzVUb3dOMzJ1ajBNWEpWMDViUXN2WDROY2poVTRXMmtLb1NhalpBM1BKNHhZaTlEdk01M241UDBWYkNHMXBKM1NLMEdpTjhFSXBma0svQlNiZFV0eWY3ZVZGb1dPRmxyTXh6MW9JWTFTNjBCVkNQeENhWXMvcEdkQ1dDRjB2ZERNbTJlam16UzJZN0pQNG0rL3hxZEJ2aE82RklSczA3S3l2ME1zT0RKVC8vN25RaDRYT0ZYcEQ0L3Y3d1BBT3l2cFBNdUMwdW5CTkJzaE9RdnZDQ1FuZ3hQMzhMeVkzVTJac2dVTERoYllSMmdXdlh3UlljTjkvOHhCNFZoZmFXZWpqUXQ4UmVrS2xmWkNzVDVLTUV0cGI2RkswM2FCaGtHVlFDaEI2emdaSTFzUGNKY2tBY0p2UW1rSzN5eHhLVGI4WVRKb0NnQmlJRW9TZWRjS25jbkQvT2ZqOGROaEJINkd0aEM0U2VnVTJwN1ZrSTRCMVJCdGV0ZkdlNTBFUTlnSmNNaFhCVUFzeEFyalRGTUhQaXJZdEY3b0RtR0xSZUN5c0NFd1BDQjBLSEJ0dUM2UjFnbm51aDBIMXdCdkRuSWlTanNEa0ZveVJuVHBSNkE5dzdLS1F3VUlYQ0cwb2RMK1g3dGtjWVBJVDJJZmFDQzJ4TDU2UFlJRGxsMmczZytZRkRzSU9XQTh6N0NwQ240VFR4ZUIvREtBVGhQNnBjVDluQ24wTHY3TWp6Uk02MVFYR3k0SHRPTEtncFY2MGpXbEN4d2dkamI2d1BBWG0zZy9Fd2xuaE9UZ2k5TERRRGk0eWFQYVhhTUcyb2dYYlNnREl0d0lqODdTVVJLQzVhb041bmhLL3hndDlEdG1DMXdUM1B3bGdmZDRMdHh3SkgzNUo2RTViSUdkQWRBMUQ5SzJpRVhneWszMFpocE10WTJWRklTRUFyL05ldWw4QTBvckdVRGI4QVNvK053eXBHWVBnTWFURXV4VVIySkdrSVcwL0RlWTBBK3hwTEF5Z0xSak5SRGZubUVHOUZoaDliVVg1aE5salZ6Q2sxV0JKU2lrdE5FcVdtVWdPeStuUktTL2F4VnlNeTI2TTFVRUVPNG50dWpwR1NRaHdpVzZVSG5Ka2JFY0t2R2U4TkM1bXpCSDMvNmJpZjVYQU9ET0t5SmNyQ0YzbXBYdjlqTEdvYkEva2dwRzJiQkQ2TkJ6WFhmQmtwN29tU3ltdFZMUmlSV3FoODhLOW1pRXF2NDN4WmZEc0QwY1lhdWN6L2pESWw4QXVKNkxtNVc0OTZRNFlLelArSnBSZmZ4NkgrZVkwOEg5T1hDc0kwYjRYQU5NUGdkZlB4bnZ2QTZOak1GeHNBemozZ21FUEJzaEtEcHZ0cFRraUJKR2hxS3Q5Z2pUd0s2R2hzbktJcTNZYmhJeXJoQnZ0MDhudXIxUDg5TFIwRS9vKzV1ZFRHNm05d1lQM0xvR3M2VUhLcjZsV0JaTi9qL0xYTERLOWlDYzZsSlVzOXNDVEhmUU4xQUhYbzVibTd1Qmt3VWxpd2ZiTUFGUjUvYWtVSW5RdTdsY0txWjRVMFNKaHlMZHh2Wkl5cHB5QzEwc0IvSlB3ZHdRWWRDWTY3STgwMTR6UEdUdzgyRHpSSzRXV3h6MDd3U25yQ0IyQ3ZvNVVmSWFkYkpQUVo1Q2V2K0tBYVVwMXV5WUE2Qko0N3k2aFg1RGo0dmtlR09NVXRJSHJ6NjFSRmloTVhvRXpSUUdRZndVb2M1cmRGK21rWEg1QzZyNUg4WG9WdENFZTRMa1E0UHNCeHNiSEMzTkU2QXV6L0RjQm5DemQwWjh0bEw5WTRnNVlXV1dxbFJPVGw4Wkd3b1ZBQi8zM0pJaXovOWRBNmFxUzdQVzZBRTlwZlAzaFh4VkovVUtsbW5IbVVzdVBzci8xOXVaUnFrMytCa2J5dnNZRDhTWHFSam1LQnZnalZkcUExSlNkY2cyaXk5Y3c1SVY0N3lxa3NMTUFGRWFrZ3oraHZzWmd3aldoQlVoUlg0V0Q2d0MrSS9BM2tXY2pWbVcwNlRLWTVvY0F0NFlBa1hxSXFFb3dYQ3dEems2RnNFMEw2b0ZkME9jRUJLbStZQWk5QytsakpnSmxQSmpYV2pCbGU2QWJqbkh2QlpiNkZsS20yN0wzUENFRFQyN1BiRnhiZWMyeU1FeVdHRERUZ1hqL2JhVHIzbUFVRE5UREZheVhZS2Zsa1RHWXZXQXZhZ0ZZK1pvMzVEcUlURUlSOU5zTSt6a0lueWd0SXlZa0s2Y1lZYnVQYUZoQzRQRTF5Y0N6MEFoamhJTndRZlJ4Tk42ZFNiS2czak1OVE5CaTV6M1Z3TWJpd0NRcjRmWEdTR0UzSXMxTXdpQUZveDdJNE1UYmtqb2dQUnlJTklPZFloQlNMMTRZZVF4QXNSbmc0a2twaC9vSWczUUxHTjVRM0RjRDZmZ2NHeW5zUUFTS3JaUy8vVUpOdVlRQitnaUNUU0lZQXJPbm5wakQ5U3ByZlNVd25oeTh4dGg0VHlVRU54N0g2WmpQTkR2dkk3U0IzM2ZSVHAzcUFOanFKY3Bma1crTUxPZE5BTmNRTHpGT0JrNnVQMzhrZTUzYlBScUFHb2UyL1p1RmcxTmJsRmVDRVpBUElpdXl0ZTBtR01IZmdnQmJFU3kzRW53c0RPenV2MTdzUXd2WTZIWFllS3pzZjM3d3NYRWdUMXB0MjlKVHdZNEwyOVJVcDZQa0JNRTN6ZWEvd1RNUWFmdFdEVHZQRHRMY1FTTVRBRHJqa1VLbEl6Vm5WblVWemlUVlRkc0ROSmZKSnY5bHNLSGw2REF6MWQrRi9nSkFpb1lqcE5tcHkya2xWV0NZS1dDV3FRQUtUZ0huWTB5VEFZN3lRRklHVHZzSDVTK3dxSzB6S3dFNEJRejhPYVR6NjFWZVp5NXFvYU5STmpncSsxK0FERGg3MmFoN3llVUFHTUpxTy8rdmlEbjVFL05ZSFNuWk9sdzdGTXhjNzJGbm5JRmdPbGdCbkZNd0JzTmtUTlJ3anpCUFY2UVR4bGFaNG5lRlh6eEhpbFYweXQrM3VRcTJhd1VlK0NJcm1BeDd1S2xJb3owcHI4cUlVbGY0eWxzMnlnWlh0YnlweFdxbHRKc0NsdlJpNkF4NkNvMHNSVlp6dnN2cTlIcEt2aTFneHBSTWsyWk1wZEtSRVI3Wkt5WkpxQU5BTUFEVW1LWHcxcFJEQUc5ZnBIZG5aY0JKQU1jWU9HZ1NIRHNWZzlvRnpDNVh3WHA4eWZNRjlxb0FuWFRVWk5JQnBEZkFjQmFqWGNkc01QQStpS3lmNEhQdTFwaHp5TGtOdzJrQWpUMXd1S09LMUZZTmNPb0IzUFpXbEt1aEpNUUEyeFJNdkJ2NnZSWjExd1lZcjBZcTIyM0FmWjFaVEhzZndEbFVrYXBQQkhzWmhYN2NTK0lxZUtZamNITjU1enRrUHVGZ25ZOGh5K3lxK0F5VGtPMUlXWE5oMTQvQ0pzNWh2cEkwNkZNQXlGcXFnLzQxUlBuT2pMbVJ0aGFlOG1UTjFTcUEwNVJ1b2xXcmwxQlNjZ3JkdUpGQVV5ZE1wTkFLTWJyVTFCU3lKTitrRWFQSFVMV3FWYWhmNzI1L3ArMUZKVHdodTBETGh3THNNakJvRnBWR0VvamFZaERxZlVsZWJIOUZwTkFzdGRDZW45R2Z6akRlVndFSysyeDh2bzJzcHV1dWRNSVlPSnM1c0pPZEJJdWZpZHBqVTlSczV4Y0NuRlRJUE5XQXdYK1BGS3dIMkVNak9HOTdCSkFiVHJUWEJ3RTBDOWR6aG5HT1JwOGtHWVh5emdRNGEzR1JyeEdVNURYVGF5Z1JIVUoyRXFKSTMvZENKZW1Nb1A2ZXh0bm9DSlNhUHJMei95aGtBbEdZTjNrMkk5K21sUU5iYUk3M3Vybzd5QWZzZGE5SXh6TzNmcjZjMnJScVRwZmlyMUw1TXBGa1Nrbkptak5uWmxiM1BnTnpIcS83TUxWbzNwZ3FWN3FQekJhTElLYjZJZ1hQTURBeWlZR1lBWjVaU0xubEV4eUdPbWQzS2xqOFlTZThBUFl3RlhVYmIwa1pnSUlQYWtWM0FFSTNBSXBMd0xDZXRRT2M0V0RZUjJCTTdrZ3pBQUd2dHU5MjhyTXBZSVVNbHY1NGpjSGtGdGlucTFJRGpzck1weVZxbXB5RzhhNkRWaGdmQnZ5TlRselRIMHorSlRDUGVEQVRSeklOWS9NbUZheWdFL283QStBd2lZcWYyQXBxUjFFcWs3WlFwVGo0ZkRESWpKYmxydllJbnArQmZTb3pCei9NeFZPd204a09ycFdMZnZRQW0wNXhrWTBHQ05BOEtQVFluZVNVekZZdG1sQ2F5VVIzN2lSVDVRcmxBcnQxNjFSajZ6YzdBcDl2MXpxeVZxMVlFWW9zbENoUzk0aFM0VVVPbmhJSXpRZURhd3luM1FRMnhremhZNlRyMmFpSFBveVUzb3pCQ3NKazhHcjFHRENsZEErM09Rb01rOVBIQjhCMmZ3VnJhd0ZnZUExdDJtbm5HdUZvKys5dTF0VjRQTGFCNGYySFhDdWNKOHJTeEJnWTcxZ0VLMWNrRnFuV1BnUVBYcHlaZzllYmc5RjBkaEk0dzFITGJRaG5lUlRzaFJuVlFnZU1jeFRxcS9MMzlBVUlUMU1CdnZmYWFyczd3cnM5SWxIYUtxeFdHQUl3SzYzUnZlc2dVSVhBNThQb255djUvWkNKOEJyQUlKUVE3SWtmL0h3cXJ1a3E4elJZTEpiazFNVGJxZC91MkppWHVnY0dCSlExbVRMNnpsbjBTYU5qSjA3ZVg2cDArYkE5K3c0TnlNckpydDZzOFpQckxWYkw5M0xhV2xTR29jY2dFZ0QwQ1V6dWF2dytCdm9sMkZHSUxCMVpnOEgzUVcyVlU4NFg0U3p2VU1FK01MMEhnUE00MkhFOUFNOSsxQThaZEJZQU9EczRBRTRwN1RDN0dkbER3RGFaOWJZajJRRUtUb3BSVm85cWc3N3Rjb054L280NTR3MzFYUGZsaFpnSU1IRUd2QmZRYnJYaWk0RGFCT0I1REZvVDQvMFhBb2hjcHNNV1JpaUFzemZBZTc0SzRQeTMxanp0aWJUZ3NrakZlODlnanJSNGxKY1hDT2ZoSjBzVk1GczVlSEtwNkYwd3lKRWdTSTVFQi85eCsybTAxRnVKOU1PdUxkU2tVUVBLeXM1cStQNjhqMlovdW54TjdmaUVSRCtMeFV4K2ZuNTA2dlNabUhWck5sU3UzK0N4dG0rUEg3bTRUR1FFMTlBemlnbzhUV0FQMG41QmRvNEhaUUF3REt5VE44SHo5b2hNcE1uK3Nqb0ZEL1JLTUw4RU1CSXBXbzJEQTJsNW9sQUZwTm5zelBYUmhoOWc1STNocElNQVpOc0x1ZFpmNkdzc0dLd3JqSkVaMUgwQXBZdHU5RXM2ZElUYjBCcmdkOFNGNi9ENDh6N09MVExnSEFDbjZRcmc3T1FrY0JLeWpzdXkzeVVaQXVhL0dZSHNPRjZmakt4bERCaXZKSnppTFVObU1GU0ZjeFkxODlSU21OWHhLdnRCVXJjdzloVlVDN0x4SG9MZWVZQm1xSUkwVkVZd0MwUEEyK0UxRUxwemg3NzlaaU0xYmR5QVRLYk1CdU1uejF5OStNTmxsWEoxZWpMNitaTFI2SnZIUnRrYWtqTXk5VnUvMkI1MTRlSmY0K09XelBXcCs4aERVNHNLUEMwMm9zWlpSVTFEZVFyUWJSdlhrUzgyeUorVC9wL0c3UzBOOXNzVFhCWDF0Z05ndHN3NFp3TTRuM1ZpOHMrQUxkZWxnczNqemtnNzlQTXpOMWxCYTREOUhiVGxoQXZYWWVmWUt3Tk9kb0tlVlBDa3lBZmszcUVXUFZDbk93QUdLcTNBTXNQbjUvalhBVWc1YUk2bnV3LzVJSUEzbDNUaUFDUzJ3UEplQTBxdDJ0TVNnWXNEYkJlVktTNlRsTGJ3S1ZmM2RnWmlMdHFEd2I2T3RMd0ZzaVlwZTVvTzRyU1MvcmtOenhGKzZCRDRuWDJjbkRFdk5lWDZ6Y3VidDZ6T2ZycFozcGJlc0xVYk5rOWF0SEJwSlo4QWZ3bzAzbjBBbGtIY3llcGpvT0RJU0RwOThnL2pxSEhUeHE1ZHNlaEhIeXErVWdNTXo5MGFxSFMrWVRqQUpoNzFQQjdoeHhGWmh5R3k3MURjWCtjZ3RWZ084QnhCQlVmSU9TTnpZS0R1eUxOSTF4bUFreEVrbkgxYW96N1NmR2FBZkZ6WUJMRENtakxnZkZwV0N2REQyTVNUYzArd2RJRXpyOGU0WDBWYm53S29waUtZalZNQVp4c3FPSmF2dCtLYXdVZ2pUOXlETlU4dHBDSUNpeGxCN2JMS3owV2hmRGJHUmZEVXd3WUdJaWkvZy9sL0hzQXNuVVU3Q1BQS1djUGJEakpGWDJScHYrTHZMRERZV1FqY0NTcExkRlprczd6R01zUmdNTEFOMHRWck41Nlp2eml1dnRub1F3RytZSnQvaDFVZHBkeEtvdWdxbFduRWtQNjBjOWNlMnY3bGRzTVBQKzRiVmx6QmN6RFlUejAzd1ZQYXdNMmJnNnZCWVEvQUFMZ0lMajBuL2pMcWZKS1VSYzF6amdQdzNJRko3RXdGWjUwNkl6c0FmSzVLWFFEYlFRQ0xLNGRQY0czNlJ3QmFkNENXZFA3b0FEak4wNG9hYWorVUdwbzUyZDRjbEVkT2d1RTJvb0x6VFJtMER5RmxueWI3VEdPdzZrMllJNlZ3Q1NFTmdhODRTamNFL2NFeTRGRWpPcFJJa2wyOEw5dkNXTXdQKytFR3ZINlpDczZ4WUFiNkpzcFh3d29COW81Z3d0MWtBZmdPNWp1Y25OdmY3S3ZUNlc2VEpmdVcyWnhmTFR0MDVIalQ4K2ZPK3dmNis1RXBNek1QaGYwREF2SkFOT1YyRW9XRWhkQ01TV09wZlp1V3RQL3dNUkdLY21uMStpL3FGRmZ3NVBwYkpOay9WVjZOQktHbVdRRkFjeFZBV2hKUmNBSllUaGNicVRNYkI2OHFYaXZrSGdNQkJzdkJvTTZxYkZzNDJEQ0RGQi9hc2MzSnZ2SFlTUHRMSjhENHBLZEkxTExaV0FEdk9qakxWQmgzSkp4aEtsTDFYWXBVYmg3RzFaV2dsb0MwL1RjQWFEdWtiRWZCSU9XbG5lWlVjR0JLSnhzczBnZmd2KzBldFdGM1Y5dkRFTnhQZzNsN1Mxb2hGZWQwbXJjZXlZK1B1NEw1NmdGV3pENDJuQXIyUzl1VEZpakx5Smt0MGQwUGRxaVczT3hzcWxMOWdid3RSeHdvcmw2N1hzdGlzZW9OVmgyRmg0WlNlbm9hcFNXbkVJTnJhRkFRTFp3M25kcTNiVWtEaG95bXp6ZHNJVU5vU1RwMzRaTEhINGtyS3RFakJYRG5hRDFPeDJQZ3JPY3h3VkVBRFY0Wm5BaXcrTXhPNU01VkVSRlB3YkhMb2k3bHI3SnRITDN2UTBraHpNbCtNWVBlalg0TUJ3Z1RBczBSOUZITnFlZHZnTTEwQmN0c2owRERxN3F6d1N5Vk5jNW8vSFRuVlBzektEZndWakQ1Y1hZWHFHQVBzTVIyV1Yrd0EwTFNIS1Y3b2U1WUZEVlBDNExoQWRtNGVGb2VSaW9kaGZybERMcDdNWlRiWWNMOGNBbU1GNFUvVVhGZE0ybDBjaEkvbTU2ZUVFOFQzaDFEalJyVXkzdkpiREViclRrNVpEUWFhZkxiYjlDczZST3BWSEFRaGZuNTBmd0ZNNmx6eC9iVVh3RG5wMHRXa0s5NGo1OVFpOVZDeGJubTZjNzVuWHFBd2s0QVhCOEFXd09rb3UrQThhMTFZUGc2bFhVWVpsQmJBVDR4WUFwcUdGaGpBT2NoSi9yRmZWb0Ixc1dzZWE2aXpWOERrQnFCSGRxVG1xZ2ZTay81N0FURG1BUFdXZDlPdTU2Rjgzem41dHd5S0w0R3grUEhCK1duZ1QwRjBENE1abHBZZWxwY0NVUUtnckszSkFvbGt3ZkI5cWZZeVB5U1pNSHFlOHlibXNkc0xZcGdZZ0dCaUVWcExhY1FYOWVoUEhBdXkyU2loazFhVU5XWXZ4L1R0NFNFaEFoR3JLdWJuWjJqdTM3OUpnMGQxSWVxUkZla1c3Y1M2Ym0yejFDLzEwZlJpaVZ4NUI5ZWlnSUVxS2JjU2FHU1lhRjZlK0JaR2Ftdkd1Wm13UHQ0dFRXeG1CZ2VBMEFHMG1vQ01DeWpncStjNks1aEt0UWVPaHZBR1l1eHY0RjZvcjNTZ3pONzhPcUFLYmNER3hsdUIvaWxvN2lhRmdLZURjQ3EvNVNWRWVZaVZYNmM3TzhlNkliUDdkUmczSmJDVHQvRFdLMUV1NzRCMjJydVp0bm1Ya2piM1JFRGdsZzIwbHVMQjl0YUFpeVRkMjdzaDQvWUtsbkZveDJYS0g4eHl0VmRNVGtvQVhGWjRFa0FvNk96UncwZ0tHL2tDb1paT2JvU1JaVXAyUC8vVU0wSDlvZUVsMnlibEpwcW1EUnREdjM2MnluNllNWUVxbE83RnZVZlBvWldmTHlDL0V0RmtIK0FQMW5NRmpKbm1LaFZpeVkzN1lFbmI4ZnBxZEw0ZlBHK1A0c1JlTDZNcUIyQk9sb2RzTTEyWUZ5ck5Mb1BwOUJ4dUljSkxMU0Q3UC9NM3BhZ1pPRHNWNGhFQThoZUJlTmo0WVVkWHVDNjZxQ013R3lPdDVod2tmK2tuZm51Z1ovYzlzdElvWDhIR3o3bWdQWFdocFBsYWpSKzQ1SCtUVVNmWnFFZC8zYmcxRUo0RVV4NmlxczNGUndrckxWd2llZHQyQVJqd0NENjU1ZnNTWktJc3NzV2NtMHZzVHd3TUlEeVF1ZlA1UGhwSkIwMEw5QUhoWVhSNnJoUHFGNjl1dlI2LzE0U2VINzkvSE90aHl4WnRLeUNiMmdvYmRxeWcvNkt2MGFSRWVHMDgvc2Z5VGM4akFJREE4aWl5OTlVWDdaQ2VlcnlZdnMxUGc0NmVaelVyV0pKcDlHbkZ4T2pZd2V2aU4rNU52Z0gwbGgyK0Y1Z09GcElBSUFxRE9NM0ZrYkFSczZMR0ExaGlNdFJLL29ENE1iczlBcWliVFlpT2E4KzhpSlZPUVMrbXFnL1NWdENQZ2N6VlBNOVVvdVFFak13dldUai94M0FhQWdCNWpqQWM3Y0Rld21EZzkyaXUxZkR0WkJYa0FWOEI3YmNRUVBnMU1scWJlNTgzcDNUZjl3OVYxZStFVDNRUTc3Q3ZzOFBISXdBKytmdFNZNVc5VE5oVitjMEFPeE1Vbi84WWdHZHR3aDMwUVZSMmFnQzVtazBHaytOR054dnpxRURSMmVmUEhhQ2ZFdUcwZEVUditVOXkxNGlLQ2l2RnBxZG0wdHBpYmRKcjlmUnVMZUdIcTUrZjh3cUh5ZnFESTdTaThKV0JuWGt2ZTlmVVdQVWpvUU5RUnJaY2dDdVYxQkhTOWJ3UHJQQTFDNmcxc2hweFM4eTl2NEZVdm1XQUxFbU10Q1N2dTlIR25jOURFcWF6MXl3MWMrUklsOXlZb3pZK0hscnkwSUFudktBQnE3OThwN09UV2gzaW9wcmNrRGcxVkxlYnBMcTVyZ3BKUXZ0dEtLdGFScllpVlhHc3RXMlM2ZndHNlZQNkowQVF5dkF6OWVOOGRtQTYyU1M4MDkxNlZTT1R3T2s2Sm53bThKcTJXeVhKelNjSDlkWWl3REhENWV1cEMyYnQ5SDhlZE1wdkdSSnVqKzY4c2NmTHBnWk1YcmM1Skg3OWgzeXBXekJaM3lObEs3VGt6VlRRRUIySm9WSGxhWFJvNFllNnQyankyQ0R3WEJON214eU9XNG5aU3NzVWlvSFNqcDcwVUtlK1hKNlI0T3JWeGlEUlNXVENBUmd6Z1A0bkhiaC91WkNBa1lkZ0Fpdk91NGwreXVKbklwK0N2VkhqWStaY1NVQXZQUWxiRnlmVFVBTmlkdDdGcG1BcTBhMkNDbi9KRngvb3V4L2E2QnFhbWdCWU02Y1F2SUMxVmVGT0d5dWkyeVBXWGtuRi91cWQyRExVMUJ1MEZQaEMwdDZ6TWRHQko0RTFQaDQ2eFp2MjRwVjZRTm1CTUpHc2t6QjZnSVQ1bXhtblJ1c2wxVDBtVGZRTDRDL3JQVWk4WEhyNUhqZndFRGFlK0F3NWFha1VyeEl3ME9DZzJsOTNJZnBUejd4NkpTNHBmUFByZCt3cGUvK2cwZXE2dlg2aU1Ta1pMS2F6WmsxWTZ2R2QzK2w4emMxcWxkZDdHczBucFpvdDQrTkNHZlZvQzVsVmZ4dThUSjRCbEhCYWRxU1k2cHB3MEFBajhtTisyZFF3WmRvMlpKZm9NNklWRmYrMDB0ajJCUGpOd0dBM1IrcG1kcDU1RVV2UG12MVVmcm41blY3ZFN5OUYrM0Vpam15OVEyWFJ4QTh1VlljcGJKTjBnb3dBK1hMc0w5R0lDSStDR3hxdjAxVEQ0WTJWK0ZMM2hxYkRQUWwwRUdaanVXNkI4b3d0aVJiQnVSR2Q4ZUJVL2ZBZ0FEU0NSRGRmL0FvOFNKU3l3NWRxWFRwQ05QbU5Vdmllblh2dkx0dno2NzN6VnF3cFAzWmM1ZUd2TmF6eThveWtSR3pxdDBmY3owN095YzFSN3hmTU0rOGdXQ1FhQTFEMTBxaXdBUld3K0c0SHZlSUY4R3pIRUJHZXRUUWhBQlJqZ28vZkZlTEw3MXFoUFR4UFAxN2hRMlVWOGQ1MFlxM0lQRWl6RkxVbVE0N3FFVXhtKzZCVWdPUGUwZWsrWVVKcC8rOGFoOU56bTIvY2xXaTBVZGJqeDl5dTNuSHhYQVgwc1NHWUh3VjhEZVhOdmlwcTJ0T1hFTjVNRWtRZnZMZTNzdGVHSnVHQUVoYkQyMGtLM3paN09HMjhGand3cXIwL2ZGcFdtRkozaEYwZ1FGNUNkS1JYMzdOcTJmV2E5TE9tcHljZk5Hb04xeThjdTE2bWV5VW0xbGRPcmJkOFdpZDJtZE5wZ3p4bmdJeXJnc3BGOXNScVFhbmp6OGpzcmk2OTgyTXozYUFJenlCbElxZmNaNFB4L3NPNzlINmExUnpNZEFjOVp1aHZpYWxpYUhvWHdYVUVhK1FaNDdqNHpid1ByZVJxQW0rU01WRGVFVjdCaFU4eG5nU1Rud05MRDBNQVRNR2htNUZNT1o5Zk02Y0M3b1c4emNEanV0RDJ0ZktzNUZLajBSd2ZZalUxVzJka1Jjdy83eXZzYWFUd0hrM1VsMDVUYUhsYS9SQkpzQXNmaWJHM2hQMm00UDU0NE5WdUZiK2pJMjJERVl3L1FqK1pTWFA3SlUxbzQrTVQ3dzFzTCs0L3pKeC8yR3dqd1c0djZaZktTNllwVFV6UFMyWGNpMjFBMEpEUm91Yy9VQndTRmczUTJaNnhwclA0dksyTC9uNUdzbmYzeit2Y1pzQWRnTmtFY2VkS09HRFdzMWtBQ2VobytrWWlGWXdZSzJkd29LMGlCMmluYUsreHRHeU0ycVlVK0Fzbm5oNnhBb2drYjV5bVZDcmxKY01wQk5oL2sySFRwekIzRDBBQU9WOXFTMFY1UjRUR0NtbnU5dkk4UjQrdmVKM052NHNwSUJzZjF4dnJhckJHRmx4UFF2ZHZhRER1eEMrUUZ0VFBEQmVPeEU0enJzRG5ETGhQY2E4WU1sbkVmRGp3TGM5WkQ4V0JFSGVIamZHem5zV3c2YUhJVWlZeVhPTHdRYjA4dzBxK0VvTzNxRVNBamJmVWV0U2hxOEFScU14alB0akZFejArOXhjdy9pa084a1pPVWszR0Zqem5sQ1M1UDhDREFENmNpR1p1RXN6eHdBQUFBQkpSVTVFcmtKZ2dnPT0iIC8+PC9zdmc+");
+    background-color: initial;
+}
+
+.headerSRcontainer .searchFilters .selectCover {
+    border-top-color: initial;
+}
+
+.headerSRcontainer .searchFilters .selectScreen,
+.headerSRcontainer .searchFilters select {
+    color: rgb(214, 211, 205);
+}
+
+.headerSRcontainer .searchFilters .selectCover .selectScreen {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOSIgaGVpZ2h0PSI3Ij48ZGVmcz48ZmlsdGVyIGlkPSJkYXJrcmVhZGVyLWltYWdlLWZpbHRlciI+PGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAuMjQ5IC0wLjYxNCAtMC42NzIgMC4wMDAgMS4wMzUgLTAuNjQ2IDAuMjg4IC0wLjY2NCAwLjAwMCAxLjAyMCAtMC42MzYgLTAuNjA5IDAuMjUwIDAuMDAwIDAuOTk0IDAuMDAwIDAuMDAwIDAuMDAwIDEuMDAwIDAuMDAwIiAvPjwvZmlsdGVyPjwvZGVmcz48aW1hZ2Ugd2lkdGg9IjkiIGhlaWdodD0iNyIgZmlsdGVyPSJ1cmwoI2RhcmtyZWFkZXItaW1hZ2UtZmlsdGVyKSIgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFBa0FBQUFIQ0FZQUFBRGFtMmRnQUFBQUdYUkZXSFJUYjJaMGQyRnlaUUJCWkc5aVpTQkpiV0ZuWlZKbFlXUjVjY2xsUEFBQUF5SnBWRmgwV0UxTU9tTnZiUzVoWkc5aVpTNTRiWEFBQUFBQUFEdy9lSEJoWTJ0bGRDQmlaV2RwYmowaTc3dS9JaUJwWkQwaVZ6Vk5NRTF3UTJWb2FVaDZjbVZUZWs1VVkzcHJZemxrSWo4K0lEeDRPbmh0Y0cxbGRHRWdlRzFzYm5NNmVEMGlZV1J2WW1VNmJuTTZiV1YwWVM4aUlIZzZlRzF3ZEdzOUlrRmtiMkpsSUZoTlVDQkRiM0psSURVdU15MWpNREV4SURZMkxqRTBOVFkyTVN3Z01qQXhNaTh3TWk4d05pMHhORG8xTmpveU55QWdJQ0FnSUNBZ0lqNGdQSEprWmpwU1JFWWdlRzFzYm5NNmNtUm1QU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUx6QXlMekl5TFhKa1ppMXplVzUwWVhndGJuTWpJajRnUEhKa1pqcEVaWE5qY21sd2RHbHZiaUJ5WkdZNllXSnZkWFE5SWlJZ2VHMXNibk02ZUcxd1BTSm9kSFJ3T2k4dmJuTXVZV1J2WW1VdVkyOXRMM2hoY0M4eExqQXZJaUI0Yld4dWN6cDRiWEJOVFQwaWFIUjBjRG92TDI1ekxtRmtiMkpsTG1OdmJTOTRZWEF2TVM0d0wyMXRMeUlnZUcxc2JuTTZjM1JTWldZOUltaDBkSEE2THk5dWN5NWhaRzlpWlM1amIyMHZlR0Z3THpFdU1DOXpWSGx3WlM5U1pYTnZkWEpqWlZKbFppTWlJSGh0Y0RwRGNtVmhkRzl5Vkc5dmJEMGlRV1J2WW1VZ1VHaHZkRzl6YUc5d0lFTlROaUFvVjJsdVpHOTNjeWtpSUhodGNFMU5Pa2x1YzNSaGJtTmxTVVE5SW5odGNDNXBhV1E2TnpaQk1VRkVPRFl3UlRZM01URkZORGhFTnpsRVFqY3lNVFJEUlVJd01qWWlJSGh0Y0UxTk9rUnZZM1Z0Wlc1MFNVUTlJbmh0Y0M1a2FXUTZOelpCTVVGRU9EY3dSVFkzTVRGRk5EaEVOemxFUWpjeU1UUkRSVUl3TWpZaVBpQThlRzF3VFUwNlJHVnlhWFpsWkVaeWIyMGdjM1JTWldZNmFXNXpkR0Z1WTJWSlJEMGllRzF3TG1scFpEbzNOa0V4UVVRNE5EQkZOamN4TVVVME9FUTNPVVJDTnpJeE5FTkZRakF5TmlJZ2MzUlNaV1k2Wkc5amRXMWxiblJKUkQwaWVHMXdMbVJwWkRvM05rRXhRVVE0TlRCRk5qY3hNVVUwT0VRM09VUkNOekl4TkVORlFqQXlOaUl2UGlBOEwzSmtaanBFWlhOamNtbHdkR2x2Ymo0Z1BDOXlaR1k2VWtSR1BpQThMM2c2ZUcxd2JXVjBZVDRnUEQ5NGNHRmphMlYwSUdWdVpEMGljaUkvUHNFRmh6b0FBQUJxU1VSQlZIamFZbFJWVlkxbVlHQll5b0FiUkRFQkNYa2dWc1doUUEySUZVQ0t1b0E0RDRqWjBCU0ErTGtnZVpDaVAwRGNDOFNWYUlvcW9lSi9tS0FDRDRENENoQjdRL25lVUQ1SW5JRUpTZWRhSUxZQ1ltTW92Ulltd1lKbVJTc1F6d2JpVkdSQmdBQURBR3A4RCthK3dOWEVBQUFBQUVsRlRrU3VRbUNDIiAvPjwvc3ZnPg==");
+    background-color: initial;
+}
+
+.headerSRcontainer .searchFilters .selectCover.disableSelect .selectRow {
+    background-image: initial;
+    background-color: rgb(47, 50, 52);
+}
+
+.headerSRcontainer .searchFilters ul .htTxt {
+    color: rgb(211, 207, 202);
+}
+
+.headerSRcontainer .title18 {
+    color: rgb(211, 207, 202);
+}
+
+.headerSRcontainer .hotSearch {
+    border-top-color: rgb(68, 74, 77);
+}
+
+.headerSRcontainer .hotSearch .subBlock a {
+    text-decoration-color: initial;
+}
+
+.headerSRcontainer .hotSearch .subBlock a:hover {
+    text-decoration-color: initial;
+}
+
+.headerSRcontainer .ncertRow {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(71, 77, 80);
+}
+
+.latest-notice-wrapper .main-section-heading {
+    color: rgb(232, 230, 227);
+}
+
+.latest-notice-wrapper .main-section-heading span {
+    color: rgb(160, 152, 139);
+}
+
+.latest-notice-wrapper .latest-notice-slider .noticeboard-card footer .btn {
+    border-color: rgb(0, 210, 146);
+    background-image: none;
+    background-color: initial;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
+}
+
+.latest-notice-wrapper .latest-notice-slider .noticeboard-card footer .btn:hover {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    border-color: rgb(0, 210, 146);
+    color: rgb(232, 230, 227);
+}
+
+.latest-notice-wrapper .latest-notice-slider+.latest-notice-arrow .slick-arrow {
+    box-shadow: rgba(0, 121, 84, 0.75) 0px 7px 10px 0px;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.latest-notice-wrapper .latest-notice-slider+.latest-notice-arrow .slick-arrow:hover {
+    box-shadow: rgba(0, 121, 84, 0.75) 0px 10px 18px 0px;
+}
+
+.latest-notice-wrapper .btn-view {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+    background-image: linear-gradient(rgb(169, 143, 0) 51%, rgb(172, 88, 12) 100%);
+    background-color: initial;
+    border-color: rgb(48, 52, 54);
+    color: rgb(211, 207, 202);
+}
+
+.latest-notice-wrapper .btn-view:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 25px;
+}
+
+.noticeboard-card {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+    background-color: rgb(24, 26, 27);
+}
+
+.noticeboard-card .contentTypeIcon i:not(.mn-youtube) {
+    text-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+}
+
+.noticeboard-card .contentTypeIcon i.mn-youtube::after {
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 8px 18px;
+}
+
+.noticeboard-card header .text {
+    color: rgb(204, 199, 193);
+}
+
+.noticeboard-card .content .subjectName,
+.noticeboard-card .content .notice-date {
+    color: rgb(164, 157, 145);
+}
+
+.noticeboard-card footer .btn {
+    color: rgb(232, 230, 227);
+    border-color: rgb(0, 210, 146);
+}
+
+.noticeboard-card footer .btn:hover {
+    color: rgb(232, 230, 227);
+}
+
+.contentType-pdf .contentTypeIcon {
+    color: rgb(255, 74, 26);
+}
+
+.contentType-image .contentTypeIcon {
+    color: rgb(255, 209, 26);
+}
+
+.contentType-doc .contentTypeIcon {
+    color: rgb(26, 198, 255);
+}
+
+.contentType-youtube .contentTypeIcon {
+    color: rgb(255, 26, 26);
+}
+
+.contentType-weburl .contentTypeIcon {
+    color: rgb(74, 232, 145);
+}
+
+.mn-youtube::after {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.text-decoration-none,
+.latest-notice-wrapper .btn-view {
+    text-decoration-color: initial;
+}
+
+.monthlyAttendanceBox h3 {
+    border-bottom-color: rgb(66, 72, 74);
+}
+
+.monthlyAttendanceBox .percentileBox {
+    box-shadow: rgba(0, 121, 84, 0.3) 0px 5px 10px;
+}
+
+.monthlyAttendanceBox .bulletPoints ul {
+    color: rgb(200, 195, 188);
+}
+
+.monthlyAttendanceBox .infoPara {
+    color: rgb(200, 195, 188);
+}
+
+.monthlyAttendanceBox a.viewDetails {
+    color: rgb(98, 255, 207);
+    border-color: rgb(0, 210, 146);
+    box-shadow: rgba(0, 121, 84, 0.4) 0px 11px 18px;
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.monthlyAttendanceBox a.viewDetails:hover {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+#pop_up_badges {
+    border-color: rgb(48, 52, 54);
+    background-image: initial;
+    background-color: rgb(46, 50, 52);
+    box-shadow: rgb(57, 61, 64) -1px 1px 4px 1px;
+}
+
+#pop_up_badges h3 {
+    background-image: initial;
+    background-color: rgb(92, 100, 103);
+    color: rgb(232, 230, 227);
+    border-bottom-color: rgb(48, 52, 54);
+}
+
+#pop_up_badges h3 a {
+    color: rgb(169, 161, 150);
+    background-image: initial;
+    background-color: rgb(67, 72, 75);
+    text-decoration-color: initial;
+}
+
+#pop_up_badges h3 a:hover {
+    text-decoration-color: initial;
+    background-image: initial;
+    background-color: rgb(53, 58, 60);
+    color: rgb(232, 230, 227);
+}
+
+#pop_up_badges .message_box_badges .text_Mess {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/badges/border-left.jpg");
+    background-color: initial;
+}
+
+.text_Mess h2 {
+    color: rgb(172, 165, 154);
+}
+
+.text_Mess p {
+    color: rgb(172, 165, 154);
+}
+
+#point_badges_pop {
+    background-image: initial;
+    background-color: rgb(2, 135, 94);
+    box-shadow: rgb(48, 52, 54) 2px 2px 2px;
+    border-color: rgb(48, 52, 54);
+}
+
+#point_badges_pop .points_text {
+    color: rgb(232, 230, 227);
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/badges/ballon_bg.jpg");
+    background-color: initial;
+}
+
+#point_badges_pop .points_text a {
+    color: rgb(229, 227, 223);
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    text-decoration-color: initial;
+}
+
+#point_badges_pop .points_text a:hover {
+    text-decoration-color: initial;
+    background-image: initial;
+    background-color: rgb(4, 72, 99);
+    color: rgb(210, 226, 231);
+}
+
+.t_Content_black,
+.t_Content_cloud,
+.t_Content_dark,
+.t_Content_lavender,
+.t_Content_light,
+.t_Content_liquid,
+.t_Content_lime,
+.t_Content_blue,
+.t_Content_salmon,
+.t_Content_yellow,
+.t_Content_facebook {
+    color: rgb(200, 195, 188);
+}
+
+.t_Content_black,
+.t_Content_dark,
+.t_Content_lavender,
+.t_Content_liquid,
+.t_Content_facebook {
+    color: rgb(232, 230, 227);
+}
+
+.t_Content_cloud {
+    color: rgb(183, 177, 168);
+}
+
+.t_Content_light {
+    color: rgb(188, 183, 174);
+}
+
+.t_Content_blue {
+    color: rgb(211, 225, 235);
+}
+
+.t_Content_salmon {
+    color: rgb(184, 178, 169);
+}
+
+.t_Content_black a,
+.t_Content_cloud a,
+.t_Content_dark a,
+.t_Content_lavender a,
+.t_Content_light a,
+.t_Content_liquid a,
+.t_Content_lime a,
+.t_Content_blue a,
+.t_Content_salmon a,
+.t_Content_yellow a {
+    color: rgb(63, 194, 255);
+    text-decoration-color: initial;
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+}
+
+.t_Content_black a:hover,
+.t_Content_cloud a:hover,
+.t_Content_dark a:hover,
+.t_Content_lavender a:hover,
+.t_Content_light a:hover,
+.t_Content_liquid a:hover,
+.t_Content_lime a:hover,
+.t_Content_blue a:hover,
+.t_Content_salmon a:hover,
+.t_Content_yellow a:hover {
+    color: rgb(63, 194, 255);
+    text-decoration-color: initial;
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+}
+
+.t_Content_black a,
+.t_Content_black a:hover {
+    color: rgb(96, 166, 216);
+}
+
+.t_Content_dark a,
+.t_Content_dark a:hover {
+    color: rgb(98, 173, 227);
+}
+
+.t_Content_cloud a,
+.t_Content_cloud a:hover {
+    color: rgb(85, 153, 202);
+}
+
+.t_Content_lavender a,
+.t_Content_lavender a:hover {
+    color: rgb(180, 209, 235);
+}
+
+.t_Content_lime a,
+.t_Content_lime a:hover {
+    color: rgb(88, 206, 250);
+}
+
+.t_Content_liquid a,
+.t_Content_liquid a:hover {
+    color: rgb(109, 160, 208);
+}
+
+.t_Content_royalblue a,
+.t_Content_royalblue a:hover {
+    color: rgb(139, 208, 219);
+}
+
+.t_Content_salmon a,
+.t_Content_salmon a:hover {
+    color: rgb(110, 141, 171);
+}
+
+.t_Tooltip {
+    background-color: transparent;
+}
+
+.t_Content_mngToolTip,
+.t_Content_questionicon {
+    color: rgb(183, 176, 167);
+}
+
+.t_Content_mngToolTip a {
+    color: rgb(26, 161, 255);
+}
+
+#TB_window {
+    color: rgb(200, 195, 188);
+}
+
+#TB_secondLine {
+    color: rgb(168, 160, 149);
+}
+
+#TB_window a:link {
+    color: rgb(120, 169, 204);
+}
+
+#TB_window a:visited {
+    color: rgb(247, 129, 58);
+}
+
+#TB_window a:hover {
+    color: rgb(247, 129, 58);
+    text-decoration-color: initial;
+}
+
+#TB_window a:active {
+    color: rgb(168, 160, 149);
+}
+
+#TB_window a:focus {
+    color: rgb(168, 160, 149);
+}
+
+#TB_window a:link.green-button,
+a:visited.green-button,
+a:hover.green-button,
+a:active.green-button {
+    color: rgb(232, 230, 227);
+}
+
+.TB_overlayMacFFBGHack {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/cache/css/macFFBgHack.png");
+    background-color: initial;
+}
+
+.TB_overlayBG {
+    background-color: rgb(0, 0, 0);
+}
+
+#TB_window {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    color: rgb(232, 230, 227);
+}
+
+#TB_window img#TB_Image {
+    border-color: rgb(106, 99, 87) rgb(62, 68, 70) rgb(62, 68, 70) rgb(106, 99, 87);
+}
+
+#TB_ajaxWindowTitle {
+    color: rgb(174, 167, 156);
+}
+
+#TB_closeWindowButton {
+    border-color: initial !important;
+}
+
+#TB_HideSelect {
+    background-color: rgb(24, 26, 27);
+    border-color: initial;
+}
+
+#TB_iframeContent {
+    border-color: initial;
+}
+
+.modalContent .mn-lock-line {
+    color: rgb(255, 26, 26);
+}
+
+.modalContent .mn-unlock-key {
+    color: rgb(99, 255, 208);
+    border-color: rgb(0, 210, 147);
+}
+
+.prMbrX>span {
+    color: rgb(157, 148, 136);
+    background-image: none !important;
+    background-color: initial !important;
+}
+
+.modalContent .pmbr {
+    background-color: rgb(0, 120, 84);
+    color: rgb(232, 230, 227);
+    border-color: initial;
+}
+
+.pmbr:hover {
+    background-image: initial;
+    background-color: rgb(0, 106, 70);
+}
+
+.jeeplus__layout #mnPopup .popupTitle h3,
+.jeeplus__layout #mnPopup .popupTitle,
+.jeeplus__layout #mnPopup .popupClose {
+    border-color: initial;
+}
+
+.slick-slider {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list:focus {
+    outline-color: initial;
+}
+
+.slick-slide {
+    outline-color: initial;
+}
+
+.slick-vertical .slick-slide {
+    border-color: transparent;
+}
+
+button,
+a,
+button:focus,
+a:focus {
+    outline-color: initial;
+}
+
+.btn-fill {
+    border-color: initial;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px;
+    text-decoration-color: initial;
+}
+
+.fill-yellow {
+    background-image: initial;
+    background-color: rgb(195, 147, 3);
+    color: rgb(232, 230, 227);
+}
+
+.fill-yellow:hover {
+    background-image: initial;
+    background-color: rgb(190, 157, 0);
+}
+
+.fill-green {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+}
+
+.fill-green:hover {
+    background-image: initial;
+    background-color: rgb(0, 108, 75);
+}
+
+.link-btn {
+    text-decoration-color: initial;
+}
+
+.link-white {
+    color: rgb(232, 230, 227);
+}
+
+.link-white:hover {
+    text-decoration-color: initial;
+}
+
+.play-btn {
+    border-color: rgb(48, 52, 54);
+    background-image: initial;
+    background-color: transparent;
+}
+
+.play-btn::after {
+    border-left-color: rgb(48, 52, 54);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.line-btn {
+    color: rgb(98, 255, 207);
+    border-color: initial;
+    background-image: initial;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 10px;
+    text-decoration-color: initial;
+}
+
+.line-btn:hover {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    color: rgb(232, 230, 227);
+    border-color: rgb(0, 210, 146);
+}
+
+.line-btn--lightGray {
+    color: rgb(204, 199, 192);
+    border-color: rgb(62, 67, 70);
+}
+
+.line-btn--lightGray:hover {
+    border-color: rgb(62, 67, 70);
+    background-image: initial;
+    background-color: rgb(52, 56, 58);
+    color: rgb(211, 207, 202);
+}
+
+.btn-facebook {
+    border-color: rgb(54, 81, 138);
+    background-image: none;
+    background-color: initial;
+    color: rgb(127, 165, 205);
+    box-shadow: rgba(47, 71, 122, 0.3) 0px 10px 10px;
+    outline-color: initial;
+}
+
+.btn-facebook i {
+    background-image: initial;
+    background-color: rgb(47, 71, 122);
+    color: rgb(232, 230, 227);
+}
+
+.subjectList h2 {
+    color: rgb(211, 207, 202);
+}
+
+.subjectList a {
+    text-decoration-color: initial;
+}
+
+.subjectList a i {
+    color: rgb(232, 230, 227);
+}
+
+.subjectList a .subj-name {
+    color: rgb(188, 182, 173);
+}
+
+.testBox h2 {
+    color: rgb(232, 230, 227);
+}
+
+.testBox_list a span {
+    color: rgb(204, 199, 192);
+}
+
+.subjectDropdown .activeDropdown {
+    background-image: initial;
+    background-color: rgb(25, 35, 38);
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 5px 8px;
+}
+
+.subjectDropdown .activeDropdown h2 {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px;
+}
+
+.subjectDropdown .activeDropdown .subList::after {
+    background-image: initial;
+    background-color: rgb(25, 35, 38);
+}
+
+.sample-paper {
+    color: rgb(70, 170, 245);
+    border-color: rgba(9, 90, 155, 0.25);
+    box-shadow: rgba(9, 96, 165, 0.25) 0px 2px 14px;
+}
+
+.sample-paper:hover {
+    box-shadow: rgba(9, 96, 165, 0.5) 0px 2px 14px;
+}
+
+.solved-paper {
+    color: rgb(255, 129, 30);
+    border-color: rgba(181, 79, 0, 0.25);
+    box-shadow: rgba(198, 87, 0, 0.25) 0px 2px 14px;
+}
+
+.solved-paper:hover {
+    box-shadow: rgba(198, 87, 0, 0.5) 0px 2px 14px;
+}
+
+.aits {
+    color: rgb(84, 232, 131);
+    border-color: rgba(23, 171, 69, 0.25);
+    box-shadow: rgba(19, 144, 58, 0.25) 0px 2px 14px;
+}
+
+.aits:hover {
+    box-shadow: rgba(19, 144, 58, 0.5) 0px 2px 14px;
+}
+
+.gradient-1 {
+    border-color: transparent;
+    box-shadow: rgba(141, 0, 0, 0.3) 0px 5px 14px;
+}
+
+.gradient-1 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(141, 0, 0) 35%, rgb(204, 149, 0) 100%);
+    background-color: initial;
+}
+
+.gradient-1:hover {
+    border-color: rgb(147, 0, 0);
+    box-shadow: rgba(141, 0, 0, 0.3) 0px 15px 24px;
+}
+
+.gradient-2 {
+    border-color: transparent;
+    box-shadow: rgba(28, 158, 122, 0.3) 0px 5px 14px;
+}
+
+.gradient-2 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(28, 158, 122) 35%, rgb(0, 168, 204) 100%);
+    background-color: initial;
+}
+
+.gradient-2:hover {
+    border-color: rgb(28, 157, 122);
+    box-shadow: rgba(28, 158, 122, 0.3) 0px 15px 24px;
+}
+
+.gradient-3 {
+    border-color: transparent;
+    box-shadow: rgba(142, 45, 134, 0.3) 0px 5px 14px;
+}
+
+.gradient-3 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(142, 45, 134) 35%, rgb(161, 0, 76) 100%);
+    background-color: initial;
+}
+
+.gradient-3:hover {
+    border-color: rgb(129, 41, 122);
+    box-shadow: rgba(142, 45, 134, 0.3) 0px 15px 24px;
+}
+
+.gradient-4 {
+    border-color: transparent;
+    box-shadow: rgba(0, 149, 204, 0.3) 0px 5px 14px;
+}
+
+.gradient-4 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(0, 149, 204) 35%, rgb(0, 197, 204) 100%);
+    background-color: initial;
+}
+
+.gradient-4:hover {
+    border-color: rgb(0, 130, 179);
+    box-shadow: rgba(0, 149, 204, 0.3) 0px 15px 24px;
+}
+
+.gradient-5 {
+    border-color: transparent;
+    box-shadow: rgba(151, 0, 0, 0.3) 0px 5px 14px;
+}
+
+.gradient-5 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(151, 0, 0) 35%, rgb(161, 0, 76) 100%);
+    background-color: initial;
+}
+
+.gradient-5:hover {
+    border-color: rgb(152, 0, 0);
+    box-shadow: rgba(151, 0, 0, 0.3) 0px 15px 24px;
+}
+
+.gradient-6 {
+    border-color: transparent;
+    box-shadow: rgba(0, 153, 180, 0.3) 0px 5px 14px;
+}
+
+.gradient-6 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(0, 153, 180) 35%, rgb(111, 0, 128) 100%);
+    background-color: initial;
+}
+
+.gradient-6:hover {
+    border-color: rgb(0, 159, 188);
+    box-shadow: rgba(0, 153, 180, 0.3) 0px 15px 24px;
+}
+
+.gradient-7 {
+    border-color: transparent;
+    box-shadow: rgba(204, 134, 0, 0.3) 0px 5px 14px;
+}
+
+.gradient-7 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(204, 134, 0) 35%, rgb(159, 0, 0) 100%);
+    background-color: initial;
+}
+
+.gradient-7:hover {
+    border-color: rgb(179, 118, 0);
+    box-shadow: rgba(204, 134, 0, 0.3) 0px 15px 24px;
+}
+
+.gradient-8 {
+    border-color: transparent;
+    box-shadow: rgba(17, 0, 149, 0.3) 0px 5px 14px;
+}
+
+.gradient-8 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(17, 0, 149) 35%, rgb(88, 0, 143) 100%);
+    background-color: initial;
+}
+
+.gradient-8:hover {
+    border-color: rgb(18, 0, 151);
+    box-shadow: rgba(17, 0, 149, 0.3) 0px 15px 24px;
+}
+
+.gradient-9 {
+    border-color: transparent;
+    box-shadow: rgba(0, 134, 146, 0.3) 0px 5px 14px;
+}
+
+.gradient-9 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(0, 134, 146) 35%, rgb(27, 152, 71) 100%);
+    background-color: initial;
+}
+
+.gradient-9:hover {
+    border-color: rgb(0, 184, 200);
+    box-shadow: rgba(0, 134, 146, 0.3) 0px 15px 24px;
+}
+
+.gradient-10 {
+    border-color: transparent;
+    box-shadow: rgba(0, 17, 176, 0.3) 0px 5px 14px;
+}
+
+.gradient-10 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(0, 17, 176) 35%, rgb(0, 197, 204) 100%);
+    background-color: initial;
+}
+
+.gradient-10:hover {
+    border-color: rgb(0, 16, 165);
+    box-shadow: rgba(0, 17, 176, 0.3) 0px 15px 24px;
+}
+
+.gradient-11 {
+    border-color: transparent;
+    box-shadow: rgba(130, 34, 9, 0.3) 0px 5px 14px;
+}
+
+.gradient-11 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(130, 34, 9) 35%, rgb(157, 0, 0) 100%);
+    background-color: initial;
+}
+
+.gradient-11:hover {
+    border-color: rgb(190, 50, 13);
+    box-shadow: rgba(130, 34, 9, 0.3) 0px 15px 24px;
+}
+
+.gradient-12 {
+    border-color: transparent;
+    box-shadow: rgba(123, 109, 78, 0.3) 0px 5px 14px;
+}
+
+.gradient-12 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(123, 109, 78) 35%, rgb(182, 105, 4) 100%);
+    background-color: initial;
+}
+
+.gradient-12:hover {
+    border-color: rgb(83, 90, 94);
+    box-shadow: rgba(123, 109, 78, 0.3) 0px 15px 24px;
+}
+
+.gradient-13 {
+    border-color: transparent;
+    box-shadow: rgba(9, 100, 130, 0.3) 0px 5px 14px;
+}
+
+.gradient-13 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(9, 100, 130) 35%, rgb(17, 44, 148) 100%);
+    background-color: initial;
+}
+
+.gradient-13:hover {
+    border-color: rgb(13, 147, 190);
+    box-shadow: rgba(9, 100, 130, 0.3) 0px 15px 24px;
+}
+
+.gradient-14 {
+    border-color: transparent;
+    box-shadow: rgba(150, 32, 93, 0.3) 0px 5px 14px;
+}
+
+.gradient-14 .subj-icon {
+    background-image: linear-gradient(45deg, rgb(150, 32, 93) 35%, rgb(158, 9, 9) 100%);
+    background-color: initial;
+}
+
+.gradient-14:hover {
+    border-color: rgb(154, 33, 96);
+    box-shadow: rgba(150, 32, 93, 0.3) 0px 15px 24px;
+}
+
+.subGradient-1 {
+    background-image: linear-gradient(45deg, rgb(141, 0, 0) 35%, rgb(204, 149, 0) 100%);
+    background-color: initial;
+}
+
+.subGradient-1:hover {
+    box-shadow: rgba(141, 0, 0, 0.3) 0px 10px 14px;
+}
+
+.subGradient-2 {
+    background-image: linear-gradient(45deg, rgb(28, 158, 122) 35%, rgb(0, 168, 204) 100%);
+    background-color: initial;
+}
+
+.subGradient-2:hover {
+    box-shadow: rgba(28, 158, 122, 0.3) 0px 10px 14px;
+}
+
+.subGradient-3 {
+    background-image: linear-gradient(45deg, rgb(142, 45, 134) 35%, rgb(161, 0, 76) 100%);
+    background-color: initial;
+}
+
+.subGradient-3:hover {
+    box-shadow: rgba(142, 45, 134, 0.3) 0px 10px 14px;
+}
+
+.subGradient-4 {
+    background-image: linear-gradient(45deg, rgb(0, 149, 204) 35%, rgb(0, 197, 204) 100%);
+    background-color: initial;
+}
+
+.subGradient-4:hover {
+    box-shadow: rgba(0, 149, 204, 0.3) 0px 10px 14px;
+}
+
+.subGradient-5 {
+    background-image: linear-gradient(45deg, rgb(151, 0, 0) 35%, rgb(161, 0, 76) 100%);
+    background-color: initial;
+}
+
+.subGradient-5:hover {
+    box-shadow: rgba(151, 0, 0, 0.3) 0px 10px 14px;
+}
+
+.subGradient-6 {
+    background-image: linear-gradient(45deg, rgb(0, 153, 180) 35%, rgb(111, 0, 128) 100%);
+    background-color: initial;
+}
+
+.subGradient-6:hover {
+    box-shadow: rgba(0, 153, 180, 0.3) 0px 10px 14px;
+}
+
+.subGradient-7 {
+    background-image: linear-gradient(45deg, rgb(204, 134, 0) 35%, rgb(159, 0, 0) 100%);
+    background-color: initial;
+}
+
+.subGradient-7:hover {
+    box-shadow: rgba(204, 134, 0, 0.3) 0px 10px 14px;
+}
+
+.subGradient-8 {
+    background-image: linear-gradient(45deg, rgb(17, 0, 149) 35%, rgb(88, 0, 143) 100%);
+    background-color: initial;
+}
+
+.subGradient-8:hover {
+    box-shadow: rgba(17, 0, 149, 0.3) 0px 10px 14px;
+}
+
+.subGradient-9 {
+    background-image: linear-gradient(45deg, rgb(0, 134, 146) 35%, rgb(27, 152, 71) 100%);
+    background-color: initial;
+}
+
+.subGradient-9:hover {
+    box-shadow: rgba(0, 134, 146, 0.3) 0px 10px 14px;
+}
+
+.subGradient-10 {
+    background-image: linear-gradient(45deg, rgb(0, 17, 176) 35%, rgb(0, 197, 204) 100%);
+    background-color: initial;
+}
+
+.subGradient-10:hover {
+    box-shadow: rgba(0, 17, 176, 0.3) 0px 10px 14px;
+}
+
+.subGradient-11 {
+    background-image: linear-gradient(45deg, rgb(130, 34, 9) 35%, rgb(157, 0, 0) 100%);
+    background-color: initial;
+}
+
+.subGradient-11:hover {
+    box-shadow: rgba(130, 34, 9, 0.3) 0px 10px 14px;
+}
+
+.subGradient-12 {
+    background-image: linear-gradient(45deg, rgb(123, 109, 78) 35%, rgb(182, 105, 4) 100%);
+    background-color: initial;
+}
+
+.subGradient-12:hover {
+    box-shadow: rgba(123, 109, 78, 0.3) 0px 10px 14px;
+}
+
+.subGradient-13 {
+    background-image: linear-gradient(45deg, rgb(9, 100, 130) 35%, rgb(17, 44, 148) 100%);
+    background-color: initial;
+}
+
+.subGradient-13:hover {
+    box-shadow: rgba(9, 100, 130, 0.3) 0px 10px 14px;
+}
+
+.subGradient-14 {
+    background-image: linear-gradient(45deg, rgb(150, 32, 93) 35%, rgb(158, 9, 9) 100%);
+    background-color: initial;
+}
+
+.subGradient-14:hover {
+    box-shadow: rgba(150, 32, 93, 0.3) 0px 10px 14px;
+}
+
+.subjectListBasic .subList {
+    list-style-image: initial;
+}
+
+.subjectListBasic a {
+    text-decoration-color: initial;
+    color: rgb(232, 230, 227);
+}
+
+.subjectListBasic a i {
+    color: rgb(232, 230, 227);
+}
+
+.test-pack-card-box h2 {
+    color: rgb(211, 207, 202);
+}
+
+.test-pack-card-box .card-content li {
+    color: rgb(211, 207, 202);
+}
+
+.test-pack-card-box .card-content li i {
+    color: rgba(211, 207, 202, 0.5);
+}
+
+.test-pack-card-box .testPack-card {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
+}
+
+.test-pack-card-box .testPack-card h2,
+.test-pack-card-box .testPack-card h3 {
+    color: rgb(232, 230, 227);
+}
+
+.tp-box h2 {
+    color: rgb(211, 207, 202);
+}
+
+.tp-box .tp-card {
+    color: rgb(232, 230, 227);
+}
+
+.tp-box .card1 {
+    background-image: initial;
+    background-color: rgb(11, 90, 146);
+}
+
+.tp-box .card1:hover {
+    box-shadow: rgba(0, 182, 204, 0.4) 0px 5px 15px;
+}
+
+.tp-box .card2 {
+    background-image: linear-gradient(45deg, rgb(123, 0, 49) 0%, rgb(123, 0, 49) 31%, rgb(124, 0, 0) 49%, rgb(124, 0, 0) 100%);
+    background-color: initial;
+}
+
+.tp-box .card2:hover {
+    box-shadow: rgba(124, 0, 0, 0.4) 0px 5px 15px;
+}
+
+.session-card {
+    box-shadow: rgba(95, 103, 107, 0.3) 0px 5px 10px;
+}
+
+.session-card .heading {
+    color: rgb(232, 230, 227);
+}
+
+.session-card h3 {
+    color: rgb(232, 230, 227);
+}
+
+.session-card .time-slot {
+    color: rgb(185, 179, 169);
+}
+
+.session-card .time-slot strong {
+    color: rgb(211, 207, 202);
+}
+
+.session-card .link-btn {
+    color: rgb(75, 186, 243);
+}
+
+.session-card .link-btn:hover {
+    text-decoration-color: initial;
+}
+
+.doubt--card .heading {
+    color: rgb(232, 230, 227);
+}
+
+.doubt--card .heading h3 {
+    color: rgb(232, 230, 227);
+}
+
+.doubt--card .prof-img {
+    border-color: rgb(58, 63, 65);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.doubt--card .pn {
+    color: rgb(211, 207, 202);
+}
+
+.doubt--card .pe {
+    color: rgb(185, 179, 169);
+}
+
+.aitc-1 {
+    background-image: linear-gradient(45deg, rgb(18, 165, 126) 35%, rgb(0, 73, 58) 100%);
+    background-color: initial;
+}
+
+.aitc-2 {
+    background-image: linear-gradient(45deg, rgb(0, 76, 191) 35%, rgb(20, 8, 121) 100%);
+    background-color: initial;
+}
+
+.aitc-3 {
+    background-image: linear-gradient(45deg, rgb(155, 44, 52) 35%, rgb(76, 46, 126) 100%);
+    background-color: initial;
+}
+
+.aitc-4 {
+    background-image: linear-gradient(45deg, rgb(120, 41, 8) 35%, rgb(82, 9, 42) 100%);
+    background-color: initial;
+}
+
+.line-heading h3 {
+    border-bottom-color: rgb(66, 72, 74);
+}
+
+.meter-box p {
+    color: rgb(154, 146, 132);
+}
+
+.hardness-meter .hardness-gradient {
+    background-image: linear-gradient(to right, rgb(0, 28, 194) 0%, rgb(9, 67, 146) 22%, rgb(55, 150, 14) 46%, rgb(197, 177, 7) 67%, rgb(154, 4, 4) 88%, rgb(174, 3, 3) 100%);
+    background-color: initial;
+}
+
+.hardness-meter .hardness-gray {
+    background-image: initial;
+    background-color: rgb(58, 63, 66);
+}
+
+.hardness-meter [class*="line-"] {
+    background-image: initial;
+    background-color: rgba(24, 26, 27, 0.15);
+}
+
+.hardness-meter .m-bar span {
+    color: rgba(157, 149, 136, 0.6);
+}
+
+.tprs-list .tprs-img span {
+    background-image: initial;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(232, 230, 227);
+}
+
+.tprs-list .tprs-name {
+    color: rgb(211, 207, 202);
+}
+
+.tprs-list .tprs-sch {
+    color: rgb(160, 152, 139);
+}
+
+.overlay {
+    background-image: initial;
+    background-color: rgba(27, 29, 30, 0.94);
+}
+
+.overlay .overlay-window {
+    background-color: rgb(24, 26, 27);
+}
+
+.btn-close {
+    text-decoration-color: initial;
+    background-image: none;
+    background-color: initial;
+    color: rgb(153, 144, 131);
+    border-color: initial;
+}
+
+.overlay-content .upload {
+    color: rgb(98, 255, 207);
+}
+
+.step2 .uploaded {
+    color: rgb(98, 255, 207);
+}
+
+.step2 .closeBtn {
+    text-decoration-color: initial;
+    color: rgb(165, 157, 146);
+}
+
+.step2 .addMoreBtn i {
+    color: rgb(98, 255, 207);
+}
+
+.testPackUploadTimeLeftMain {
+    background-image: initial;
+    background-color: rgb(36, 39, 40);
+}
+
+.testPackUploadTimeLeftMain button {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.live-card .inner-wrap {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.live-card-wrap::after,
+.live-card-wrap::before {
+    box-shadow: rgba(58, 82, 106, 0.2) 0px 0px 30px 13px;
+}
+
+.live-card .white-top {
+    text-decoration-color: initial;
+}
+
+.live-card .live-logo {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.live-card .live-logo i {
+    color: rgb(99, 255, 207);
+}
+
+.live-card .live-logo span {
+    background-image: initial;
+    background-color: rgb(183, 15, 21);
+    color: rgb(232, 230, 227);
+}
+
+.live-card .btn-class {
+    border-color: initial;
+    background-image: initial;
+    background-color: rgb(33, 83, 71);
+    color: rgba(232, 230, 227, 0.7);
+}
+
+.live-card h4 {
+    color: rgb(232, 230, 227);
+}
+
+.live-card .fac-img {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 15px;
+    border-color: rgb(48, 52, 54);
+}
+
+.live-card-navigation a {
+    text-decoration-color: initial;
+    border-color: rgb(60, 65, 67);
+    color: rgb(171, 164, 153);
+}
+
+.live-card .fac-img .mn-butterfly {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    color: rgb(98, 255, 207);
+}
+
+.live-card .fac-info .name {
+    color: rgb(232, 230, 227);
+}
+
+.live-card .fac-info .more-desc,
+.live-card .fac-info .sub {
+    color: rgba(232, 230, 227, 0.8);
+}
+
+.live-card .fac-info .stext {
+    color: rgb(182, 175, 166);
+}
+
+.live-card .fac-info .stime {
+    color: rgb(232, 230, 227);
+}
+
+.live-card .fac-info .btn-link {
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+    color: rgba(232, 230, 227, 0.8);
+}
+
+.live-card .shareBox {
+    border-bottom-color: rgb(48, 52, 54);
+}
+
+.live-card .shareBox.showText p.d-none {
+    color: rgb(232, 230, 227);
+}
+
+.live-card .suc-register {
+    color: rgb(232, 230, 227);
+}
+
+.live-card .btn-download {
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+    color: rgb(232, 230, 227);
+}
+
+.live-card .shareBox .btn-intrest {
+    text-decoration-color: initial;
+    color: rgb(232, 230, 227);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: initial;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 13px;
+}
+
+.live-card .shareBox .btn-intrest.slideLoader {
+    color: transparent;
+}
+
+.live-card .shareBox .btn-intrest.slideLoader::before {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/ask-answer/loader.gif");
+}
+
+.live-card .shareBox .btn-share-content {
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+    color: rgb(232, 230, 227);
+}
+
+.live-card--noTimer .stext.btn-green,
+.live-card--noTimer .stext.btn-sm-green,
+.live-card--noTimer .stext.btn-sm-yellow,
+.live-card--noTimer .stext.btn-yellow,
+.live-card--noTimer .stext.line-btn,
+.live-card--noTimer .stext.text-uppercase {
+    color: rgb(216, 213, 208);
+}
+
+.live-card--noTimer .fac-info .stime {
+    color: rgb(175, 168, 158);
+}
+
+.enrol-box .enrol-count {
+    color: rgb(232, 230, 227);
+}
+
+.enrol-box .mn-group {
+    color: rgb(176, 170, 159);
+}
+
+.enrol-bar {
+    background-image: initial;
+    background-color: rgb(48, 52, 54);
+}
+
+.enrol-bar .pro-gradiant {
+    background-image: linear-gradient(to right, rgb(202, 153, 0) 0%, rgb(155, 0, 0) 52%, rgb(126, 0, 0) 84%);
+    background-color: initial;
+}
+
+.enrol-bar .show-fill {
+    background-image: initial;
+    background-color: rgb(48, 52, 54);
+}
+
+.enrol-bar .units {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    color: rgba(232, 230, 227, 0.6);
+}
+
+.live-card .share-btn {
+    text-decoration-color: initial;
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.live-card .facebook-btn {
+    color: rgb(111, 155, 202);
+}
+
+.live-card .whatsapp-btn {
+    color: rgb(86, 215, 107);
+}
+
+.live-card .twitter-btn {
+    color: rgb(53, 163, 231);
+}
+
+.live-card:not(.past-class):nth-child(4n+1) .shareBox {
+    background-image: linear-gradient(45deg, rgb(0, 121, 84) 73%, rgb(0, 121, 84) 73%, rgb(0, 192, 143) 100%);
+    background-color: initial;
+}
+
+.live-card:not(.past-class):nth-child(4n+2) .shareBox {
+    background-image: linear-gradient(45deg, rgb(179, 121, 9) 81%, rgb(146, 142, 8) 100%);
+    background-color: initial;
+}
+
+.live-card:not(.past-class):nth-child(4n+3) .shareBox {
+    background-image: linear-gradient(45deg, rgb(0, 79, 199) 81%, rgb(0, 105, 134) 100%);
+    background-color: initial;
+}
+
+.live-card:not(.past-class):nth-child(4n+4) .shareBox {
+    background-image: linear-gradient(45deg, rgb(134, 0, 0) 73%, rgb(98, 0, 19) 100%);
+    background-color: initial;
+}
+
+.live-card.past-class .shareBox {
+    background-image: linear-gradient(45deg, rgb(90, 97, 101) 81%, rgb(58, 63, 65) 100%);
+    background-color: initial;
+}
+
+.live-class {
+    border-bottom-color: rgb(48, 52, 54);
+    background-image: initial;
+    background-color: rgb(183, 15, 21);
+}
+
+.live-class::before,
+.live-class::after {
+    box-shadow: rgba(58, 82, 106, 0.8) 0px 0px 30px 13px;
+}
+
+.live-class .shareBox {
+    border-color: initial;
+}
+
+.showLoader::after {
+    background-color: rgba(24, 26, 27, 0.8);
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/ask-answer/loader.gif");
+}
+
+.loginLiveCard .batch-title {
+    color: rgb(232, 230, 227);
+}
+
+.loginLiveCard .batch-info {
+    color: rgb(232, 230, 227);
+}
+
+.loginLiveCard .batch-info i {
+    color: rgb(121, 255, 178);
+}
+
+.loginLiveCard .batch-lang {
+    border-left-color: rgb(48, 52, 54);
+}
+
+@media (max-width: 767px) {
+    .live-card .shareBox .btn-share-content {
+        background-image: initial;
+        background-color: rgb(24, 26, 27);
+        color: rgb(98, 255, 207);
+    }
+}
+
+@media (min-width: 768px) {
+    .live-card .fac-img {
+        border-color: rgb(48, 52, 54);
+    }
+    .live-card h4 {
+        color: rgb(232, 230, 227);
+    }
+}
+
+.topSlideMainBlock.jeeplusPQ {
+    background-image: initial;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.slideTopOverlay {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.topSliderTitleBlock.jeeplusPQ .titleBlockInner {
+    background-color: rgb(18, 112, 185);
+    border-color: initial;
+    box-shadow: rgb(49, 54, 56) -10px 10px 25px;
+}
+
+.topSlideMainBlock {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.topSliderTitleBlock.jeeplusPQ .titleBlockInner a.titleClose {
+    border-left-color: initial;
+}
+
+.topSliderTitleBlock.jeeplusPQ .titleBlockInner a.titleClose:hover {
+    background-image: none;
+    background-color: initial;
+}
+
+.leftStateSlider {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgb(38, 42, 43) 1px 3px 36px;
+}
+
+.rightStateResult {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgb(38, 42, 43) 1px 3px 36px;
+}
+
+.queSlider .InnerBox .queText {
+    color: rgb(211, 207, 202);
+}
+
+.leftStateSlider .previous,
+.leftStateSlider .next {
+    text-decoration-color: initial;
+}
+
+.questionList {
+    list-style-image: initial;
+}
+
+.questionList.queOptWrap li label:hover {
+    background-image: initial;
+    background-color: rgb(25, 35, 38);
+}
+
+.questionList li input:checked+label .questionList li input[type="checkbox"]:checked+label {
+    background-image: initial;
+    background-color: rgb(25, 35, 38);
+}
+
+.subMath.bgColor {
+    background-color: rgb(18, 112, 185);
+}
+
+.stateMeter .meterBox h3 {
+    color: rgb(211, 207, 202);
+}
+
+.meterModule ul {
+    list-style-image: initial;
+}
+
+.meterWrap ul {
+    list-style-image: initial;
+}
+
+.meterWrap ul li .fade {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.ansList {
+    list-style-image: initial;
+}
+
+.ansList li a {
+    text-decoration-color: initial;
+    color: rgb(168, 160, 149);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(62, 68, 70);
+}
+
+.ansList li a.greenBg {
+    background-image: initial;
+    background-color: rgb(31, 139, 77);
+}
+
+.ansList li a.redBg {
+    background-image: initial;
+    background-color: rgb(154, 46, 34);
+}
+
+.ansList li a.active {
+    border-color: rgb(106, 99, 87);
+}
+
+.leftStateSlider .middleBox {
+    color: rgb(180, 174, 164);
+}
+
+.leftStateSlider .bottomButtonBox {
+    border-top-color: rgb(62, 68, 70);
+}
+
+.leftStateSlider .bottomButtonBox ul {
+    list-style-image: initial;
+}
+
+.leftStateSlider .bottomButtonBox .button {
+    background-color: rgb(24, 26, 27);
+    text-decoration-color: initial;
+}
+
+.leftStateSlider .bottomButtonBox .graybutton {
+    border-color: rgb(71, 77, 80);
+    color: rgb(168, 160, 149);
+}
+
+.leftStateSlider .bottomButtonBox .bluebutton {
+    background-color: rgb(18, 112, 185);
+    color: rgb(232, 230, 227);
+}
+
+.leftStateSlider .bottomButtonBox .graybutton:hover {
+    background-color: rgb(31, 34, 35);
+}
+
+.leftStateSlider .bottomButtonBox .bluebutton:hover {
+    background-color: rgb(14, 102, 170);
+}
+
+.greenText {
+    color: rgb(92, 218, 145);
+}
+
+.redText {
+    color: rgb(216, 92, 79);
+}
+
+.grayText {
+    color: rgb(175, 168, 157);
+}
+
+.greenCorrectText {
+    color: rgb(92, 218, 145);
+}
+
+.redCorrectText {
+    color: rgb(216, 92, 79);
+}
+
+.borderBottom {
+    border-bottom-color: rgb(71, 77, 80);
+}
+
+.sliderBox .messageBox {
+    background-color: rgb(24, 26, 27);
+}
+
+.sliderBox a {
+    outline-color: initial;
+}
+
+.pqMainSlider .mn-bookmark {
+    color: rgb(168, 160, 149);
+}
+
+.pqMainSlider .green {
+    color: rgb(81, 247, 197);
+}
+
+.slideTopOverlay {
+    background-image: initial;
+    background-color: rgb(30, 32, 33);
+}
+
+.topSlideMainBlock {
+    box-shadow: rgb(0, 1, 1) 1px 1px 5px;
+}
+
+.topSliderTitleBlock .titleBlockInner {
+    background-image: initial;
+    background-color: rgb(72, 81, 98);
+    border-color: rgb(112, 104, 92);
+    box-shadow: rgb(49, 53, 55) 0px 2px 2px, rgb(71, 77, 80) 0px 1px 0px inset;
+}
+
+.topSliderTitleBlock .titleBlockInner h2 {
+    color: rgb(232, 230, 227);
+}
+
+a.titleClose {
+    border-left-color: rgb(76, 82, 85);
+}
+
+a.titleClose .closeIcon {
+    background-image: url("https://css-nm.mnimgs.com/theme/JuniorSite/img/closeIcon.png");
+    background-color: initial;
+}
+
+a.titleClose:hover {
+    background-image: initial;
+    background-color: rgb(16, 23, 33);
+}
+
+.pollThanks {
+    border-color: rgb(0, 217, 0);
+}
+
+.numberCircle {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(106, 99, 87);
+    color: rgb(232, 230, 227);
+}
+
+.greenCircle {
+    background-image: initial;
+    background-color: rgb(31, 139, 77);
+    border-color: rgb(35, 156, 86);
+    color: rgb(232, 230, 227);
+}
+
+.redCircle {
+    background-image: initial;
+    background-color: rgb(154, 46, 34);
+    border-color: rgb(151, 45, 34);
+    color: rgb(232, 230, 227);
+}
+
+.leftQuesDiv {
+    color: rgb(211, 207, 202);
+}
+
+.rightQuesDiv,
+.rightQuesDiv>p,
+.rightQuesDiv>span {
+    color: rgb(211, 207, 202);
+}
+
+.lineSeperator {
+    background-color: rgb(47, 51, 53);
+}
+
+.myStats h3 {
+    border-bottom-color: rgb(66, 72, 74);
+}
+
+.myStats .dedicated {
+    background-image: initial;
+    background-color: rgb(144, 82, 59);
+}
+
+.myStats .enthusiast {
+    background-image: initial;
+    background-color: rgb(58, 63, 66);
+}
+
+.myStats .autobiographer {
+    background-image: initial;
+    background-color: rgb(182, 119, 6);
+}
+
+.myStats .rankbox {
+    color: rgb(211, 207, 202);
+}
+
+.myStats .rankbox .box {
+    border-color: rgb(71, 77, 80);
+}
+
+.statList li span {
+    color: rgb(232, 230, 227);
+}
+
+.summaryBox .batch_summery {
+    color: rgb(211, 207, 202);
+}
+
+.profileSliderBox h3 {
+    border-bottom-color: rgb(66, 72, 74);
+}
+
+.profileSliderBox .profilSlider {
+    list-style-image: initial;
+}
+
+.profileSliderBox .add_address {
+    background-image: initial;
+    background-color: rgb(191, 166, 1);
+}
+
+.profileSliderBox .add_pdetail {
+    background-image: initial;
+    background-color: rgb(98, 23, 146);
+}
+
+.profileSliderBox .add_friend {
+    background-image: initial;
+    background-color: rgb(51, 66, 138);
+}
+
+.profileSliderBox a {
+    color: rgb(156, 148, 135);
+}
+
+.profileSliderBox a.disabled {
+    color: rgb(202, 197, 190);
+}
+
+.profileSliderBox .icon_box i {
+    color: rgb(232, 230, 227);
+}
+
+.profilSlider_paging .psliderPaging {
+    list-style-image: initial;
+}
+
+.profilSlider_paging li {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+}
+
+.profilSlider_paging li.activeSlide,
+.profilSlider_paging li:hover {
+    background-image: initial;
+    background-color: rgb(45, 49, 51);
+}
+
+.profilSlider_paging li.activeSlide a,
+.profilSlider_paging li:hover a {
+    color: rgb(200, 195, 188);
+}
+
+.profilSlider_paging li a {
+    text-decoration-color: initial;
+    color: rgb(168, 160, 149);
+}
+
+.profilSlider_paging li+li {
+    border-left-color: rgb(54, 59, 61);
+}
+
+.trndVideos h2 {
+    color: rgb(232, 230, 227);
+}
+
+.trndVideos .slick-arrow {
+    color: rgb(171, 164, 153);
+    text-decoration-color: initial;
+    border-color: rgb(60, 65, 67);
+}
+
+.trndSlider ._slide {
+    outline-color: initial;
+}
+
+.trndSlider .mySlide {
+    background-image: radial-gradient(rgb(0, 121, 84), rgba(0, 0, 0, 0));
+    background-color: initial;
+    border-color: rgb(48, 52, 54);
+    box-shadow: rgba(1, 1, 1, 0.22) 0px 0px 14px;
+}
+
+.trndSlider .mySlide:nth-of-type(5n+1) {
+    border-color: rgb(48, 52, 54);
+}
+
+.trndSlider .heading-overlay {
+    background-image: initial;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.trndSlider .heading-overlay h4,
+.trndSlider .heading-overlay h6 {
+    color: rgb(232, 230, 227);
+}
+
+#mnPopup,
+#mnPopup .blackOverLay,
+#onbording-outerWrap {
+    background-image: initial;
+    background-color: rgba(87, 94, 98, 0.8);
+}
+
+#mnPopup .mnPopupCont {
+    border-color: rgb(71, 76, 79);
+    box-shadow: rgb(0, 0, 0) 1px 1px 10px;
+}
+
+#mnPopup .mnPopupFront,
+#mnPopup .mnPopupBack {
+    background-image: initial;
+    background-color: rgb(29, 31, 32);
+}
+
+#mnPopup .popupTitle {
+    border-bottom-color: rgb(48, 52, 54);
+}
+
+#mnPopup .popupTitle h3,
+.forgotPassword header h3 {
+    border-bottom-color: rgb(71, 76, 79);
+}
+
+#mnPopup .popupClose,
+#TB_closeAjaxWindow #TB_closeWindowButton,
+.forgotPassword .popupClose,
+.popupCover .btnClose {
+    border-left-color: rgb(67, 72, 75);
+}
+
+#mnPopup .popupClose span,
+#TB_closeAjaxWindow #TB_closeWindowButton span,
+.forgotPassword .popupClose span,
+.popupCover .btnClose span {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/popup-close-btn.png");
+}
+
+#mnPopup .popupClose:hover,
+#TB_closeAjaxWindow #TB_closeWindowButton:hover,
+.forgotPassword .popupClose:hover,
+.popupCover .btnClose:hover {
+    background-color: rgb(36, 39, 40);
+}
+
+#mnPopup .makeityourown_otherpages #onbording .onbording-inner {
+    border-color: initial;
+}
+
+#mnPopup .content_mnpopup .ajaxLoader {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/ajax-loader.gif");
+    background-color: initial;
+}
+
+#TB_closeAjaxWindow #TB_closeWindowButton span {
+    background-image: url("https://css-nm.mnimgs.com/theme/newNav/img/popup-close-btn.png");
+    background-color: initial;
+}
+
+#mnPopup.grayOverLay {
+    background-image: initial;
+    background-color: rgba(64, 69, 72, 0.9);
+}
+
+#mnPopup .home2Style.mnPopupCont {
+    border-color: initial;
+    box-shadow: none;
+}
+
+#mnPopup .home2Style .popupTitle h3 {
+    border-bottom-color: initial;
+    border-top-color: rgb(59, 64, 67);
+    color: rgb(232, 230, 227);
+}
+
+#mnPopup .home2Style .popupClose {
+    border-color: rgb(76, 82, 85);
+}
+
+#mnPopup .home2Style .popupClose span {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/popup-close-btn-new.png");
+}
+
+#mnPopup .home2Style .popupClose:hover {
+    background-color: rgb(16, 23, 33);
+}
+
+#mnPopup .home2Style .popupTitle {
+    background-image: initial;
+    background-color: rgb(35, 44, 57);
+    border-color: rgb(129, 120, 106);
+    box-shadow: rgba(0, 1, 1, 0.5) 0px 2px 2px;
+}
+
+#mnPopup .home2Style .mnPopupFront {
+    background-image: none;
+    background-color: initial;
+}
+
+.mnPopupCont.FBrevampP1 .mnPopupFront,
+.mnPopupCont.FBrevampP2 .mnPopupFront,
+.mnPopupCont.FBrevampP3 .mnPopupFront {
+    background-image: initial !important;
+    background-color: rgb(24, 26, 27) !important;
+}
+
+#mnPopup .mnPopupCont.FBrevampP1 .popupClose,
+#mnPopup .mnPopupCont.FBrevampP2 .popupClose,
+#mnPopup .mnPopupCont.FBrevampP3 .popupClose {
+    background-image: none;
+    background-color: initial;
+    border-left-color: initial;
+}
+
+#mnPopup .mnPopupCont.FBrevampP1 .popupClose span,
+#mnPopup .mnPopupCont.FBrevampP2 .popupClose span {
+    background-image: url("https://css-nm.mnimgs.com/img/site_content/facebook/icons.png");
+    background-color: initial;
+}
+
+#mnPopup .mnPopupCont.FBrevampP1,
+#mnPopup .mnPopupCont.FBrevampP2 {
+    border-color: initial;
+}
+
+#mnPopup .mnPopupCont.FBrevampP1 .popupTitle {
+    border-bottom-color: initial;
+    background-color: rgb(47, 71, 122);
+}
+
+#mnPopup .mnPopupCont.FBrevampP1 .popupTitle h3,
+#mnPopup .mnPopupCont.FBrevampP2 .popupTitle h3 {
+    border-bottom-color: initial;
+    color: rgb(232, 230, 227);
+}
+
+#mnPopup .mnPopupCont.FBrevampP2 .popupTitle {
+    border-bottom-color: initial;
+    background-color: rgb(47, 71, 122);
+}
+
+#TB_ajaxContent>span>a:hover {
+    text-decoration-color: initial;
+}
+
+.fullscreen-video-player {
+    background-color: rgb(0, 0, 0);
+    outline-color: initial;
+}
+
+.fullscreen-video-player .video-container {
+    outline-color: initial;
+}
+
+.fullscreen-video-player .remove-btn {
+    background-image: none;
+    background-color: initial;
+    border-color: initial;
+}
+
+.icon-remove::before {
+    background-color: rgb(96, 104, 108);
+}
+
+.icon-remove::after {
+    background-color: rgb(96, 104, 108);
+}
+
+.loading {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPjxkZWZzPjxmaWx0ZXIgaWQ9ImRhcmtyZWFkZXItaW1hZ2UtZmlsdGVyIj48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC4zMzMgLTAuNjY3IC0wLjY2NyAwLjAwMCAxLjAwMCAtMC42NjcgMC4zMzMgLTAuNjY3IDAuMDAwIDEuMDAwIC0wLjY2NyAtMC42NjcgMC4zMzMgMC4wMDAgMS4wMDAgMC4wMDAgMC4wMDAgMC4wMDAgMS4wMDAgMC4wMDAiIC8+PC9maWx0ZXI+PC9kZWZzPjxpbWFnZSB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIGZpbHRlcj0idXJsKCNkYXJrcmVhZGVyLWltYWdlLWZpbHRlcikiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvZ2lmO2Jhc2U2NCxSMGxHT0RsaFBBQThBT1ovQU9ucDZUTzMveUt4Lys3dTd0M3ovNFRNOUZYRC85cmEydXowK2ZqOC9rUzkvL1g3L3VIaDRRQ2wveDZ1L09ibTV1enM3UFQwOVBMeTh1NzUvenUwOWhHci85UHMrYnZuLzVMUzlmTDUvZ1NtL2xHNzlhYlo5Y3JvK05ydisyVEUrVGF6OStQdTlFcTU5UXlvL296UytLcmQrZi8vLzkzczlXckcrUHY5L3orMjluVEg5TlRwOUJlcSt3bW4vWUhMOU9iMC9BS20vdExTMHVMdzlpYXcrMUc5K1VDNCtoV3IvdjcrL3ZIeDhmMzkvZFBUMC9mMzk5VFUxTjdlM2xwYVd2bjUrZG5aMmRmWDErTGk0dDNkM2Z2Nys5emMzT3ZyNi9qNCtPcnE2dGpZMk9UazVOYlcxdno4L09YbDVXYkovM2ZQLy9yNityMjl2Y3p0Ly9iMjltVmxaWnljbk1qSXlJYUdodC9mMzVuYi82cmgvM3Q3ZTZlbnAzQndjSWpWLzVHUmtiS3lzcy9yK3FqYTlWeSs5Q090K2ZuNy9NZm0rUHo5L2N6bjloT3AvT256K2YzKy8vUDI5OFBvL1A3Ly84am4rTTdvOW9QUCtIL005bGpBK0ovWDlaL1k5LzM5L3ZEMStHREM5Mi9HOW4vTitmYjI5L1Q0K2txOCtmLy8veUgvQzA1RlZGTkRRVkJGTWk0d0F3RUFBQUFoK1FRRkNnQi9BQ3dBQUFBQVBBQThBQUFILzRBbWdvT0VoWVk0U0RrQVEwUkJURDA2R1MwZ0d5dGpGZ21HbXB1Y25WUkhSRUl5bzZReWdnMm9xSk12WjUydXI0STZPUXc5cGJhbUpxbTZEU01pSEJtd3dZUTVQanUzdDZlN3Vob1VZOEt3UEVQR3g4aTV5cnNhR3gzUG16Z0RvdFRIeWRlN0xSaVozSU02RDlQVUJ3ODVQRVU2T0RnTE1HSWxLRFRrcUJwa0U5S1ppQkl2eURFbFNZRGdlSlhBZ3h3SC9WUjQ0SWFFeUlFaUVXcVJDcEpEUjdvRkpmaGRBekV4V0JRam80dzBrVkNyQndTUEFnVXRJREZDR1EwV1JXQTF5VktLZ1k0QlBvREVMUFRHUXdCZE5OYm9jTkxFRlk0bHQ1WWdXVGpVMElJUHFFQWdLRUpFeGhLcW13YTBJNVVFYk5WQ0tmYlk2RlBrd0tnZEEvODQ4UUJYNnNqWlRtendBREZJU2dpUFRVTnVPVEY3OXhDQVcwTTA1Umdyd3dqaHdvZFFsdHFSbzVBT0g3WjZDSVhzQ29oR1VqNWdDbHBzQ3dKbldCQnNVU2JFd0ZhUXg2Y1A4U1hGWUJDUHo2TXF4MzZWSS9OZkUwZHNLWUc5dXhBT0piYnM0c0JjS2tseFdFbHMrVUJFVjRibTU2ODhseEtTeU5ZQjR0Z0g0WEJiU3BHdEIrRmZQYkMxeUpidTlKeDZsMkprNnpmOFRUeHNOYktWYzlDVUJnRUYwMFVYVjFRUlV4R3VNV0dMYUNaYzBBQUJ3bGhoUlZVNjJNSUVneWFZNVNDRUprVEF4UTlWN09ERER5UmVzUU9KWEZoUllBUS9ZUEZERnlhNCtHRUVuQkNtQTRZYVBpaElGMTZZMEFVWEpvUUJ4ZzlXcEdpQ0YxWkk4UVAvQUQ5SUVVWVZWeXlwSkFBMVdxWmdLUXh1dUdPUFA0YmhoWWRGVG9qa2xEL3NvR1NVQUV6SlNZV2xNREhiS1AwSjhsOHFJWHdZb3BKVllJSEZpUzBTV0FXTFBoUVk0dzllL0RDaUQyQ0FjYWdnQ0pZU1JGZWwySGVhRDFXaytRT04rT2tYV0huUHVVaGtKL0tSTXNSaHBhQjMzeWJybFFKQXFLTjhkK29oNUpHU0F4TFZYZmNxSWRyMU5SVnpaTjFLU0hTbFRBZWNjT0JoZDF4eWd0em1ucThtc0dxZGZhMDVXdXh1T0x3cFEyMkRrRmFLYWErbU50bDdKbHlXMldidzVRb2FodHFTNGhoOE9FaEd5bXFHYkZyS1lPSGg0QVJpK0ZVbkF4R1M3amJBTFg1eEl0YTVFUnd4clVBNFJNQURjdS9HVlNOVTErTEFrZ3owY21hdnF4RVlYZW5WdEUwd3NJUUpBNmRFN2xsQVNIWkFFNlJsMGRRclJmQVFNaWt1WWNpTkRoRGc1dE1BUkVRaERCQzh1dFpST3JKWU84b0RQSXdNU3hROFVZT1FRcS9nQUVRU0RCOHpSSnpQNkxBRVk5N0JJdzg5T09qUWNnNFB4SHJNRGt2SUxJdzMrb1l6aWlCcWJ6ZkF3YTlFZ3pVMWJMZTl3eEQ5bmtYTTNMYlVUWTJJNEhJbUN5MXErNTBaQXorSDkwa280cGhnaXhCRUhFSEZyWWdvd29namtEVHg2S2l6d3IxSklBQWgrUVFGQ2dCL0FDd1FBQUFBTEFBaEFBQUgvNEIvZ29PRWhVMUJSRU1BT1VnNGhZK1FrWktDTXBXVlFrUkhWSk9jblpTV29EME1PVHFlcG9XZ3FUSTdQam1ucjZxcU8wTThyNTZ4c1VJRGpyYVJPa1U4T1E4SHVKVTdTNlc5bkRoQVNVckZXVkhLbmpvNVFiZyswdE9kT2hBOXFyb0liOXVjSmtCR29Fd1JPQVV3NUowNFRwZFVabmtOWkF2dnkwbEJRR1kxRFJwb3dLQ3ZYSnMrTmdJR2JOR2g0S1FGSkJRcTNNREdvYVFGQVNRS0hHTlJrb2NSR2lsazZCZ3Bva1FOSEVoQ1drQkRvd2lWa0Vwb2RORVFKcUVGRGpTK3NGbElUc2g4UEFWNTBDQ3hoWVdnZ2hLMGxNZ1I2UjhVR2xjNC9TTlQ0b2FwWWpTQ21BcERZNW1wR1RScW1KQ3h3Z1diQ1FvdGdDTGdENVFBVXcwRnNYVUxOeTdaQm1iai9na0VBQ0g1QkFVS0FIOEFMQlVBQ1FBbkFDc0FBQWYvZ0grQ2c0U0Zob2VEUlNhSWpJMk1PazVOanBPVFJVUXlTemlVbTRaRkJ6SXlPd09jcER4QVFhQ2dRanlrbXpnQXFhbERpNjJUT0VheG9UbTFsRUE5dVQ0NnZKTVF1VHU3dzQwNHFMRU15WTQ1dVQyc3o0ZzRTcmxIMVl4SndKcmJocjZ4UWtqZ2hqaWZzY2ptaEErNUFPeUYwYkZEOFlROHVVVDJpYmxCKzRJNmNqR1owcURnRm5iZkJnbjdZcURCRTNZSkNpMzRJbUJDZ0lmbU1oVGNxRUZMZ3dvS0ZMQ0RzYkZnbVg5L3hKUnNBQUpsaVpVYlVLSll1ZUpmQWhvcngvenpvS0ZrQ3d2LzVLeWtzR0RmQWdjclgveDdXZEpGQjZNNFM0cjRSMktsQmc3N1BJd1ltc0hlZ2dCV2RjWkw4V0ZsZ3cxczR1R3dZN2JGVTN0NEhXeVUxSUFCNVl5b0RjZ1VSWGxpcTRvSkNmL0ZVZUVCWmFFMWlBSUJBQ0g1QkFVS0FIOEFMQm9BR3dBaUFDRUFBQWYvZ0grQ1VGQ0Nob2VJaVlxSVQwK0xqNUNDRncwTkFZNlJtSWlXZndLWG1ZbzRpRHFiblorTE9qS3BxVXlURFFxRnBvbEZxcWxCc1pFOHRESkV0NUE1dWtPOWp3KzZBTUtnQjdvNXg0bEFQYlJDU015SVNibytvZE9DT0VxNlI5bUd2N1E5UE45L09FRzZET1YvRUxvN3k5L08xanJmT0VidThOTTRUcm95UXliWlRBem9KNFRjdEJScmVIQlR0V05BdGdVZjZKaUp3RVRWRW16SFBBU2dST2RQamgweXNqUUJLR3dCaVJHVUtNMUJNNEJJbEdNTFN0QklTYlBPSHlDOUVuaVE0NENtencwVFBpMkFJYVlFQ2hveGZOTFVRQ2FvS2FWUUc3VEFzT0JXMUtVYk9naTcya0FEaFRGc2prVjFJWUpEaG1rK1cxQjRBZWRiaGhZZ0NEYXNHR09oNnJGQUFDSDVCQVVLQUg4QUxBZ0FHd0FyQUNFQUFBZi9nSCtDZzRTRmhvSmJGWWVMakkyT2o1Q1JpWkdVajFvTmxabUxsNXFkaEpPZW9hS2pwS1dtcDZpcHFxdXNyYTZ2c0xHeXFteXpnak1ZS2FvNEVZY25MUTBmQzZnNFRrWkZoU3dhRGN3QkhtK2xRRVl5TWdlRGZHa3V6TnNqSk1PaE9oQTkxTlFNT245ckt0dnJEVFFsMzVVNk9VSGs5UStDSHVyczJ3NXlIZ21QY0FCSm9xU2V3U0hJL2t3Z3MyemZOaG9vU29pQmtRR2dqaUk4Y2p3NFlORGdqaVhuQmlYQUFNeWhRdzJDT3FxVUlXUUFqa01kTmpRMHVjMUZ5cFhrZGd6aDRXZ01oWmttYmY3QktXT0hqeHdtSUdYZ0lHSUVUYUVyZXpESUViTFNtUmNnU3E2RFdrOElrU05VUmlXd01HYkZCaEJsMUtqNTB5UUlrU0VBQm5JZ2Vla29FQUFoK1FRRkNnQi9BQ3dBQUIwQUpnQWZBQUFILzRCL2dvT0VoWWFIaFJNTkNnMVFDNFVKaUpLU0JBMWFYeFVhRFp1YkdaT2ZoWlVYV2cxbG5Kc3dvS3AvaWxOYkZTQ25EV0tydFlJYnNpVzJ0U3V5S0x1clk3STBrY0NmRmkybkdoN0dud3NVc25MTm55K3lEby9UaUIwdXVkbVNJc1BZM29VY21xY2s0NFlaMEtjanpPbUVZK2FjQWVMd2JMaXlIeW53Z3gzSnAvTGdNZEZQRUlaNWV0QkVPSUtqNEFJeW0rYjhrZEJEaHBPRy9TYUl3UEJud0E0WklJMEFJUWpQRFFLUElGUDJnS0NqSHhBZktXUEtDSktqWmJvb1dXVEdWSklFQ01ac09wWjgxSm55d0lNY1BJcm8rR2tMeHdBaFJLUEttTVpqeUZDcEtiM2w4SEZWNmpnZE9SaFU5QXFQeWhFaVVIVVcvSU1EU1E0QVF3ZUlCR0hTQTFFZ0FDSDVCQVVLQUg4QUxBQUFCZ0F6QUMwQUFBZi9nSCtDZzRNcEM0U0lpWXFMakkwZUo0MlJrcE9DWWlBMVpwU2FtMzhFSUEwTmVaeWpqRGdUS3FDZ0JXaWtyWU1MWkttcEdLNnVHQnF5b0NSc3RhTWRMYmtOY3J5OW0yd2J3UjhweFp4anVMSUJoOHlhR1JTNUl4N1RteHpQcVNUYW15SzVOTkxna2gwdXVTWG1sQys1RHVYc2pBdldzbkx5a2hiQXFSclorSTFqeGlYNDEyaEZMaFFFR3lHVHRTN2hvayt5eERoY1ZDWVhqSW1LdW9IS2dERlJ2RDhENVNsb0VLREJCRVU2RU9HUXQ2VUJBUzB1RlRHUlFaTm1Tbll0WDhaTUZLUW16U0w0Umdwb01JV29BUU5GcHhEeEtZT0h2Q2tWZEo1TU5JUnBqcUNnbml3Q3dQUkJSMFE1bUI1WStWVVFFaUUrZXdBcEt3aUhENlpKU3RnS09zSlVDZG15UEhwWWxmdUhBZE1nZDcvbTJNRVVnbHdkYjlPdVpUdVlxWkhBR0UxVVplb0U4a1FlYUgwU2NjcDJBR0dhUG02eXhiR0VKZ08rZzVvd1dJS2FVQkhPWHdNQkFDSDVCQVVLQUg4QUxBQUFBQUFmQUI0QUFBZnpnSCtDZzRTRmhna1dZeXNiSUdWcWFvYVJrV2N2SUMwTm1Ka3ViNUtTR1J3aUxwbWptQzZka1dNVUdxU3NwcWVESFJ1cnJLMnZid3NZbDdTMEdxZHZGd1c3bVRRb0pXSXdHUW1uVVNFSU5yUU9jaDdLcjROSVJBZEZNemVqTkNVTDFZVlJSakl5Um4vYkRTTWs0T0dESmsxWjVlVU1PbWwrSHU2Rk9Fdno4MHQvVXVnck5HQ0h2M0pKY0F3a3hFUElRUmxIVEN4OE4rU2hFNFVUQmVVdzZNOEl4b3c2ZkJ6c0FTVGpvSTBISVpnY3hPQmdrSThaZWZRNG1HT2xvQ01IbGNDY2lFT2t2eVEyL3lCeE9JOWswQndIRCt5Y0NPRGdnNkIvS3ZxckdaVElRUjVRZ3h3c0FwWEpRUjFRd1JKYU9qRVFBRHM9IiAvPjwvc3ZnPg==");
+}
+
+.modalBox {
+    background-image: initial;
+    background-color: rgba(24, 26, 27, 0.9);
+}
+
+.modalBox .modalBox-content {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(0, 0, 0, 0.12) 2px 2px 10px 1px;
+}
+
+.modalBox-content .modalBox-title {
+    background-image: initial;
+    background-color: rgb(195, 147, 3);
+}
+
+.modalBox-title .close-btn {
+    background-image: url("https://www.meritnation.com/img/site_content/meritnation/newHome/home-sprite.png?v=25102016");
+}
+
+.modalBox-content .modalBox-body p {
+    color: rgb(158, 150, 137);
+}
+
+.modalBox-content .modalBox-body .thanksmsg {
+    color: rgb(98, 255, 207);
+}
+
+.input-group .group-addon {
+    border-top-color: rgb(67, 73, 76);
+    border-bottom-color: rgb(67, 73, 76);
+    border-left-color: rgb(67, 73, 76);
+    border-right-color: initial;
+}
+
+.input-group .group-addon .ind-flag {
+    background-image: url("https://www.meritnation.com/img/site_content/meritnation/newHome/home-sprite.png?v=25102016");
+}
+
+.input-group .form-control {
+    border-top-color: rgb(67, 73, 76);
+    border-bottom-color: rgb(67, 73, 76);
+    border-left-color: rgb(67, 73, 76);
+    border-right-color: initial;
+}
+
+.input-group .group-btn {
+    background-image: initial;
+    background-color: rgb(0, 121, 84);
+    border-color: initial;
+    color: rgb(232, 230, 227);
+}
+
+.modalBox-content .modalBox-body p {
+    color: rgb(158, 150, 137);
+}
+
+.modalBox-content .modalBox-body .thanksmsg {
+    color: rgb(98, 255, 207);
+}
+
+.modalBox.msgSuccess .input-group .group-addon,
+.modalBox.msgSuccess .input-group .form-control {
+    border-color: rgb(0, 210, 146);
+}
+
+.modalBox.dontDistrub .input-group .group-addon,
+.modalBox.dontDistrub .input-group .form-control {
+    border-color: rgb(179, 116, 0);
+}
+
+.modalBox.wrongNo .input-group .group-addon,
+.modalBox.wrongNo .input-group .form-control {
+    border-color: rgb(182, 6, 18);
+}
+
+#webklipper-publisher-widget-container,
+#webklipper-publisher-widget-container * {
+    border-color: initial;
+}
+
+
+/* Override Style */
+
+.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+
+::placeholder {
+    opacity: 0.5 !important;
+}
+
+a[href="https://coinmarketcap.com/"]>svg[width="94"][height="16"]>path {
+    fill: var(--darkreader-neutral-text) !important;
+}
+
+#edge-translate-panel-body {
+    color: var(--darkreader-neutral-text) !important;
+}
